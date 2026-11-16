@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pengumuman &amp; SPMB &mdash; Panel Admin SMPN 5 Kupang</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-admin="spmb" data-root="../">
+  <div class="admin-shell">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="admin-main">
+      <header class="topbar" id="topbar" data-title="Pengumuman &amp; SPMB" data-subtitle="Kelola banner pengumuman dan informasi penerimaan murid baru."></header>
+      <main class="admin-content">
+        <!-- shortcut: form statis, tombol hanya menampilkan toast; sambungkan ke backend saat Construction -->
+        <div class="admin-grid">
+          <div class="stack-24">
+            <form class="card">
+              <h2 style="font-size:20px">Banner Pengumuman</h2>
+              <p class="small muted mt-8">Tampil di bagian paling atas semua halaman publik. Menggantikan banner &ldquo;SAS&rdquo; di website lama.</p>
+              <div class="field mt-24">
+                <label for="bTeks">Teks pengumuman</label>
+                <input id="bTeks" type="text" maxlength="120" value="Sumatif Akhir Semester (SAS) Ganjil dimulai 1 Desember 2026.">
+                <div class="hint">Maksimal 120 karakter.</div>
+              </div>
+              <div class="grid grid-2">
+                <div class="field">
+                  <label for="bTautan">Tautan &ldquo;Selengkapnya&rdquo;</label>
+                  <select id="bTautan">
+                    <option>Berita: Jadwal SAS Ganjil 2026/2027</option>
+                    <option>Halaman SPMB</option>
+                    <option>Dokumen &amp; Tautan</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="bSampai">Tampil sampai</label>
+                  <input id="bSampai" type="date" value="2026-12-12">
+                </div>
+              </div>
+              <div class="field">
+                <div class="check"><input id="bAktif" type="checkbox" checked><label for="bAktif">Tampilkan banner di situs</label></div>
+              </div>
+              <div class="form-actions">
+                <button class="btn btn-primary" type="button" data-toast="Banner pengumuman disimpan (demo).">Simpan Banner</button>
+              </div>
+            </form>
+
+            <form class="card">
+              <h2 style="font-size:20px">Informasi SPMB</h2>
+              <p class="small muted mt-8">Website hanya menyajikan informasi. Pendaftaran tetap melalui portal resmi Dinas Pendidikan Kota Kupang.</p>
+              <div class="grid grid-2 mt-24">
+                <div class="field">
+                  <label for="sTahun">Tahun ajaran</label>
+                  <input id="sTahun" type="text" value="2027/2028">
+                </div>
+                <div class="field">
+                  <label for="sStatus">Status di halaman publik</label>
+                  <select id="sStatus">
+                    <option>Segera dibuka</option>
+                    <option>Pendaftaran dibuka</option>
+                    <option>Pendaftaran ditutup</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="sKuota">Kuota murid baru</label>
+                  <input id="sKuota" type="number" value="256">
+                </div>
+                <div class="field">
+                  <label for="sPortal">Tautan portal SPMB Dinas</label>
+                  <input id="sPortal" type="url" placeholder="https://...">
+                  <div class="hint">Diisi saat Dinas mengumumkan alamat portal.</div>
+                </div>
+              </div>
+              <div class="field">
+                <label for="sSyarat">Persyaratan umum (satu baris satu syarat)</label>
+                <textarea id="sSyarat" rows="5">Fotokopi akta kelahiran dan Kartu Keluarga.
+Fotokopi rapor kelas IV–VI atau ijazah SD.
+Surat keterangan lulus dari SD/MI.
+Pas foto berwarna ukuran 3×4 sebanyak dua lembar.
+Berkas pendukung sesuai jalur.</textarea>
+              </div>
+              <div class="form-actions">
+                <button class="btn btn-primary" type="button" data-toast="Informasi SPMB disimpan (demo).">Simpan Informasi</button>
+                <a class="btn btn-text" href="../spmb.html">Lihat halaman SPMB</a>
+              </div>
+            </form>
+          </div>
+
+          <aside class="stack-24">
+            <section class="card" style="padding:0">
+              <div class="panel-head"><h3>Jadwal SPMB</h3><button class="btn btn-text btn-sm" type="button" data-toast="Tahap baru ditambahkan (demo).">+ Tahap</button></div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Tahap</th><th>Tanggal</th></tr></thead>
+                  <tbody>
+                    <tr><td data-label="Tahap">Sosialisasi</td><td data-label="Tanggal">20–31 Mei 2027</td></tr>
+                    <tr><td data-label="Tahap">Pendaftaran daring</td><td data-label="Tanggal">1–12 Jun 2027</td></tr>
+                    <tr><td data-label="Tahap">Verifikasi berkas</td><td data-label="Tanggal">13–20 Jun 2027</td></tr>
+                    <tr><td data-label="Tahap">Pengumuman hasil</td><td data-label="Tanggal">25 Jun 2027</td></tr>
+                    <tr><td data-label="Tahap">Daftar ulang</td><td data-label="Tanggal">26–30 Jun 2027</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            <section class="card">
+              <h3>Status</h3>
+              <div class="row mt-16"><span class="badge badge-success">Banner aktif</span><span class="tiny muted">Diubah 9 Nov 2026</span></div>
+              <div class="row mt-8"><span class="badge badge-warning">SPMB: segera dibuka</span></div>
+            </section>
+          </aside>
+        </div>
+      </main>
+    </div>
+  </div>
+  <div class="overlay" id="overlay"></div>
+  <script src="../assets/layout.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>

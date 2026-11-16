@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Berita &mdash; Panel Admin SMPN 5 Kupang</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-admin="berita" data-root="../">
+  <div class="admin-shell">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="admin-main">
+      <header class="topbar" id="topbar" data-title="Berita" data-subtitle="Kelola artikel dan pengumuman sekolah."></header>
+      <main class="admin-content">
+        <div class="spread" style="margin-bottom:24px">
+          <div>
+            <h2 style="font-size:20px">Daftar Berita</h2>
+            <p class="small muted">4 artikel &mdash; 2 publish, 2 draft.</p>
+          </div>
+          <button class="btn btn-primary" type="button" data-drawer="drawerBerita" data-new-berita>+ Tulis Berita</button>
+        </div>
+
+        <section class="card" style="padding:0">
+          <div class="filter-bar">
+            <div class="field grow">
+              <label for="cariBerita">Cari</label>
+              <input id="cariBerita" type="search" placeholder="Cari judul berita...">
+            </div>
+            <div class="field">
+              <label for="statusBerita">Status</label>
+              <select id="statusBerita">
+                <option value="">Semua status</option>
+                <option value="publish">Publish</option>
+                <option value="draft">Draft</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" id="btnTerapkanBerita" type="button">Terapkan</button>
+          </div>
+
+          <div class="table-wrap">
+            <table id="tabelBerita">
+              <thead>
+                <tr><th>Judul</th><th>Status</th><th>Penulis</th><th>Tanggal</th><th>Aksi</th></tr>
+              </thead>
+              <tbody>
+                <tr id="brow1" data-status="publish">
+                  <td data-label="Judul">SMPN 5 Kupang Raih Juara 1 Lomba Cerdas Cermat Tingkat Kota</td>
+                  <td data-label="Status"><span class="badge badge-success">Publish</span></td>
+                  <td data-label="Penulis">Humas</td>
+                  <td data-label="Tanggal">12 Okt 2026</td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-edit-berita data-judul="SMPN 5 Kupang Raih Juara 1 Lomba Cerdas Cermat Tingkat Kota">Edit</button><a href="../berita-detail.html">Lihat</a></div></td>
+                </tr>
+                <tr id="brow2" data-status="publish">
+                  <td data-label="Judul">Informasi SPMB 2027/2028: Jadwal, Jalur, dan Persyaratan</td>
+                  <td data-label="Status"><span class="badge badge-success">Publish</span></td>
+                  <td data-label="Penulis">Operator</td>
+                  <td data-label="Tanggal">8 Okt 2026</td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-edit-berita data-judul="Informasi SPMB 2027/2028: Jadwal, Jalur, dan Persyaratan">Edit</button><a href="../berita-detail.html">Lihat</a></div></td>
+                </tr>
+                <tr id="brow3" data-status="draft">
+                  <td data-label="Judul">Workshop Literasi Digital untuk Guru dan Siswa</td>
+                  <td data-label="Status"><span class="badge badge-neutral">Draft</span></td>
+                  <td data-label="Penulis">Humas</td>
+                  <td data-label="Tanggal">2 Okt 2026</td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-edit-berita data-judul="Workshop Literasi Digital untuk Guru dan Siswa">Edit</button><button class="btn btn-text btn-sm danger" type="button" data-hapus-berita="brow3">Hapus</button></div></td>
+                </tr>
+                <tr id="brow4" data-status="draft">
+                  <td data-label="Judul">Peringatan Bulan Bahasa dan Seni 2026</td>
+                  <td data-label="Status"><span class="badge badge-neutral">Draft</span></td>
+                  <td data-label="Penulis">Humas</td>
+                  <td data-label="Tanggal">28 Sep 2026</td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-edit-berita data-judul="Peringatan Bulan Bahasa dan Seni 2026">Edit</button><button class="btn btn-text btn-sm danger" type="button" data-hapus-berita="brow4">Hapus</button></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="drawer wide" id="drawerBerita" aria-label="Editor berita" aria-hidden="true">
+    <div class="drawer-head">
+      <div><h3>Edit Berita</h3><p class="tiny muted mt-8">Perubahan disimpan sebagai draft sampai dipublikasikan.</p></div>
+      <button class="close-btn" type="button" data-close aria-label="Tutup">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="drawer-body">
+      <div class="field">
+        <label for="bJudul">Judul</label>
+        <input id="bJudul" type="text" value="Workshop Literasi Digital untuk Guru dan Siswa">
+      </div>
+      <div class="field">
+        <label for="bSlug">Slug</label>
+        <input id="bSlug" type="text" value="workshop-literasi-digital-untuk-guru-dan-siswa">
+        <div class="hint">Dibuat otomatis dari judul.</div>
+      </div>
+      <div class="field">
+        <label for="bRingkasan">Ringkasan</label>
+        <textarea id="bRingkasan" style="min-height:80px">Pelatihan dua hari membahas pemanfaatan perpustakaan digital dan keamanan daring bagi guru dan siswa.</textarea>
+      </div>
+      <div class="field">
+        <label>Isi Berita</label>
+        <div class="editor-toolbar">
+          <button type="button" data-fmt="bold"><strong>B</strong></button>
+          <button type="button" data-fmt="italic"><em>I</em></button>
+          <button type="button" data-fmt="insertUnorderedList"><span>&#8801;</span></button>
+          <button type="button" data-fmt="link">Link</button>
+        </div>
+        <div class="editor" contenteditable="true">
+          <p>Workshop Literasi Digital digelar selama dua hari di aula sekolah. Kegiatan ini diikuti oleh guru dan perwakilan siswa dari setiap kelas.</p>
+          <p>Materi pertama membahas cara memanfaatkan perpustakaan digital untuk mencari sumber belajar yang tepercaya.</p>
+          <p>Hari kedua diisi praktik keamanan daring: mengenali tautan mencurigakan, menjaga kata sandi, dan melindungi data pribadi.</p>
+        </div>
+      </div>
+      <div class="field">
+        <label>Gambar Utama</label>
+        <label class="upload-zone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>
+          <span>Tarik gambar ke sini atau pilih file</span>
+          <input type="file" accept=".jpg,.jpeg,.png" hidden>
+        </label>
+        <div class="hint">JPG atau PNG, maksimal 5 MB.</div>
+      </div>
+      <div class="field">
+        <label for="bStatus">Status</label>
+        <select id="bStatus">
+          <option value="draft" selected>Draft</option>
+          <option value="publish">Publish</option>
+        </select>
+      </div>
+      <div class="card mt-16" id="beritaPreview" hidden></div>
+    </div>
+    <div class="drawer-foot">
+      <button class="btn btn-outline" type="button" id="btnPreviewBerita">Pratinjau</button>
+      <button class="btn btn-primary" id="btnSimpanBerita" type="button">Simpan</button>
+    </div>
+  </aside>
+
+  <script src="../assets/layout.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>

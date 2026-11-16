@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pengajuan Berhasil &mdash; SMP Negeri 5 Kota Kupang</title>
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="sukses" data-root="">
+  <header class="site-header" id="site-header"></header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="card success-card">
+          <div class="success-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg>
+          </div>
+          <h1 style="font-size:32px">Pengajuan berhasil dikirim</h1>
+          <p class="muted mt-8">Terima kasih, <strong id="successName">Peserta</strong>. <span id="successJenis">Pengajuan</span> Anda sudah kami terima dan akan diverifikasi dalam 1&times;24 jam kerja.</p>
+
+          <div class="code-box mt-24">
+            <div>
+              <div class="tiny muted">Kode Pengajuan</div>
+              <div class="code mono" id="kodeSukses">LMB-261104-8QK2</div>
+            </div>
+            <button class="btn btn-outline" type="button" data-copy="kodeSukses">Salin kode</button>
+          </div>
+          <div class="warning-strip">Simpan kode ini. Kode diperlukan untuk mengecek status pengajuan.</div>
+
+          <dl class="summary mt-24">
+            <div><dt>Jenis layanan</dt><dd id="successJenis2">Pendaftaran</dd></div>
+            <div><dt>Nama</dt><dd id="successName2">Peserta</dd></div>
+            <div><dt>Status</dt><dd><span class="badge badge-warning">Menunggu</span></dd></div>
+            <div><dt>Verifikasi</dt><dd>Maks. 1&times;24 jam kerja</dd></div>
+          </dl>
+
+          <div class="h-steps mt-32">
+            <div class="h-step done"><span class="dot"></span>Pengajuan diterima</div>
+            <span class="h-sep"></span>
+            <div class="h-step active"><span class="dot"></span>Verifikasi admin</div>
+            <span class="h-sep"></span>
+            <div class="h-step"><span class="dot"></span>Status final</div>
+          </div>
+
+          <div class="form-actions" style="justify-content:center">
+            <a class="btn btn-primary" href="cek-status.html">Cek Status Pengajuan</a>
+            <a class="btn btn-text" href="index.html">Kembali ke Beranda</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+  <script src="assets/layout.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

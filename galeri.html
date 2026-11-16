@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galeri &mdash; SMP Negeri 5 Kota Kupang</title>
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="galeri" data-root="">
+  <header class="site-header" id="site-header"></header>
+
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Beranda</a><span>/</span><span>Galeri</span></div>
+        <h1>Galeri Sekolah</h1>
+        <p class="lead">Dokumentasi kegiatan, fasilitas, dan capaian siswa SMP Negeri 5 Kota Kupang.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- shortcut: filter galeri statis, sambungkan ke data galeri saat Construction -->
+        <div class="filters">
+          <div class="chips">
+            <button class="chip active" type="button" data-gal-filter="semua">Semua</button>
+            <button class="chip" type="button" data-gal-filter="kegiatan">Kegiatan</button>
+            <button class="chip" type="button" data-gal-filter="fasilitas">Fasilitas</button>
+            <button class="chip" type="button" data-gal-filter="prestasi">Prestasi</button>
+          </div>
+        </div>
+
+        <div class="grid grid-3">
+          <figure class="card" data-gal="kegiatan">
+            <div class="media ratio-4-3">Foto: Upacara Bendera</div>
+            <figcaption class="mt-16"><strong>Upacara Bendera</strong><p class="small muted">Senin, 2 November 2026</p></figcaption>
+          </figure>
+          <figure class="card" data-gal="fasilitas">
+            <div class="media ratio-4-3">Foto: Perpustakaan</div>
+            <figcaption class="mt-16"><strong>Ruang Perpustakaan</strong><p class="small muted">Fasilitas &mdash; literasi siswa</p></figcaption>
+          </figure>
+          <figure class="card" data-gal="fasilitas">
+            <div class="media ratio-4-3">Foto: Laboratorium IPA</div>
+            <figcaption class="mt-16"><strong>Laboratorium IPA</strong><p class="small muted">Fasilitas &mdash; praktikum</p></figcaption>
+          </figure>
+          <figure class="card" data-gal="prestasi">
+            <div class="media ratio-4-3">Foto: Lomba Cerdas Cermat</div>
+            <figcaption class="mt-16"><strong>Juara 1 Lomba Cerdas Cermat</strong><p class="small muted">Prestasi &mdash; tingkat Kota, 1 Oktober 2026</p></figcaption>
+          </figure>
+          <figure class="card" data-gal="fasilitas">
+            <div class="media ratio-4-3">Foto: Aula Serbaguna</div>
+            <figcaption class="mt-16"><strong>Aula Serbaguna</strong><p class="small muted">Fasilitas &mdash; kegiatan komite</p></figcaption>
+          </figure>
+          <figure class="card" data-gal="kegiatan">
+            <div class="media ratio-4-3">Foto: Bulan Bahasa</div>
+            <figcaption class="mt-16"><strong>Peringatan Bulan Bahasa</strong><p class="small muted">Kegiatan &mdash; 28 Oktober 2026</p></figcaption>
+          </figure>
+          <figure class="card" data-gal="fasilitas">
+            <div class="media ratio-4-3">Foto: Lapangan Olahraga</div>
+            <figcaption class="mt-16"><strong>Lapangan Olahraga</strong><p class="small muted">Fasilitas &mdash; bola voli dan basket</p></figcaption>
+          </figure>
+          <figure class="card" data-gal="kegiatan">
+            <div class="media ratio-4-3">Foto: Class Meeting</div>
+            <figcaption class="mt-16"><strong>Class Meeting</strong><p class="small muted">Kegiatan &mdash; Desember 2026</p></figcaption>
+          </figure>
+          <figure class="card" data-gal="kegiatan">
+            <div class="media ratio-4-3">Foto: Workshop Guru</div>
+            <figcaption class="mt-16"><strong>Workshop Guru</strong><p class="small muted">Kegiatan &mdash; 2 Oktober 2026</p></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+  <script src="assets/layout.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

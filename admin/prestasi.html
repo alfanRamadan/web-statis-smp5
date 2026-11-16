@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prestasi &mdash; Panel Admin SMPN 5 Kupang</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-admin="prestasi" data-root="../">
+  <div class="admin-shell">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="admin-main">
+      <header class="topbar" id="topbar" data-title="Prestasi" data-subtitle="Kelola capaian siswa dan sekolah."></header>
+      <main class="admin-content">
+        <div class="spread" style="margin-bottom:24px">
+          <div>
+            <h2 style="font-size:20px">Daftar Prestasi</h2>
+            <p class="small muted">4 prestasi tercatat pada 2026.</p>
+          </div>
+          <button class="btn btn-primary" type="button" data-soon="Tambah prestasi">+ Tambah</button>
+        </div>
+
+        <section class="card" style="padding:0">
+          <div class="filter-bar">
+            <div class="field grow">
+              <label for="cariPrestasi">Cari</label>
+              <input id="cariPrestasi" type="search" placeholder="Cari judul atau nama siswa...">
+            </div>
+            <div class="field">
+              <label for="tahunPrestasi">Tahun</label>
+              <select id="tahunPrestasi">
+                <option>2026</option>
+                <option>2025</option>
+                <option>2024</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="tingkatPrestasi">Tingkat</label>
+              <select id="tingkatPrestasi">
+                <option>Semua</option>
+                <option>Kota</option>
+                <option>Provinsi</option>
+                <option>Nasional</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" type="button" data-soon="Terapkan filter">Terapkan</button>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Prestasi</th><th>Siswa / Tim</th><th>Tingkat</th><th>Tahun</th><th>Status</th><th>Aksi</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Prestasi">Juara 1 Lomba Cerdas Cermat</td>
+                  <td data-label="Siswa / Tim">Tim LCC</td>
+                  <td data-label="Tingkat">Kota</td>
+                  <td data-label="Tahun">2026</td>
+                  <td data-label="Status"><span class="badge badge-success">Publish</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit prestasi">Edit</button></div></td>
+                </tr>
+                <tr>
+                  <td data-label="Prestasi">Finalis Olimpiade Sains</td>
+                  <td data-label="Siswa / Tim">Matematika &amp; IPA</td>
+                  <td data-label="Tingkat">Provinsi</td>
+                  <td data-label="Tahun">2026</td>
+                  <td data-label="Status"><span class="badge badge-success">Publish</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit prestasi">Edit</button></div></td>
+                </tr>
+                <tr>
+                  <td data-label="Prestasi">Juara 2 Lomba Puisi Bulan Bahasa</td>
+                  <td data-label="Siswa / Tim">Elisabeth R. Peni</td>
+                  <td data-label="Tingkat">Kota</td>
+                  <td data-label="Tahun">2026</td>
+                  <td data-label="Status"><span class="badge badge-success">Publish</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit prestasi">Edit</button></div></td>
+                </tr>
+                <tr>
+                  <td data-label="Prestasi">Juara 3 Turnamen Bola Voli Pelajar</td>
+                  <td data-label="Siswa / Tim">Tim Putra</td>
+                  <td data-label="Tingkat">Kecamatan</td>
+                  <td data-label="Tahun">2026</td>
+                  <td data-label="Status"><span class="badge badge-neutral">Draft</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit prestasi">Edit</button></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <div class="overlay" id="overlay"></div>
+  <script src="../assets/layout.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>

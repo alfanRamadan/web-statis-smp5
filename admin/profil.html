@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profil Sekolah &mdash; Panel Admin SMPN 5 Kupang</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-admin="profil" data-root="../">
+  <div class="admin-shell">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="admin-main">
+      <header class="topbar" id="topbar" data-title="Profil Sekolah" data-subtitle="Kelola informasi umum sekolah."></header>
+      <main class="admin-content">
+        <!-- shortcut: form statis, belum menyimpan; sambungkan ke backend saat Construction -->
+        <div class="admin-grid">
+          <form class="card">
+            <h2 style="font-size:20px">Informasi Sekolah</h2>
+            <p class="small muted mt-8">Perubahan di sini akan tampil di halaman profil publik.</p>
+
+            <div class="grid grid-2 mt-24">
+              <div class="field">
+                <label for="pNama">Nama Sekolah</label>
+                <input id="pNama" type="text" value="SMP Negeri 5 Kota Kupang">
+              </div>
+              <div class="field">
+                <label for="pNpsn">NPSN</label>
+                <input id="pNpsn" type="text" value="5030xxxx">
+              </div>
+              <div class="field">
+                <label for="pAkreditasi">Akreditasi</label>
+                <input id="pAkreditasi" type="text" value="A">
+              </div>
+              <div class="field">
+                <label for="pKepsek">Kepala Sekolah</label>
+                <input id="pKepsek" type="text" value="Nama Kepala Sekolah, M.Pd.">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="pAlamat">Alamat</label>
+              <input id="pAlamat" type="text" value="Jl. Frans Seda, Kel. Kelapa Lima, Kec. Kelapa Lima, Kota Kupang, NTT 85228">
+            </div>
+            <div class="grid grid-2">
+              <div class="field">
+                <label for="pTelepon">Telepon</label>
+                <input id="pTelepon" type="text" value="" placeholder="Belum ada nomor resmi">
+              </div>
+              <div class="field">
+                <label for="pEmail">Email</label>
+                <input id="pEmail" type="email" value="smpnegeri5kupang.80@gmail.com">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="pVisi">Visi</label>
+              <textarea id="pVisi">Menghasilkan tamatan yang beriman dan bertakwa, berprestasi, terampil, dan berdaya saing tinggi serta berbudi pekerti yang luhur.</textarea>
+            </div>
+            <div class="field">
+              <label for="pMisi">Misi</label>
+              <textarea id="pMisi" rows="8">Unggul dalam disiplin.
+Unggul dalam perolehan nilai US/UN.
+Unggul dalam perolehan nilai ulangan.
+Unggul dalam lomba kesenian dan olahraga prestasi.
+Unggul dalam kegiatan keagamaan dan sosial kemasyarakatan.
+Unggul dalam Lomba Cerdas Cermat / LAMOJARI.
+Unggul dalam LPIR/PIR.
+Unggul dalam 7K.</textarea>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="button" data-toast="Profil disimpan (demo).">Simpan Perubahan</button>
+            </div>
+          </form>
+
+          <aside class="stack-24">
+            <section class="card">
+              <h3>Pratinjau Publik</h3>
+              <p class="small muted mt-8">Halaman profil menampilkan sejarah, visi/misi, struktur, dan fasilitas.</p>
+              <a class="btn btn-outline btn-block mt-16" href="../profil.html">Lihat Halaman Profil</a>
+            </section>
+            <section class="card">
+              <h3>Status</h3>
+              <div class="row mt-16"><span class="badge badge-success">Tampil</span><span class="tiny muted">Terakhir diubah 3 Nov 2026</span></div>
+            </section>
+          </aside>
+        </div>
+      </main>
+    </div>
+  </div>
+  <div class="overlay" id="overlay"></div>
+  <script src="../assets/layout.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>

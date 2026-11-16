@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ajukan Kunjungan &mdash; SMP Negeri 5 Kota Kupang</title>
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="kunjungan" data-root="">
+  <header class="site-header" id="site-header"></header>
+
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Beranda</a><span>/</span><a href="index.html#agenda">Layanan</a><span>/</span><span>Kunjungan Tamu</span></div>
+        <h1>Ajukan Kunjungan</h1>
+        <p class="lead">Isi formulir berikut untuk mengajukan jadwal kunjungan ke sekolah. Tidak perlu membuat akun.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split-form">
+        <form class="card" id="formKunjungan" novalidate>
+          <h2 style="font-size:20px">Data Pengunjung</h2>
+          <p class="small muted mt-8">Field bertanda <span class="req">*</span> wajib diisi.</p>
+
+          <div class="mt-24">
+            <div class="field">
+              <label for="nama">Nama Lengkap <span class="req">*</span></label>
+              <input id="nama" name="nama" type="text" placeholder="Contoh: Yohanes Tefa" required autocomplete="name">
+              <div class="error-text">Nama lengkap wajib diisi.</div>
+            </div>
+            <div class="field">
+              <label for="instansi">Instansi / Asal <span class="req">*</span></label>
+              <input id="instansi" name="instansi" type="text" placeholder="Contoh: Dinas Pendidikan Kota Kupang" required autocomplete="organization">
+              <div class="error-text">Instansi atau asal wajib diisi.</div>
+            </div>
+            <div class="field">
+              <label for="jenisKunjungan">Jenis Kunjungan <span class="req">*</span></label>
+              <select id="jenisKunjungan" name="jenis" required>
+                <option value="">Pilih jenis kunjungan</option>
+                <option>Kunjungan dinas / instansi</option>
+                <option>Studi banding / penelitian</option>
+                <option>Kunjungan perpustakaan</option>
+                <option>Orang tua / wali murid</option>
+                <option>Lainnya</option>
+              </select>
+              <div class="error-text">Jenis kunjungan wajib dipilih.</div>
+            </div>
+            <div class="field">
+              <label for="wa">Nomor WhatsApp <span class="req">*</span></label>
+              <input id="wa" name="wa" type="tel" inputmode="tel" placeholder="08xx xxxx xxxx" required autocomplete="tel">
+              <div class="hint">Dipakai admin untuk konfirmasi jadwal.</div>
+              <div class="error-text">Nomor WhatsApp wajib diisi.</div>
+            </div>
+            <div class="field">
+              <label for="tanggal">Tanggal Kunjungan <span class="req">*</span></label>
+              <input id="tanggal" name="tanggal" type="date" value="2026-11-05" required>
+              <div class="hint">Pilih tanggal minimal H+1. Jadwal final ditentukan admin.</div>
+              <div class="error-text">Tanggal kunjungan wajib diisi.</div>
+            </div>
+            <div class="field">
+              <label for="keperluan">Keperluan <span class="req">*</span></label>
+              <textarea id="keperluan" name="keperluan" maxlength="300" placeholder="Jelaskan tujuan kunjungan Anda" required data-counter="hitungKeperluan"></textarea>
+              <div class="spread"><div class="hint">Maksimal 300 karakter.</div><div class="hint" id="hitungKeperluan">0/300</div></div>
+              <div class="error-text">Keperluan wajib diisi.</div>
+            </div>
+            <div class="field">
+              <div class="check">
+                <input id="setuju" name="setuju" type="checkbox" required>
+                <label for="setuju">Saya menyatakan data yang diisi benar.</label>
+              </div>
+              <div class="error-text">Centang pernyataan sebelum mengirim.</div>
+            </div>
+            <div class="field">
+              <div class="check">
+                <input id="pdp" name="pdp" type="checkbox" required>
+                <label for="pdp">Saya setuju data pribadi saya hanya digunakan untuk keperluan layanan ini, sesuai UU No. 27 Tahun 2022 tentang Pelindungan Data Pribadi.</label>
+              </div>
+              <div class="error-text">Persetujuan data pribadi wajib dicentang.</div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Kirim Pengajuan</button>
+            <a class="btn btn-text" href="index.html">Batal</a>
+          </div>
+          <p class="form-note">Setelah dikirim, Anda akan menerima kode unik untuk mengecek status pengajuan.</p>
+        </form>
+
+        <aside class="stack-24">
+          <div class="card">
+            <h3>Alur Pengajuan</h3>
+            <div class="stepper mt-16">
+              <div class="step active"><span class="step-num">1</span><div><strong>Isi formulir</strong><span>Lengkapi data kunjungan.</span></div></div>
+              <div class="step"><span class="step-num">2</span><div><strong>Verifikasi admin</strong><span>Maksimal 1&times;24 jam kerja.</span></div></div>
+              <div class="step"><span class="step-num">3</span><div><strong>Cek status</strong><span>Gunakan kode pengajuan.</span></div></div>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Jam Layanan</h3>
+            <p class="small mt-8">Senin&ndash;Jumat, 08.00&ndash;14.00 WITA</p>
+            <p class="small muted">Sabtu&ndash;Minggu dan hari libur nasional tutup.</p>
+          </div>
+          <div class="card">
+            <h3>Butuh bantuan?</h3>
+            <p class="small mt-8">Email Tata Usaha: smpnegeri5kupang.80@gmail.com</p>
+            <a class="card-link" href="#" data-soon="WhatsApp Tata Usaha">Hubungi via WhatsApp</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+  <script src="assets/layout.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

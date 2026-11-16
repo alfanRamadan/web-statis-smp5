@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guru &amp; Staf &mdash; SMP Negeri 5 Kota Kupang</title>
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="guru" data-root="">
+  <header class="site-header" id="site-header"></header>
+
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Beranda</a><span>/</span><span>Guru &amp; Staf</span></div>
+        <h1>Guru &amp; Staf</h1>
+        <p class="lead">Kenali tenaga pendidik dan kependidikan yang mendampingi siswa setiap hari.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="filters">
+          <div class="search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input id="cariGuru" type="search" placeholder="Cari nama atau jabatan..." aria-label="Cari guru atau staf">
+          </div>
+          <div class="chips" id="filterGuru">
+            <button class="chip active" data-kategori="semua" type="button">Semua</button>
+            <button class="chip" data-kategori="pimpinan" type="button">Pimpinan</button>
+            <button class="chip" data-kategori="guru" type="button">Guru</button>
+            <button class="chip" data-kategori="staf" type="button">Staf</button>
+          </div>
+        </div>
+
+        <div class="grid grid-4" id="daftarGuru">
+          <article class="card person-card" data-kategori="pimpinan">
+            <div class="portrait">KS</div>
+            <strong>Nama Kepala Sekolah, M.Pd.</strong>
+            <span>Kepala Sekolah</span>
+            <span class="tiny">NIP 19680512 199003 2 001</span>
+          </article>
+          <article class="card person-card" data-kategori="pimpinan">
+            <div class="portrait alt">PN</div>
+            <strong>Paulus A. Neno, S.Pd.</strong>
+            <span>Wakil Kepala Kurikulum</span>
+            <span class="tiny">NIP 19720318 199803 1 004</span>
+          </article>
+          <article class="card person-card" data-kategori="guru">
+            <div class="portrait alt2">YL</div>
+            <strong>Yuliana B. Lada, S.Pd.</strong>
+            <span>Guru Bahasa Indonesia</span>
+            <span class="tiny">NIP 19801125 200604 2 002</span>
+          </article>
+          <article class="card person-card" data-kategori="guru">
+            <div class="portrait">AB</div>
+            <strong>Andreas K. Bau, S.Pd.</strong>
+            <span>Guru Matematika</span>
+            <span class="tiny">NIP 19770909 200312 1 003</span>
+          </article>
+          <article class="card person-card" data-kategori="guru">
+            <div class="portrait alt">TL</div>
+            <strong>Theresia M. Laka, S.Pd.</strong>
+            <span>Guru IPA</span>
+            <span class="tiny">NIP 19830407 200902 2 005</span>
+          </article>
+          <article class="card person-card" data-kategori="guru">
+            <div class="portrait alt2">YT</div>
+            <strong>Yohanes D. Tefa, S.Pd.</strong>
+            <span>Guru IPS</span>
+            <span class="tiny">NIP 19751230 200801 1 006</span>
+          </article>
+          <article class="card person-card" data-kategori="guru">
+            <div class="portrait">EP</div>
+            <strong>Elisabeth R. Peni, S.Pd.</strong>
+            <span>Guru Bahasa Inggris</span>
+            <span class="tiny">NIP 19860714 201001 2 007</span>
+          </article>
+          <article class="card person-card" data-kategori="staf">
+            <div class="portrait alt">MA</div>
+            <strong>Mateus B. Ate, S.Kom.</strong>
+            <span>Staf Tata Usaha</span>
+            <span class="tiny">NIP 19900122 201503 1 008</span>
+          </article>
+        </div>
+
+        <div class="center mt-32">
+          <button class="btn btn-outline" type="button" data-soon="Daftar guru lengkap">Tampilkan lebih banyak</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+  <script src="assets/layout.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+# Situs statis: tanpa build, publish dari root repo.
+[build]
+  publish = "."
+  command = ""
+
+# Prototipe dengan data contoh: jangan diindeks mesin pencari.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"

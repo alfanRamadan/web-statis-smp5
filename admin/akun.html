@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Akun Admin &mdash; Panel Admin SMPN 5 Kupang</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-admin="akun" data-root="../">
+  <div class="admin-shell">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="admin-main">
+      <header class="topbar" id="topbar" data-title="Akun Admin" data-subtitle="Kelola akses operator dan panitia lomba."></header>
+      <main class="admin-content">
+        <div class="spread" style="margin-bottom:24px">
+          <div>
+            <h2 style="font-size:20px">Daftar Akun</h2>
+            <p class="small muted">Hanya operator yang dapat mengelola akun.</p>
+          </div>
+          <button class="btn btn-primary" type="button" data-akun-baru data-drawer="drawerAkun">+ Tambah Akun</button>
+        </div>
+
+        <section class="card" style="padding:0">
+          <div class="table-wrap">
+            <table id="tabelAkun">
+              <thead>
+                <tr><th>Nama</th><th>Username</th><th>Peran</th><th>Status</th><th>Aksi</th></tr>
+              </thead>
+              <tbody>
+                <tr id="urow1">
+                  <td data-label="Nama">Operator Sekolah</td>
+                  <td data-label="Username"><span class="table-code">operator</span></td>
+                  <td data-label="Peran">Operator</td>
+                  <td data-label="Status"><span class="badge badge-success">Aktif</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-akun data-row="urow1" data-nama="Operator Sekolah" data-username="operator" data-role="operator" data-status="aktif">Edit</button><button class="btn btn-text btn-sm danger" type="button" data-hapus-akun="urow1">Hapus</button></div></td>
+                </tr>
+                <tr id="urow2">
+                  <td data-label="Nama">Maria Goreti</td>
+                  <td data-label="Username"><span class="table-code">maria.panitia</span></td>
+                  <td data-label="Peran">Panitia Lomba</td>
+                  <td data-label="Status"><span class="badge badge-success">Aktif</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-akun data-row="urow2" data-nama="Maria Goreti" data-username="maria.panitia" data-role="panitia_lomba" data-status="aktif">Edit</button><button class="btn btn-text btn-sm danger" type="button" data-hapus-akun="urow2">Hapus</button></div></td>
+                </tr>
+                <tr id="urow3">
+                  <td data-label="Nama">Yohanes Tefa</td>
+                  <td data-label="Username"><span class="table-code">yohanes.panitia</span></td>
+                  <td data-label="Peran">Panitia Lomba</td>
+                  <td data-label="Status"><span class="badge badge-neutral">Nonaktif</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-akun data-row="urow3" data-nama="Yohanes Tefa" data-username="yohanes.panitia" data-role="panitia_lomba" data-status="nonaktif">Edit</button><button class="btn btn-text btn-sm danger" type="button" data-hapus-akun="urow3">Hapus</button></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="drawer" id="drawerAkun" aria-label="Form akun admin" aria-hidden="true">
+    <div class="drawer-head">
+      <div><h3 id="akunTitle">Tambah Akun</h3><p class="tiny muted mt-8">Akun baru dapat langsung dipakai setelah disimpan.</p></div>
+      <button class="close-btn" type="button" data-close aria-label="Tutup">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="drawer-body">
+      <div class="field">
+        <label for="aNama">Nama Lengkap <span class="req">*</span></label>
+        <input id="aNama" type="text" placeholder="Contoh: Maria Goreti">
+        <div class="error-text">Nama wajib diisi.</div>
+      </div>
+      <div class="field">
+        <label for="aUsername">Username <span class="req">*</span></label>
+        <input id="aUsername" type="text" placeholder="Contoh: maria.panitia" autocomplete="off">
+        <div class="error-text">Username wajib diisi.</div>
+      </div>
+      <div class="field">
+        <label for="aRole">Peran <span class="req">*</span></label>
+        <select id="aRole">
+          <option value="operator">Operator</option>
+          <option value="panitia_lomba">Panitia Lomba</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="aStatus">Status <span class="req">*</span></label>
+        <select id="aStatus">
+          <option value="aktif">Aktif</option>
+          <option value="nonaktif">Nonaktif</option>
+        </select>
+      </div>
+      <div class="note-box note-warning">Password awal dibuat otomatis dan wajib diganti saat login pertama.</div>
+      <div class="note-box note-info" id="resetInfo" hidden></div>
+      <button class="btn btn-outline btn-block mt-16" id="btnResetPassword" type="button" hidden>Reset Password</button>
+    </div>
+    <div class="drawer-foot">
+      <span class="hint" id="aHint">Semua field wajib diisi.</span>
+      <button class="btn btn-primary" id="btnSimpanAkun" type="button">Simpan</button>
+    </div>
+  </aside>
+
+  <script src="../assets/layout.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>

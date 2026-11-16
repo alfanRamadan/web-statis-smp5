@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Masuk Panel Admin &mdash; SMP Negeri 5 Kota Kupang</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-root="../">
+  <div class="login-page">
+    <div class="login-form-side">
+      <div class="login-card">
+        <div class="brand">
+          <img class="crest" src="../assets/img/logo.png" alt="Logo SMP Negeri 5 Kota Kupang">
+          <span><span class="brand-name">SMP Negeri 5 Kota Kupang</span><span class="brand-sub">Kota Kupang, Nusa Tenggara Timur</span></span>
+        </div>
+        <h1 class="mt-32" style="font-size:28px">Masuk ke Panel Admin</h1>
+        <p class="small muted mt-8">Gunakan akun yang diberikan operator sekolah.</p>
+
+        <form id="formLogin" class="mt-24" novalidate>
+          <div class="field">
+            <label for="username">Username</label>
+            <input id="username" type="text" placeholder="Masukkan username" autocomplete="username" required>
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <div class="pass-wrap">
+              <input id="password" type="password" placeholder="Masukkan password" autocomplete="current-password" required>
+              <button class="pass-toggle" id="togglePass" type="button">Lihat</button>
+            </div>
+          </div>
+          <div class="spread">
+            <label class="check" style="font-size:13px"><input type="checkbox" checked> Ingat saya</label>
+            <a class="btn btn-text small" href="#" data-soon="Reset password">Lupa password?</a>
+          </div>
+          <div class="note-box note-danger mt-16" id="loginError" hidden>Username atau password salah.</div>
+          <button class="btn btn-primary btn-block mt-16" type="submit">Masuk</button>
+        </form>
+
+        <p class="tiny muted mt-16">Akses hanya untuk operator dan panitia lomba. Hubungi admin sekolah jika Anda tidak memiliki akun.</p>
+        <p class="tiny muted mt-8">Demo: <span class="mono">operator</span> / <span class="mono">admin123</span></p>
+        <a class="btn btn-text mt-16" href="../index.html">&larr; Kembali ke situs sekolah</a>
+      </div>
+    </div>
+    <div class="login-photo">
+      <blockquote>&ldquo;Mengelola informasi sekolah dengan rapi, satu halaman setiap hari.&rdquo;</blockquote>
+      <div class="caption">Panel Admin SMPN 5 Kota Kupang</div>
+    </div>
+  </div>
+
+  <script src="../assets/layout.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>

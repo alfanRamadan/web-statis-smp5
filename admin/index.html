@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard &mdash; Panel Admin SMPN 5 Kupang</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-admin="dashboard" data-root="../">
+  <div class="admin-shell">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="admin-main">
+      <header class="topbar" id="topbar" data-title="Dashboard" data-subtitle="Ringkasan aktivitas hari ini, 3 November 2026."></header>
+      <main class="admin-content">
+        <div class="grid grid-4">
+          <article class="card stat-card">
+            <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div class="stat-num">12</div>
+            <div class="stat-label">Kunjungan Menunggu</div>
+            <a class="stat-link" href="kunjungan.html">Lihat &rarr;</a>
+          </article>
+          <article class="card stat-card">
+            <div class="icon-tile amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4Z"/><path d="M7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3"/></svg></div>
+            <div class="stat-num">8</div>
+            <div class="stat-label">Pendaftaran Lomba</div>
+            <a class="stat-link" href="lomba.html">Lihat &rarr;</a>
+          </article>
+          <article class="card stat-card">
+            <div class="icon-tile blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-4h6v4"/></svg></div>
+            <div class="stat-num">5</div>
+            <div class="stat-label">Reservasi Menunggu</div>
+            <a class="stat-link" href="reservasi.html">Lihat &rarr;</a>
+          </article>
+          <article class="card stat-card">
+            <div class="icon-tile green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg></div>
+            <div class="stat-num">3</div>
+            <div class="stat-label">Pendaftar Kegiatan Menunggu</div>
+            <a class="stat-link" href="agenda.html">Lihat &rarr;</a>
+          </article>
+        </div>
+
+        <div class="admin-grid mt-24">
+          <section class="card" style="padding:0">
+            <div class="panel-head">
+              <h2>Antrean Verifikasi Terbaru</h2>
+              <a class="btn btn-text small" href="kunjungan.html">Lihat semua</a>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Kode</th><th>Nama</th><th>Layanan</th><th>Tanggal</th><th>Status</th><th>Aksi</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-label="Kode"><span class="table-code">KJG-261103-7KQ2</span></td>
+                    <td data-label="Nama">Yohanes Tefa</td>
+                    <td data-label="Layanan">Kunjungan</td>
+                    <td data-label="Tanggal">5 Nov 2026</td>
+                    <td data-label="Status"><span class="badge badge-warning">Menunggu</span></td>
+                    <td data-label="Aksi"><div class="table-actions"><a href="kunjungan.html">Verifikasi</a></div></td>
+                  </tr>
+                  <tr>
+                    <td data-label="Kode"><span class="table-code">LMB-261103-M4XA</span></td>
+                    <td data-label="Nama">Kelas IX A</td>
+                    <td data-label="Layanan">Lomba</td>
+                    <td data-label="Tanggal">6 Nov 2026</td>
+                    <td data-label="Status"><span class="badge badge-warning">Menunggu</span></td>
+                    <td data-label="Aksi"><div class="table-actions"><a href="lomba.html">Verifikasi</a></div></td>
+                  </tr>
+                  <tr>
+                    <td data-label="Kode"><span class="table-code">RSV-261102-9BHT</span></td>
+                    <td data-label="Nama">Paulus Neno</td>
+                    <td data-label="Layanan">Reservasi</td>
+                    <td data-label="Tanggal">20 Nov 2026</td>
+                    <td data-label="Status"><span class="badge badge-warning">Menunggu</span></td>
+                    <td data-label="Aksi"><div class="table-actions"><a href="reservasi.html">Verifikasi</a></div></td>
+                  </tr>
+                  <tr>
+                    <td data-label="Kode"><span class="table-code">AGT-261101-P6WD</span></td>
+                    <td data-label="Nama">Maria Goreti</td>
+                    <td data-label="Layanan">Kegiatan</td>
+                    <td data-label="Tanggal">25 Nov 2026</td>
+                    <td data-label="Status"><span class="badge badge-success">Dikonfirmasi</span></td>
+                    <td data-label="Aksi"><div class="table-actions"><a href="agenda.html">Lihat</a></div></td>
+                  </tr>
+                  <tr>
+                    <td data-label="Kode"><span class="table-code">KJG-261031-3TKR</span></td>
+                    <td data-label="Nama">Fransiska Lobo</td>
+                    <td data-label="Layanan">Kunjungan</td>
+                    <td data-label="Tanggal">4 Nov 2026</td>
+                    <td data-label="Status"><span class="badge badge-success">Disetujui</span></td>
+                    <td data-label="Aksi"><div class="table-actions"><a href="kunjungan.html">Lihat</a></div></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <aside class="stack-24">
+            <section class="card">
+              <h3>Kapasitas Kegiatan</h3>
+              <div class="mt-16">
+                <div class="spread tiny"><span>Peringatan Hari Guru</span><strong>28/40 terisi</strong></div>
+                <div class="progress mt-8"><span style="width:70%"></span></div>
+              </div>
+              <div class="mt-16">
+                <div class="spread tiny"><span>Class Meeting</span><strong>65/80 terisi</strong></div>
+                <div class="progress mt-8"><span style="width:81%"></span></div>
+              </div>
+              <div class="mt-16">
+                <div class="spread tiny"><span>Sosialisasi SPMB</span><strong>60/60 terisi</strong></div>
+                <div class="progress mt-8"><span style="width:100%"></span></div>
+              </div>
+            </section>
+            <section class="card">
+              <h3>Akses Cepat</h3>
+              <div class="quick-grid mt-16">
+                <a class="btn btn-outline btn-block" href="berita.html">Tulis Berita</a>
+                <a class="btn btn-outline btn-block" href="kunjungan.html">Verifikasi Kunjungan</a>
+                <a class="btn btn-outline btn-block" href="lomba.html">Buat Lomba</a>
+              </div>
+            </section>
+          </aside>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+  <script src="../assets/layout.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>

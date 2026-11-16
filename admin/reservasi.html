@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reservasi Sarana &mdash; Panel Admin SMPN 5 Kupang</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-admin="reservasi" data-root="../">
+  <div class="admin-shell">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="admin-main">
+      <header class="topbar" id="topbar" data-title="Reservasi Sarana" data-subtitle="Periksa ketersediaan sebelum menyetujui."></header>
+      <main class="admin-content">
+        <div class="note-box note-info" style="margin-bottom:24px">Tidak ada pengecekan otomatis. Admin wajib memeriksa bentrok jadwal secara manual sebelum menyetujui.</div>
+
+        <div class="tabs" role="tablist" aria-label="Filter status reservasi">
+          <button class="tab active" type="button" data-res-filter="semua">Semua <span class="tab-count">14</span></button>
+          <button class="tab" type="button" data-res-filter="menunggu">Menunggu <span class="tab-count">5</span></button>
+          <button class="tab" type="button" data-res-filter="disetujui">Disetujui <span class="tab-count">7</span></button>
+          <button class="tab" type="button" data-res-filter="ditolak">Ditolak <span class="tab-count">2</span></button>
+        </div>
+
+        <section class="card" style="padding:0">
+          <div class="filter-bar">
+            <div class="field grow">
+              <label for="cariReservasi">Cari</label>
+              <input id="cariReservasi" type="search" placeholder="Cari pemohon, sarana, atau kode...">
+            </div>
+            <div class="field">
+              <label for="statusReservasi">Status</label>
+              <select id="statusReservasi">
+                <option value="">Semua status</option>
+                <option value="menunggu">Menunggu</option>
+                <option value="disetujui">Disetujui</option>
+                <option value="ditolak">Ditolak</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" id="btnTerapkanReservasi" type="button">Terapkan</button>
+          </div>
+
+          <div class="table-wrap">
+            <table id="tabelReservasi">
+              <thead>
+                <tr><th>Kode</th><th>Pemohon</th><th>Sarana</th><th>Jadwal</th><th>Status</th><th>Aksi</th></tr>
+              </thead>
+              <tbody>
+                <tr id="rrow1" data-status="menunggu">
+                  <td data-label="Kode"><span class="table-code">RSV-261104-2NHT</span></td>
+                  <td data-label="Pemohon">Paulus Neno</td>
+                  <td data-label="Sarana">Aula Serbaguna</td>
+                  <td data-label="Jadwal">20 Nov 2026, 08.00</td>
+                  <td data-label="Status"><span class="badge badge-warning">Menunggu</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-reservasi data-row="rrow1" data-kode="RSV-261104-2NHT" data-nama="Paulus Neno" data-instansi="Komite Sekolah" data-sarana="Aula Serbaguna" data-jadwal="20 November 2026, 08.00–12.00 WITA" data-keperluan="Rapat komite sekolah" data-status="Menunggu">Verifikasi</button></div></td>
+                </tr>
+                <tr id="rrow2" data-status="menunggu">
+                  <td data-label="Kode"><span class="table-code">RSV-261103-7KQ2</span></td>
+                  <td data-label="Pemohon">Yuliana Lada</td>
+                  <td data-label="Sarana">Laboratorium IPA</td>
+                  <td data-label="Jadwal">18 Nov 2026, 09.00</td>
+                  <td data-label="Status"><span class="badge badge-warning">Menunggu</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-reservasi data-row="rrow2" data-kode="RSV-261103-7KQ2" data-nama="Yuliana Lada" data-instansi="Guru IPA" data-sarana="Laboratorium IPA" data-jadwal="18 November 2026, 09.00–11.00 WITA" data-keperluan="Praktikum kelas IX" data-status="Menunggu">Verifikasi</button></div></td>
+                </tr>
+                <tr id="rrow3" data-status="disetujui">
+                  <td data-label="Kode"><span class="table-code">RSV-261102-9BHT</span></td>
+                  <td data-label="Pemohon">Maria Goreti</td>
+                  <td data-label="Sarana">Ruang Multimedia</td>
+                  <td data-label="Jadwal">15 Nov 2026, 10.00</td>
+                  <td data-label="Status"><span class="badge badge-success">Disetujui</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-reservasi data-row="rrow3" data-kode="RSV-261102-9BHT" data-nama="Maria Goreti" data-instansi="Komite Sekolah" data-sarana="Ruang Multimedia" data-jadwal="15 November 2026, 10.00–12.00 WITA" data-keperluan="Pelatihan literasi digital" data-status="Disetujui">Lihat</button></div></td>
+                </tr>
+                <tr id="rrow4" data-status="ditolak">
+                  <td data-label="Kode"><span class="table-code">RSV-261101-P6WD</span></td>
+                  <td data-label="Pemohon">Aleksander Bria</td>
+                  <td data-label="Sarana">Aula Serbaguna</td>
+                  <td data-label="Jadwal">12 Nov 2026, 13.00</td>
+                  <td data-label="Status"><span class="badge badge-danger">Ditolak</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-reservasi data-row="rrow4" data-kode="RSV-261101-P6WD" data-nama="Aleksander Bria" data-instansi="Puskesmas Bakunase" data-sarana="Aula Serbaguna" data-jadwal="12 November 2026, 13.00–15.00 WITA" data-keperluan="Sosialisasi kesehatan" data-status="Ditolak">Lihat</button></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="drawer" id="drawerReservasi" aria-label="Verifikasi reservasi" aria-hidden="true">
+    <div class="drawer-head">
+      <div>
+        <h3>Verifikasi Reservasi</h3>
+        <div class="row mt-8"><span class="mono small" id="rKode">RSV-261104-2NHT</span><span class="badge badge-warning" id="rStatus">Menunggu</span></div>
+      </div>
+      <button class="close-btn" type="button" data-close aria-label="Tutup">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="drawer-body">
+      <dl class="inline">
+        <div><dt>Pemohon</dt><dd id="rNama">Paulus Neno</dd></div>
+        <div><dt>Instansi</dt><dd id="rInstansi">Komite Sekolah</dd></div>
+        <div><dt>Sarana</dt><dd id="rSarana">Aula Serbaguna</dd></div>
+        <div><dt>Jadwal</dt><dd id="rJadwal">20 November 2026, 08.00–12.00 WITA</dd></div>
+        <div><dt>Keperluan</dt><dd id="rKeperluan">Rapat komite sekolah</dd></div>
+      </dl>
+      <hr class="hr">
+      <div class="field">
+        <div class="check">
+          <input id="rCek" type="checkbox">
+          <label for="rCek">Saya sudah memeriksa ketersediaan sarana pada jadwal tersebut.</label>
+        </div>
+      </div>
+      <div class="field">
+        <label for="rCatatan">Catatan Admin</label>
+        <textarea id="rCatatan" placeholder="Wajib diisi jika menolak pengajuan."></textarea>
+        <div class="error-text">Catatan wajib diisi saat menolak pengajuan.</div>
+      </div>
+    </div>
+    <div class="drawer-foot">
+      <span class="hint" id="rHint">Centang pemeriksaan ketersediaan untuk menyetujui.</span>
+      <button class="btn btn-danger" id="btnTolakReservasi" type="button">Tolak</button>
+      <button class="btn btn-primary" id="btnSetujuiReservasi" type="button" disabled>Setujui</button>
+    </div>
+  </aside>
+
+  <script src="../assets/layout.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>

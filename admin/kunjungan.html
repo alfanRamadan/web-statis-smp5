@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kunjungan Tamu &mdash; Panel Admin SMPN 5 Kupang</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-admin="kunjungan" data-root="../">
+  <div class="admin-shell">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="admin-main">
+      <header class="topbar" id="topbar" data-title="Kunjungan Tamu" data-subtitle="Verifikasi pengajuan kunjungan dan tentukan jadwal konfirmasi."></header>
+      <main class="admin-content">
+        <div class="tabs" role="tablist" aria-label="Filter status kunjungan">
+          <button class="tab active" type="button" data-filter="semua">Semua <span class="tab-count">24</span></button>
+          <button class="tab" type="button" data-filter="menunggu">Menunggu <span class="tab-count">12</span></button>
+          <button class="tab" type="button" data-filter="disetujui">Disetujui <span class="tab-count">8</span></button>
+          <button class="tab" type="button" data-filter="ditolak">Ditolak <span class="tab-count">4</span></button>
+        </div>
+
+        <section class="card" style="padding:0">
+          <div class="filter-bar">
+            <div class="field grow">
+              <label for="cariKunjungan">Cari</label>
+              <input id="cariKunjungan" type="search" placeholder="Cari nama, instansi, atau kode...">
+            </div>
+            <div class="field">
+              <label for="rentangKunjungan">Rentang tanggal</label>
+              <input id="rentangKunjungan" type="text" value="1&ndash;30 November 2026">
+            </div>
+            <button class="btn btn-primary" id="btnTerapkanKunjungan" type="button">Terapkan</button>
+            <button class="btn btn-text" id="btnResetKunjungan" type="button">Reset</button>
+          </div>
+
+          <div class="table-wrap">
+            <table id="tabelKunjungan">
+              <thead>
+                <tr><th>Kode</th><th>Nama</th><th>Instansi</th><th>Tanggal</th><th>Status</th><th>Aksi</th></tr>
+              </thead>
+              <tbody>
+                <tr id="row1" data-status="menunggu">
+                  <td data-label="Kode"><span class="table-code">KJG-261103-7KQ2</span></td>
+                  <td data-label="Nama">Yohanes Tefa</td>
+                  <td data-label="Instansi">Dinas Pendidikan Kota Kupang</td>
+                  <td data-label="Tanggal">5 Nov 2026</td>
+                  <td data-label="Status"><span class="badge badge-warning">Menunggu</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-verifikasi data-row="row1" data-kode="KJG-261103-7KQ2" data-nama="Yohanes Tefa" data-instansi="Dinas Pendidikan Kota Kupang" data-hp="0812 3456 7890" data-tanggal="5 November 2026" data-keperluan="Koordinasi program literasi sekolah" data-diajukan="3 November 2026, 09.14 WITA" data-status="Menunggu">Verifikasi</button></div></td>
+                </tr>
+                <tr id="row2" data-status="menunggu">
+                  <td data-label="Kode"><span class="table-code">KJG-261102-M4XA</span></td>
+                  <td data-label="Nama">Maria Goreti</td>
+                  <td data-label="Instansi">Komite Sekolah</td>
+                  <td data-label="Tanggal">6 Nov 2026</td>
+                  <td data-label="Status"><span class="badge badge-warning">Menunggu</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-verifikasi data-row="row2" data-kode="KJG-261102-M4XA" data-nama="Maria Goreti" data-instansi="Komite Sekolah" data-hp="0813 2233 4455" data-tanggal="6 November 2026" data-keperluan="Rapat persiapan kegiatan sekolah" data-diajukan="2 November 2026, 13.05 WITA" data-status="Menunggu">Verifikasi</button></div></td>
+                </tr>
+                <tr id="row3" data-status="disetujui">
+                  <td data-label="Kode"><span class="table-code">KJG-261101-9BHT</span></td>
+                  <td data-label="Nama">Fransiska Lobo</td>
+                  <td data-label="Instansi">Universitas Nusa Cendana</td>
+                  <td data-label="Tanggal">4 Nov 2026</td>
+                  <td data-label="Status"><span class="badge badge-success">Disetujui</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-verifikasi data-row="row3" data-kode="KJG-261101-9BHT" data-nama="Fransiska Lobo" data-instansi="Universitas Nusa Cendana" data-hp="0812 9988 7766" data-tanggal="4 November 2026" data-keperluan="Studi lapangan mahasiswa" data-diajukan="1 November 2026, 10.20 WITA" data-status="Disetujui">Lihat</button></div></td>
+                </tr>
+                <tr id="row4" data-status="ditolak">
+                  <td data-label="Kode"><span class="table-code">KJG-261031-P6WD</span></td>
+                  <td data-label="Nama">Aleksander Bria</td>
+                  <td data-label="Instansi">Puskesmas Bakunase</td>
+                  <td data-label="Tanggal">3 Nov 2026</td>
+                  <td data-label="Status"><span class="badge badge-danger">Ditolak</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-verifikasi data-row="row4" data-kode="KJG-261031-P6WD" data-nama="Aleksander Bria" data-instansi="Puskesmas Bakunase" data-hp="0811 3344 5566" data-tanggal="3 November 2026" data-keperluan="Sosialisasi kesehatan sekolah" data-diajukan="31 Oktober 2026, 08.30 WITA" data-status="Ditolak">Lihat</button></div></td>
+                </tr>
+                <tr id="row5" data-status="menunggu">
+                  <td data-label="Kode"><span class="table-code">KJG-261030-3TKR</span></td>
+                  <td data-label="Nama">Yulita Neno</td>
+                  <td data-label="Instansi">Orang Tua Siswa</td>
+                  <td data-label="Tanggal">7 Nov 2026</td>
+                  <td data-label="Status"><span class="badge badge-warning">Menunggu</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-verifikasi data-row="row5" data-kode="KJG-261030-3TKR" data-nama="Yulita Neno" data-instansi="Orang Tua Siswa" data-hp="0852 1122 3344" data-tanggal="7 November 2026" data-keperluan="Konsultasi perkembangan belajar anak" data-diajukan="30 Oktober 2026, 15.40 WITA" data-status="Menunggu">Verifikasi</button></div></td>
+                </tr>
+                <tr id="row6" data-status="disetujui">
+                  <td data-label="Kode"><span class="table-code">KJG-261029-K2MN</span></td>
+                  <td data-label="Nama">Robertus Leki</td>
+                  <td data-label="Instansi">Dinas Kesehatan</td>
+                  <td data-label="Tanggal">10 Nov 2026</td>
+                  <td data-label="Status"><span class="badge badge-success">Disetujui</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-verifikasi data-row="row6" data-kode="KJG-261029-K2MN" data-nama="Robertus Leki" data-instansi="Dinas Kesehatan" data-hp="0813 5566 7788" data-tanggal="10 November 2026" data-keperluan="Pemeriksaan kesehatan berkala" data-diajukan="29 Oktober 2026, 09.10 WITA" data-status="Disetujui">Lihat</button></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="drawer" id="drawerVerifikasi" aria-label="Detail kunjungan" aria-hidden="true">
+    <div class="drawer-head">
+      <div>
+        <h3>Detail Kunjungan</h3>
+        <div class="row mt-8"><span class="mono small" id="vKode">KJG-261103-7KQ2</span><span class="badge badge-warning" id="vStatus">Menunggu</span></div>
+      </div>
+      <button class="close-btn" type="button" data-close aria-label="Tutup">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="drawer-body">
+      <dl class="inline">
+        <div><dt>Nama</dt><dd id="vNama">Yohanes Tefa</dd></div>
+        <div><dt>Instansi</dt><dd id="vInstansi">Dinas Pendidikan Kota Kupang</dd></div>
+        <div><dt>No. WhatsApp</dt><dd id="vHp">0812 3456 7890</dd></div>
+        <div><dt>Tanggal kunjungan</dt><dd id="vTanggal">5 November 2026</dd></div>
+        <div><dt>Keperluan</dt><dd id="vKeperluan">Koordinasi program literasi sekolah</dd></div>
+        <div><dt>Diajukan</dt><dd id="vDiajukan">3 November 2026, 09.14 WITA</dd></div>
+      </dl>
+      <hr class="hr">
+      <div class="field">
+        <label for="vJadwal">Jadwal Konfirmasi <span class="req">*</span></label>
+        <input id="vJadwal" type="datetime-local">
+        <div class="hint">Wajib diisi sebelum menyetujui.</div>
+        <div class="error-text">Jadwal konfirmasi wajib diisi.</div>
+      </div>
+      <div class="field">
+        <label for="vCatatan">Catatan Admin</label>
+        <textarea id="vCatatan" placeholder="Tambahkan catatan untuk pengunjung (wajib jika menolak)."></textarea>
+        <div class="error-text">Catatan wajib diisi saat menolak pengajuan.</div>
+      </div>
+    </div>
+    <div class="drawer-foot">
+      <span class="hint" id="vHint">Isi jadwal konfirmasi terlebih dahulu.</span>
+      <button class="btn btn-danger" id="btnTolak" type="button">Tolak</button>
+      <button class="btn btn-primary" id="btnSetujui" type="button" disabled>Setujui</button>
+    </div>
+  </aside>
+
+  <script src="../assets/layout.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>

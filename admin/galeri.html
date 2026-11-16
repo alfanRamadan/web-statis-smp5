@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galeri &mdash; Panel Admin SMPN 5 Kupang</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-admin="galeri" data-root="../">
+  <div class="admin-shell">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="admin-main">
+      <header class="topbar" id="topbar" data-title="Galeri" data-subtitle="Kelola foto kegiatan dan fasilitas sekolah."></header>
+      <main class="admin-content">
+        <div class="spread" style="margin-bottom:24px">
+          <div>
+            <h2 style="font-size:20px">Foto Galeri</h2>
+            <p class="small muted">9 foto &mdash; tampil di halaman galeri publik.</p>
+          </div>
+          <button class="btn btn-primary" type="button" data-soon="Unggah foto">+ Unggah Foto</button>
+        </div>
+
+        <!-- shortcut: galeri statis, belum ada unggah/hapus; sambungkan ke penyimpanan file saat Construction -->
+        <div class="grid grid-3">
+          <figure class="card">
+            <div class="media ratio-4-3">Foto: Upacara Bendera</div>
+            <figcaption class="spread mt-16"><div><strong>Upacara Bendera</strong><div class="tiny muted">Kegiatan &bull; 2 Nov 2026</div></div><button class="btn btn-text btn-sm" type="button" data-soon="Edit foto">Edit</button></figcaption>
+          </figure>
+          <figure class="card">
+            <div class="media ratio-4-3">Foto: Perpustakaan</div>
+            <figcaption class="spread mt-16"><div><strong>Ruang Perpustakaan</strong><div class="tiny muted">Fasilitas</div></div><button class="btn btn-text btn-sm" type="button" data-soon="Edit foto">Edit</button></figcaption>
+          </figure>
+          <figure class="card">
+            <div class="media ratio-4-3">Foto: Laboratorium IPA</div>
+            <figcaption class="spread mt-16"><div><strong>Laboratorium IPA</strong><div class="tiny muted">Fasilitas</div></div><button class="btn btn-text btn-sm" type="button" data-soon="Edit foto">Edit</button></figcaption>
+          </figure>
+          <figure class="card">
+            <div class="media ratio-4-3">Foto: Lomba Cerdas Cermat</div>
+            <figcaption class="spread mt-16"><div><strong>Juara 1 LCC</strong><div class="tiny muted">Prestasi &bull; 1 Okt 2026</div></div><button class="btn btn-text btn-sm" type="button" data-soon="Edit foto">Edit</button></figcaption>
+          </figure>
+          <figure class="card">
+            <div class="media ratio-4-3">Foto: Aula Serbaguna</div>
+            <figcaption class="spread mt-16"><div><strong>Aula Serbaguna</strong><div class="tiny muted">Fasilitas</div></div><button class="btn btn-text btn-sm" type="button" data-soon="Edit foto">Edit</button></figcaption>
+          </figure>
+          <figure class="card">
+            <div class="media ratio-4-3">Foto: Bulan Bahasa</div>
+            <figcaption class="spread mt-16"><div><strong>Peringatan Bulan Bahasa</strong><div class="tiny muted">Kegiatan &bull; 28 Okt 2026</div></div><button class="btn btn-text btn-sm" type="button" data-soon="Edit foto">Edit</button></figcaption>
+          </figure>
+          <figure class="card">
+            <div class="media ratio-4-3">Foto: Lapangan Olahraga</div>
+            <figcaption class="spread mt-16"><div><strong>Lapangan Olahraga</strong><div class="tiny muted">Fasilitas</div></div><button class="btn btn-text btn-sm" type="button" data-soon="Edit foto">Edit</button></figcaption>
+          </figure>
+          <figure class="card">
+            <div class="media ratio-4-3">Foto: Class Meeting</div>
+            <figcaption class="spread mt-16"><div><strong>Class Meeting</strong><div class="tiny muted">Kegiatan &bull; Des 2026</div></div><button class="btn btn-text btn-sm" type="button" data-soon="Edit foto">Edit</button></figcaption>
+          </figure>
+          <figure class="card">
+            <div class="media ratio-4-3">Foto: Workshop Guru</div>
+            <figcaption class="spread mt-16"><div><strong>Workshop Guru</strong><div class="tiny muted">Kegiatan &bull; 2 Okt 2026</div></div><button class="btn btn-text btn-sm" type="button" data-soon="Edit foto">Edit</button></figcaption>
+          </figure>
+        </div>
+      </main>
+    </div>
+  </div>
+  <div class="overlay" id="overlay"></div>
+  <script src="../assets/layout.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>

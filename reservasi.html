@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reservasi Sarana &mdash; SMP Negeri 5 Kota Kupang</title>
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="reservasi" data-root="">
+  <header class="site-header" id="site-header"></header>
+
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Beranda</a><span>/</span><span>Layanan</span><span>/</span><span>Reservasi Sarana</span></div>
+        <h1>Reservasi Sarana</h1>
+        <p class="lead">Ajukan pemakaian aula, ruang, atau alat sekolah secara online, menggantikan surat peminjaman manual. Admin memeriksa ketersediaan secara manual.</p>
+        <a class="btn btn-outline btn-sm mt-16" href="#kalender">Lihat Kalender Pemakaian Sarana</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split-form">
+        <form class="card" id="formReservasi" novalidate data-validate data-success="sukses.html" data-jenis="Reservasi Sarana" data-kode="RSV-261104-2NHT">
+          <h2 style="font-size:20px">Data Pemohon</h2>
+          <p class="small muted mt-8">Field bertanda <span class="req">*</span> wajib diisi.</p>
+
+          <div class="note-box note-warning mt-16">Pengajuan ini <strong>bukan pemesanan otomatis</strong>. Jadwal baru dianggap terpakai setelah admin menyetujui.</div>
+
+          <div class="mt-24">
+            <div class="field">
+              <label for="sarana">Pilih Sarana <span class="req">*</span></label>
+              <select id="sarana" name="sarana" required>
+                <option value="">Pilih sarana</option>
+                <option>Aula Serbaguna</option>
+                <option>Laboratorium IPA</option>
+                <option>Ruang Multimedia</option>
+                <option>Proyektor</option>
+                <option>Lapangan Sekolah</option>
+              </select>
+              <div class="error-text">Sarana wajib dipilih.</div>
+            </div>
+            <div class="field">
+              <label for="nama">Nama Pemohon <span class="req">*</span></label>
+              <input id="nama" name="nama" type="text" placeholder="Contoh: Paulus Neno" required autocomplete="name">
+              <div class="error-text">Nama pemohon wajib diisi.</div>
+            </div>
+            <div class="field">
+              <label for="instansi">Instansi / Unit</label>
+              <input id="instansi" name="instansi" type="text" placeholder="Contoh: Komite Sekolah">
+            </div>
+            <div class="field">
+              <label for="wa">Nomor WhatsApp <span class="req">*</span></label>
+              <input id="wa" name="wa" type="tel" inputmode="tel" placeholder="08xx xxxx xxxx" required autocomplete="tel">
+              <div class="error-text">Nomor WhatsApp wajib diisi.</div>
+            </div>
+            <div class="field">
+              <label for="tanggal">Tanggal Pakai <span class="req">*</span></label>
+              <input id="tanggal" name="tanggal" type="date" value="2026-11-20" required>
+              <div class="error-text">Tanggal pakai wajib diisi.</div>
+            </div>
+            <div class="grid-2-sm">
+              <div class="field">
+                <label for="mulai">Jam Mulai <span class="req">*</span></label>
+                <input id="mulai" name="mulai" type="time" value="08:00" required>
+                <div class="error-text">Jam mulai wajib diisi.</div>
+              </div>
+              <div class="field">
+                <label for="selesai">Jam Selesai <span class="req">*</span></label>
+                <input id="selesai" name="selesai" type="time" value="12:00" required>
+                <div class="error-text">Jam selesai wajib diisi.</div>
+              </div>
+            </div>
+            <div class="field">
+              <label for="keperluan">Keperluan <span class="req">*</span></label>
+              <textarea id="keperluan" name="keperluan" maxlength="300" placeholder="Jelaskan kegiatan yang akan menggunakan sarana" required data-counter="hitungReservasi"></textarea>
+              <div class="spread"><div class="hint">Maksimal 300 karakter.</div><div class="hint" id="hitungReservasi">0/300</div></div>
+              <div class="error-text">Keperluan wajib diisi.</div>
+            </div>
+            <div class="field">
+              <div class="check">
+                <input id="setuju" name="setuju" type="checkbox" required>
+                <label for="setuju">Saya memahami jadwal diverifikasi manual dan belum tentu tersedia.</label>
+              </div>
+              <div class="error-text">Centang pernyataan sebelum mengirim.</div>
+            </div>
+            <div class="field">
+              <div class="check">
+                <input id="pdp" name="pdp" type="checkbox" required>
+                <label for="pdp">Saya setuju data pribadi saya hanya digunakan untuk keperluan layanan ini, sesuai UU No. 27 Tahun 2022 tentang Pelindungan Data Pribadi.</label>
+              </div>
+              <div class="error-text">Persetujuan data pribadi wajib dicentang.</div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Kirim Pengajuan</button>
+            <a class="btn btn-text" href="index.html">Batal</a>
+          </div>
+          <p class="form-note">Setelah dikirim, Anda akan menerima kode untuk mengecek status reservasi.</p>
+        </form>
+
+        <aside class="stack-24">
+          <div class="card">
+            <h3>Alur Reservasi</h3>
+            <div class="stepper mt-16">
+              <div class="step active"><span class="step-num">1</span><div><strong>Ajukan sarana dan jadwal</strong><span>Pilih sarana, tanggal, dan jam.</span></div></div>
+              <div class="step"><span class="step-num">2</span><div><strong>Pemeriksaan manual</strong><span>Admin mengecek bentrok jadwal.</span></div></div>
+              <div class="step"><span class="step-num">3</span><div><strong>Cek status</strong><span>Disetujui atau ditolak.</span></div></div>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Jam Layanan</h3>
+            <p class="small mt-8">Senin&ndash;Jumat, 08.00&ndash;14.00 WITA</p>
+            <p class="small muted">Pengajuan di luar jam layanan akan ditolak.</p>
+          </div>
+          <div class="card">
+            <h3>Butuh bantuan?</h3>
+            <p class="small mt-8">Email Tata Usaha: smpnegeri5kupang.80@gmail.com</p>
+            <a class="card-link" href="#" data-soon="WhatsApp Tata Usaha">Hubungi via WhatsApp</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <section class="section" id="kalender" style="background:var(--surface);border-block:1px solid var(--border)">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Jadwal Terpakai</div>
+            <h2 class="mt-8">Kalender Pemakaian Sarana</h2>
+            <p class="small muted mt-8">Hanya menampilkan reservasi yang sudah disetujui admin. Periksa kalender ini sebelum mengajukan.</p>
+          </div>
+          <span class="badge badge-neutral">November&ndash;Desember 2026</span>
+        </div>
+        <div class="grid grid-2">
+          <div class="agenda-item"><div class="date-block"><strong>14</strong><span>Nov</span></div><div><h3>Laboratorium IPA &mdash; Praktikum Kelas IX</h3><div class="row mt-8"><span class="badge badge-info">Disetujui</span><span class="tiny muted">07.30&ndash;10.00 WITA &bull; Guru IPA</span></div></div></div>
+          <div class="agenda-item"><div class="date-block"><strong>20</strong><span>Nov</span></div><div><h3>Aula Serbaguna &mdash; Rapat Komite Sekolah</h3><div class="row mt-8"><span class="badge badge-info">Disetujui</span><span class="tiny muted">08.00&ndash;12.00 WITA &bull; Komite Sekolah</span></div></div></div>
+          <div class="agenda-item"><div class="date-block"><strong>25</strong><span>Nov</span></div><div><h3>Aula Serbaguna &mdash; Peringatan Hari Guru</h3><div class="row mt-8"><span class="badge badge-info">Disetujui</span><span class="tiny muted">08.00&ndash;12.00 WITA &bull; OSIS</span></div></div></div>
+          <div class="agenda-item"><div class="date-block"><strong>3</strong><span>Des</span></div><div><h3>Ruang Multimedia &mdash; Pelatihan Guru</h3><div class="row mt-8"><span class="badge badge-info">Disetujui</span><span class="tiny muted">09.00&ndash;13.00 WITA &bull; Wakasek Kurikulum</span></div></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+  <script src="assets/layout.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guru &amp; Staf &mdash; Panel Admin SMPN 5 Kupang</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-admin="guru" data-root="../">
+  <div class="admin-shell">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="admin-main">
+      <header class="topbar" id="topbar" data-title="Guru &amp; Staf" data-subtitle="Kelola data tenaga pendidik dan kependidikan."></header>
+      <main class="admin-content">
+        <div class="spread" style="margin-bottom:24px">
+          <div>
+            <h2 style="font-size:20px">Daftar Guru &amp; Staf</h2>
+            <p class="small muted">8 orang terdaftar.</p>
+          </div>
+          <button class="btn btn-primary" type="button" data-soon="Tambah guru">+ Tambah</button>
+        </div>
+
+        <section class="card" style="padding:0">
+          <div class="filter-bar">
+            <div class="field grow">
+              <label for="cariGuruAdmin">Cari</label>
+              <input id="cariGuruAdmin" type="search" placeholder="Cari nama atau jabatan...">
+            </div>
+            <div class="field">
+              <label for="kategoriGuru">Kategori</label>
+              <select id="kategoriGuru">
+                <option>Semua</option>
+                <option>Pimpinan</option>
+                <option>Guru</option>
+                <option>Staf</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" type="button" data-soon="Terapkan filter">Terapkan</button>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Nama</th><th>NIP</th><th>Jabatan</th><th>Kategori</th><th>Status</th><th>Aksi</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Nama">Nama Kepala Sekolah, M.Pd.</td>
+                  <td data-label="NIP"><span class="table-code">19680512 199003 2 001</span></td>
+                  <td data-label="Jabatan">Kepala Sekolah</td>
+                  <td data-label="Kategori">Pimpinan</td>
+                  <td data-label="Status"><span class="badge badge-success">Aktif</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit guru">Edit</button></div></td>
+                </tr>
+                <tr>
+                  <td data-label="Nama">Paulus A. Neno, S.Pd.</td>
+                  <td data-label="NIP"><span class="table-code">19720318 199803 1 004</span></td>
+                  <td data-label="Jabatan">Wakil Kepala Kurikulum</td>
+                  <td data-label="Kategori">Pimpinan</td>
+                  <td data-label="Status"><span class="badge badge-success">Aktif</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit guru">Edit</button></div></td>
+                </tr>
+                <tr>
+                  <td data-label="Nama">Yuliana B. Lada, S.Pd.</td>
+                  <td data-label="NIP"><span class="table-code">19801125 200604 2 002</span></td>
+                  <td data-label="Jabatan">Guru Bahasa Indonesia</td>
+                  <td data-label="Kategori">Guru</td>
+                  <td data-label="Status"><span class="badge badge-success">Aktif</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit guru">Edit</button></div></td>
+                </tr>
+                <tr>
+                  <td data-label="Nama">Andreas K. Bau, S.Pd.</td>
+                  <td data-label="NIP"><span class="table-code">19770909 200312 1 003</span></td>
+                  <td data-label="Jabatan">Guru Matematika</td>
+                  <td data-label="Kategori">Guru</td>
+                  <td data-label="Status"><span class="badge badge-success">Aktif</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit guru">Edit</button></div></td>
+                </tr>
+                <tr>
+                  <td data-label="Nama">Theresia M. Laka, S.Pd.</td>
+                  <td data-label="NIP"><span class="table-code">19830407 200902 2 005</span></td>
+                  <td data-label="Jabatan">Guru IPA</td>
+                  <td data-label="Kategori">Guru</td>
+                  <td data-label="Status"><span class="badge badge-success">Aktif</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit guru">Edit</button></div></td>
+                </tr>
+                <tr>
+                  <td data-label="Nama">Mateus B. Ate, S.Kom.</td>
+                  <td data-label="NIP"><span class="table-code">19900122 201503 1 008</span></td>
+                  <td data-label="Jabatan">Staf Tata Usaha</td>
+                  <td data-label="Kategori">Staf</td>
+                  <td data-label="Status"><span class="badge badge-success">Aktif</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit guru">Edit</button></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <div class="overlay" id="overlay"></div>
+  <script src="../assets/layout.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>

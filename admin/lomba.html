@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pendaftaran Lomba &mdash; Panel Admin SMPN 5 Kupang</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-admin="lomba" data-root="../">
+  <div class="admin-shell">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="admin-main">
+      <header class="topbar" id="topbar" data-title="Pendaftaran Lomba" data-subtitle="Verifikasi berkas dan tentukan hasil seleksi."></header>
+      <main class="admin-content">
+        <div class="spread" style="margin-bottom:24px">
+          <div>
+            <h2 style="font-size:20px">Pendaftaran Lomba</h2>
+            <p class="small muted">18 pendaftar &mdash; 8 menunggu verifikasi.</p>
+          </div>
+          <button class="btn btn-primary" type="button" data-drawer="drawerBuatLomba">+ Buat Lomba</button>
+        </div>
+
+        <!-- shortcut: master lomba statis; simpan belum menyimpan, sambungkan ke backend saat Construction -->
+        <section class="card" style="padding:0; margin-bottom:24px">
+          <div class="panel-head"><h3>Lomba Aktif</h3><span class="badge badge-neutral">2 lomba</span></div>
+          <div class="table-wrap">
+            <table id="tabelLombaAktif">
+              <thead><tr><th>Nama Lomba</th><th>Kategori</th><th>Pendaftaran</th><th>Kuota</th><th>Status</th><th>Aksi</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td data-label="Nama Lomba">Lomba Cerdas Cermat</td>
+                  <td data-label="Kategori">Akademik</td>
+                  <td data-label="Pendaftaran">1&ndash;15 Nov 2026</td>
+                  <td data-label="Kuota">24 tim</td>
+                  <td data-label="Status"><span class="badge badge-success">Dibuka</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit lomba">Edit</button></div></td>
+                </tr>
+                <tr>
+                  <td data-label="Nama Lomba">Lomba Poster Digital</td>
+                  <td data-label="Kategori">Non-akademik</td>
+                  <td data-label="Pendaftaran">5&ndash;20 Nov 2026</td>
+                  <td data-label="Kuota">40 peserta</td>
+                  <td data-label="Status"><span class="badge badge-success">Dibuka</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit lomba">Edit</button></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <div class="tabs" role="tablist" aria-label="Filter status lomba">
+          <button class="tab active" type="button" data-lomba-filter="semua">Semua <span class="tab-count">18</span></button>
+          <button class="tab" type="button" data-lomba-filter="menunggu">Menunggu <span class="tab-count">8</span></button>
+          <button class="tab" type="button" data-lomba-filter="diterima">Diterima <span class="tab-count">6</span></button>
+          <button class="tab" type="button" data-lomba-filter="revisi">Revisi <span class="tab-count">2</span></button>
+          <button class="tab" type="button" data-lomba-filter="ditolak">Ditolak <span class="tab-count">2</span></button>
+        </div>
+
+        <section class="card" style="padding:0">
+          <div class="filter-bar">
+            <div class="field grow">
+              <label for="cariLomba">Cari</label>
+              <input id="cariLomba" type="search" placeholder="Cari nama, lomba, atau kode...">
+            </div>
+            <div class="field">
+              <label for="statusLomba">Status</label>
+              <select id="statusLomba">
+                <option value="">Semua status</option>
+                <option value="menunggu">Menunggu</option>
+                <option value="diterima">Diterima</option>
+                <option value="revisi">Revisi</option>
+                <option value="ditolak">Ditolak</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" id="btnTerapkanLomba" type="button">Terapkan</button>
+          </div>
+
+          <div class="table-wrap">
+            <table id="tabelLomba">
+              <thead>
+                <tr><th>Kode</th><th>Peserta</th><th>Lomba</th><th>Karya</th><th>Status</th><th>Aksi</th></tr>
+              </thead>
+              <tbody>
+                <tr id="lrow1" data-status="menunggu">
+                  <td data-label="Kode"><span class="table-code">LMB-261104-8QK2</span></td>
+                  <td data-label="Peserta">Maria Goreti</td>
+                  <td data-label="Lomba">Lomba Cerdas Cermat</td>
+                  <td data-label="Karya">lcc-ix-a.pdf</td>
+                  <td data-label="Status"><span class="badge badge-warning">Menunggu</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-lomba data-row="lrow1" data-kode="LMB-261104-8QK2" data-nama="Maria Goreti" data-lomba-nama="Lomba Cerdas Cermat" data-asal="SMP Negeri 5 Kota Kupang" data-karya="lcc-ix-a.pdf" data-status="Menunggu">Verifikasi</button></div></td>
+                </tr>
+                <tr id="lrow2" data-status="menunggu">
+                  <td data-label="Kode"><span class="table-code">LMB-261104-3TKR</span></td>
+                  <td data-label="Peserta">Yohanes Tefa</td>
+                  <td data-label="Lomba">Lomba Poster Digital</td>
+                  <td data-label="Karya">poster-literasi.png</td>
+                  <td data-label="Status"><span class="badge badge-warning">Menunggu</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-lomba data-row="lrow2" data-kode="LMB-261104-3TKR" data-nama="Yohanes Tefa" data-lomba-nama="Lomba Poster Digital" data-asal="SMP Negeri 5 Kota Kupang" data-karya="poster-literasi.png" data-status="Menunggu">Verifikasi</button></div></td>
+                </tr>
+                <tr id="lrow3" data-status="diterima">
+                  <td data-label="Kode"><span class="table-code">LMB-261103-M4XA</span></td>
+                  <td data-label="Peserta">Kelas IX A</td>
+                  <td data-label="Lomba">Lomba Cerdas Cermat</td>
+                  <td data-label="Karya">lcc-ix-a.pdf</td>
+                  <td data-label="Status"><span class="badge badge-success">Diterima</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-lomba data-row="lrow3" data-kode="LMB-261103-M4XA" data-nama="Kelas IX A" data-lomba-nama="Lomba Cerdas Cermat" data-asal="SMP Negeri 5 Kota Kupang" data-karya="lcc-ix-a.pdf" data-status="Diterima">Lihat</button></div></td>
+                </tr>
+                <tr id="lrow4" data-status="revisi">
+                  <td data-label="Kode"><span class="table-code">LMB-261102-P6WD</span></td>
+                  <td data-label="Peserta">Fransiska Lobo</td>
+                  <td data-label="Lomba">Lomba Puisi</td>
+                  <td data-label="Karya">puisi-laut.pdf</td>
+                  <td data-label="Status"><span class="badge badge-info">Revisi</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-lomba data-row="lrow4" data-kode="LMB-261102-P6WD" data-nama="Fransiska Lobo" data-lomba-nama="Lomba Puisi" data-asal="SMP Negeri 2 Kupang" data-karya="puisi-laut.pdf" data-status="Revisi">Lihat</button></div></td>
+                </tr>
+                <tr id="lrow5" data-status="ditolak">
+                  <td data-label="Kode"><span class="table-code">LMB-261101-9BHT</span></td>
+                  <td data-label="Peserta">Aleksander Bria</td>
+                  <td data-label="Lomba">Lomba Poster Digital</td>
+                  <td data-label="Karya">poster-sekolah.jpg</td>
+                  <td data-label="Status"><span class="badge badge-danger">Ditolak</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-lomba data-row="lrow5" data-kode="LMB-261101-9BHT" data-nama="Aleksander Bria" data-lomba-nama="Lomba Poster Digital" data-asal="SMP Negeri 1 Kupang" data-karya="poster-sekolah.jpg" data-status="Ditolak">Lihat</button></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="drawer" id="drawerLomba" aria-label="Verifikasi lomba" aria-hidden="true">
+    <div class="drawer-head">
+      <div>
+        <h3>Verifikasi Pendaftaran</h3>
+        <div class="row mt-8"><span class="mono small" id="lKode">LMB-261104-8QK2</span><span class="badge badge-warning" id="lStatus">Menunggu</span></div>
+      </div>
+      <button class="close-btn" type="button" data-close aria-label="Tutup">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="drawer-body">
+      <dl class="inline">
+        <div><dt>Peserta</dt><dd id="lNama">Maria Goreti</dd></div>
+        <div><dt>Lomba</dt><dd id="lLomba">Lomba Cerdas Cermat</dd></div>
+        <div><dt>Asal sekolah</dt><dd id="lAsal">SMP Negeri 5 Kota Kupang</dd></div>
+      </dl>
+      <div class="file-box mt-16">
+        <span id="lKarya">lcc-ix-a.pdf</span>
+        <a class="btn btn-text btn-sm" href="#" data-soon="Unduh berkas">Unduh</a>
+      </div>
+      <hr class="hr">
+      <div class="field">
+        <label for="lStatusSelect">Status <span class="req">*</span></label>
+        <select id="lStatusSelect">
+          <option value="Menunggu">Menunggu</option>
+          <option value="Diterima">Diterima</option>
+          <option value="Revisi">Revisi</option>
+          <option value="Ditolak">Ditolak</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="lCatatan">Catatan Panitia</label>
+        <textarea id="lCatatan" placeholder="Wajib diisi jika status Revisi atau Ditolak."></textarea>
+        <div class="error-text">Catatan wajib diisi untuk Revisi atau Ditolak.</div>
+      </div>
+      <div class="field">
+        <label for="lJuara">Juara <span class="tiny muted">(opsional)</span></label>
+        <input id="lJuara" type="text" placeholder="Contoh: Juara 1">
+      </div>
+    </div>
+    <div class="drawer-foot">
+      <span class="hint" id="lHint">Pilih status lalu simpan.</span>
+      <button class="btn btn-primary" id="btnSimpanLomba" type="button">Simpan</button>
+    </div>
+  </aside>
+
+  <aside class="drawer" id="drawerBuatLomba" aria-label="Buat lomba" aria-hidden="true">
+    <div class="drawer-head">
+      <div><h3>Buat Lomba</h3><p class="tiny muted mt-8">Lomba baru langsung tampil di halaman pendaftaran publik.</p></div>
+      <button class="close-btn" type="button" data-close aria-label="Tutup">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="drawer-body">
+      <div class="field">
+        <label for="lombaNamaBaru">Nama Lomba <span class="req">*</span></label>
+        <input id="lombaNamaBaru" type="text" placeholder="Contoh: Lomba Cerdas Cermat">
+        <div class="error-text">Nama lomba wajib diisi.</div>
+      </div>
+      <div class="field">
+        <label for="lombaKategoriBaru">Kategori</label>
+        <select id="lombaKategoriBaru">
+          <option>Akademik</option>
+          <option>Non-akademik</option>
+        </select>
+      </div>
+      <div class="grid grid-2">
+        <div class="field">
+          <label for="lombaMulai">Pendaftaran Dibuka</label>
+          <input id="lombaMulai" type="date" value="2026-11-05">
+        </div>
+        <div class="field">
+          <label for="lombaTutup">Pendaftaran Ditutup</label>
+          <input id="lombaTutup" type="date" value="2026-11-20">
+        </div>
+      </div>
+      <div class="field">
+        <label for="lombaKuotaBaru">Kuota Peserta <span class="req">*</span></label>
+        <input id="lombaKuotaBaru" type="number" min="1" placeholder="Contoh: 40">
+        <div class="error-text">Kuota wajib diisi dengan angka lebih dari 0.</div>
+      </div>
+      <div class="field">
+        <label for="lombaDeskripsi">Deskripsi</label>
+        <textarea id="lombaDeskripsi" placeholder="Ketentuan singkat lomba."></textarea>
+      </div>
+    </div>
+    <div class="drawer-foot">
+      <span class="hint">Peserta mendaftar lewat halaman publik.</span>
+      <button class="btn btn-primary" type="button" id="btnSimpanLombaBaru">Simpan</button>
+    </div>
+  </aside>
+
+  <script src="../assets/layout.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>

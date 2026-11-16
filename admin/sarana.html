@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sarana &mdash; Panel Admin SMPN 5 Kupang</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-admin="sarana" data-root="../">
+  <div class="admin-shell">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="admin-main">
+      <header class="topbar" id="topbar" data-title="Sarana" data-subtitle="Kelola daftar sarana yang dapat direservasi."></header>
+      <main class="admin-content">
+        <div class="spread" style="margin-bottom:24px">
+          <div>
+            <h2 style="font-size:20px">Daftar Sarana</h2>
+            <p class="small muted">6 sarana terdaftar &mdash; 5 aktif, 1 dalam perbaikan.</p>
+          </div>
+          <button class="btn btn-primary" type="button" data-soon="Tambah sarana">+ Tambah Sarana</button>
+        </div>
+
+        <!-- shortcut: tabel sarana statis; tambah/edit belum menyimpan, sambungkan ke backend saat Construction -->
+        <section class="card" style="padding:0">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Kode</th><th>Nama Sarana</th><th>Kategori</th><th>Kapasitas</th><th>Status</th><th>Aksi</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Kode"><span class="table-code">SAR-01</span></td>
+                  <td data-label="Nama Sarana">Aula Serbaguna</td>
+                  <td data-label="Kategori">Ruang Pertemuan</td>
+                  <td data-label="Kapasitas">200 orang</td>
+                  <td data-label="Status"><span class="badge badge-success">Aktif</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit sarana">Edit</button></div></td>
+                </tr>
+                <tr>
+                  <td data-label="Kode"><span class="table-code">SAR-02</span></td>
+                  <td data-label="Nama Sarana">Lapangan Bola Voli</td>
+                  <td data-label="Kategori">Olahraga</td>
+                  <td data-label="Kapasitas">50 orang</td>
+                  <td data-label="Status"><span class="badge badge-success">Aktif</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit sarana">Edit</button></div></td>
+                </tr>
+                <tr>
+                  <td data-label="Kode"><span class="table-code">SAR-03</span></td>
+                  <td data-label="Nama Sarana">Lapangan Basket</td>
+                  <td data-label="Kategori">Olahraga</td>
+                  <td data-label="Kapasitas">50 orang</td>
+                  <td data-label="Status"><span class="badge badge-success">Aktif</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit sarana">Edit</button></div></td>
+                </tr>
+                <tr>
+                  <td data-label="Kode"><span class="table-code">SAR-04</span></td>
+                  <td data-label="Nama Sarana">Ruang Kelas Multifungsi</td>
+                  <td data-label="Kategori">Ruang Kelas</td>
+                  <td data-label="Kapasitas">40 orang</td>
+                  <td data-label="Status"><span class="badge badge-success">Aktif</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit sarana">Edit</button></div></td>
+                </tr>
+                <tr>
+                  <td data-label="Kode"><span class="table-code">SAR-05</span></td>
+                  <td data-label="Nama Sarana">Laboratorium IPA</td>
+                  <td data-label="Kategori">Laboratorium</td>
+                  <td data-label="Kapasitas">32 orang</td>
+                  <td data-label="Status"><span class="badge badge-success">Aktif</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit sarana">Edit</button></div></td>
+                </tr>
+                <tr>
+                  <td data-label="Kode"><span class="table-code">SAR-06</span></td>
+                  <td data-label="Nama Sarana">Perpustakaan</td>
+                  <td data-label="Kategori">Ruang Baca</td>
+                  <td data-label="Kapasitas">60 orang</td>
+                  <td data-label="Status"><span class="badge badge-warning">Perbaikan</span></td>
+                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit sarana">Edit</button></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <div class="overlay" id="overlay"></div>
+  <script src="../assets/layout.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>
