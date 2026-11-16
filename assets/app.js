@@ -39,6 +39,17 @@ document.addEventListener('DOMContentLoaded', function () {
       menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
   }
+  // Dropdown menu utama: buka satu, tutup yang lain; klik di luar menu menutup semuanya.
+  var dropdowns = document.querySelectorAll('.nav-drop');
+  dropdowns.forEach(function (d) {
+    d.addEventListener('toggle', function () {
+      if (d.open) dropdowns.forEach(function (o) { if (o !== d) o.open = false; });
+    });
+  });
+  document.addEventListener('click', function (e) {
+    dropdowns.forEach(function (d) { if (!d.contains(e.target)) d.open = false; });
+  });
+
   if (sideToggle && sidebar && overlay) {
     sideToggle.addEventListener('click', function () {
       sidebar.classList.add('open');
@@ -121,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       var nama = document.getElementById('nama').value.trim();
       var instansi = document.getElementById('instansi').value.trim();
-      location.href = 'kunjungan-sukses.html?nama=' + encodeURIComponent(nama) + '&instansi=' + encodeURIComponent(instansi);
+      location.href = 'kunjungan/sukses.html?nama=' + encodeURIComponent(nama) + '&instansi=' + encodeURIComponent(instansi);
     });
   }
 
@@ -438,41 +449,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Admin: news drawer.
-  document.querySelectorAll('[data-edit-berita]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var judul = btn.dataset.judul;
-      document.getElementById('bJudul').value = judul;
-      document.getElementById('bSlug').value = judul.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-      openDrawer('drawerBerita');
-    });
-  });
-  var btnTulisBerita = document.querySelector('[data-new-berita]');
-  if (btnTulisBerita) {
-    btnTulisBerita.addEventListener('click', function () {
-      document.getElementById('bJudul').value = '';
-      document.getElementById('bSlug').value = '';
-      document.getElementById('bRingkasan').value = '';
-      document.querySelector('#drawerBerita .editor').innerHTML = '<p></p>';
-      document.getElementById('bStatus').value = 'draft';
-    });
-  }
-  var btnSimpanBerita = document.getElementById('btnSimpanBerita');
-  if (btnSimpanBerita) {
-    btnSimpanBerita.addEventListener('click', function () {
-      closeDrawers();
-      toast('Berita disimpan sebagai Draft (demo).');
-    });
-  }
-  document.querySelectorAll('[data-hapus-berita]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      if (!confirm('Hapus berita ini?')) return;
-      var row = document.getElementById(btn.dataset.hapusBerita);
-      if (row) row.remove();
-      toast('Berita dihapus (demo).');
-    });
-  });
-
   // Admin filters.
   function applyKunjunganFilter() {
     var q = (document.getElementById('cariKunjungan').value || '').toLowerCase();
@@ -498,21 +474,6 @@ document.addEventListener('DOMContentLoaded', function () {
       cariKunjungan.value = '';
       document.querySelector('[data-filter="semua"]').click();
     });
-  }
-  function applyBeritaFilter() {
-    var q = (document.getElementById('cariBerita').value || '').toLowerCase();
-    var status = document.getElementById('statusBerita').value;
-    document.querySelectorAll('#tabelBerita tbody tr').forEach(function (tr) {
-      var matchText = tr.textContent.toLowerCase().indexOf(q) !== -1;
-      var matchStatus = !status || tr.dataset.status === status;
-      tr.style.display = matchText && matchStatus ? '' : 'none';
-    });
-  }
-  var cariBerita = document.getElementById('cariBerita');
-  if (cariBerita) {
-    cariBerita.addEventListener('input', applyBeritaFilter);
-    document.getElementById('statusBerita').addEventListener('change', applyBeritaFilter);
-    document.getElementById('btnTerapkanBerita').addEventListener('click', applyBeritaFilter);
   }
 
   // Directory filter.
@@ -920,17 +881,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Public gallery filter.
-  document.querySelectorAll('[data-gal-filter]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      document.querySelectorAll('[data-gal-filter]').forEach(function (b) { b.classList.toggle('active', b === btn); });
-      var cat = btn.dataset.galFilter;
-      document.querySelectorAll('[data-gal]').forEach(function (fig) {
-        fig.style.display = cat === 'semua' || fig.dataset.gal === cat ? '' : 'none';
-      });
-    });
-  });
-
   // Public prestasi filter (year + level).
   var prYear = 'semua';
   var prLevel = 'semua';
@@ -956,25 +906,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Public news pagination: 3 cards per page, in-memory only.
-  var newsPage = 1;
-  function showNewsPage(page) {
-    newsPage = page;
-    document.querySelectorAll('[data-news-page]').forEach(function (card) {
-      card.style.display = card.dataset.newsPage === String(page) ? '' : 'none';
-    });
-    document.querySelectorAll('[data-news-go]').forEach(function (btn) {
-      btn.classList.toggle('active', btn.dataset.newsGo === String(page));
-    });
-  }
-  document.querySelectorAll('[data-news-go]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var target = btn.dataset.newsGo;
-      showNewsPage(target === 'next' ? Math.min(newsPage + 1, 3) : parseInt(target, 10));
-    });
-  });
-  if (document.querySelector('[data-news-page]')) showNewsPage(1);
-
   // Admin editor toolbar. shortcut: execCommand deprecated; replace with a real editor in Construction.
   document.querySelectorAll('[data-fmt]').forEach(function (btn) {
     btn.addEventListener('click', function () {
@@ -989,22 +920,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
-  var btnPreviewBerita = document.getElementById('btnPreviewBerita');
-  if (btnPreviewBerita) {
-    btnPreviewBerita.addEventListener('click', function () {
-      var preview = document.getElementById('beritaPreview');
-      var editor = document.querySelector('#drawerBerita .editor');
-      preview.innerHTML = editor.innerHTML;
-      preview.hidden = !preview.hidden;
-    });
-  }
-  var uploadGambar = document.querySelector('#drawerBerita .upload-zone input[type="file"]');
-  if (uploadGambar) {
-    uploadGambar.addEventListener('change', function () {
-      var hint = uploadGambar.closest('.field').querySelector('.hint');
-      if (hint) hint.textContent = uploadGambar.files[0] ? uploadGambar.files[0].name : 'JPG atau PNG, maksimal 5 MB.';
-    });
-  }
 
   // Admin: create master lomba (in-memory).
   var btnSimpanLombaBaru = document.getElementById('btnSimpanLombaBaru');

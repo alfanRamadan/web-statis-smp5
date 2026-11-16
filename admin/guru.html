@@ -7,37 +7,84 @@
   <link rel="icon" type="image/png" href="../assets/img/logo.png">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body data-admin="guru" data-root="../">
-  <div class="admin-shell">
-    <aside class="sidebar" id="sidebar"></aside>
+<body>
+    <div class="admin-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="../admin/index.html">
+        <img class="crest" src="../assets/img/logo.png" alt="Logo SMP Negeri 5 Kota Kupang">
+        <span><span class="brand-name">SMPN 5 Kupang</span><span class="brand-sub">Panel Admin</span></span>
+      </a>
+      <div class="side-group">
+        <div class="side-label">Utama</div>
+        <a class="side-link" href="../admin/index.html">Dashboard</a>
+      </div>
+      <div class="side-group">
+        <div class="side-label">Konten</div>
+        <a class="side-link" href="../admin/profil.html">Profil Sekolah</a>
+        <a class="side-link active" href="../admin/guru.html">Guru &amp; Staf</a>
+        <a class="side-link" href="../admin/berita.html">Berita</a>
+        <a class="side-link" href="../admin/prestasi.html">Prestasi</a>
+        <a class="side-link" href="../admin/galeri.html">Galeri</a>
+        <a class="side-link" href="../admin/spmb.html">Pengumuman &amp; SPMB</a>
+        <a class="side-link" href="../admin/dokumen.html">Dokumen &amp; Tautan</a>
+      </div>
+      <div class="side-group">
+        <div class="side-label">Layanan</div>
+        <a class="side-link" href="../admin/kunjungan.html">Kunjungan</a>
+        <a class="side-link" href="../admin/lomba.html">Lomba</a>
+        <a class="side-link" href="../admin/reservasi.html">Reservasi</a>
+        <a class="side-link" href="../admin/sarana.html">Sarana</a>
+        <a class="side-link" href="../admin/kegiatan.html">Kegiatan</a>
+      </div>
+      <div class="side-group">
+        <div class="side-label">Sistem</div>
+        <a class="side-link" href="../admin/akun.html">Akun Admin</a>
+      </div>
+      <form class="side-bottom" method="POST" action="#" data-aksi="/logout">
+        <button class="side-link" type="submit" style="width:100%;border:0;background:none;cursor:pointer;font:inherit;text-align:left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5M21 12H9"/></svg> Keluar</button>
+      </form>
+    </aside>
     <div class="admin-main">
-      <header class="topbar" id="topbar" data-title="Guru &amp; Staf" data-subtitle="Kelola data tenaga pendidik dan kependidikan."></header>
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-btn menu-btn" id="sideToggle" aria-label="Buka menu admin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+          <div><h1>Guru &amp; Staf</h1><div class="sub">Kelola data tenaga pendidik dan kependidikan.</div></div>
+        </div>
+        <div class="topbar-actions">
+          <a class="btn btn-text small" href="">Lihat situs</a>
+          <div class="user-chip">
+            <span class="avatar">OP</span>
+            <span class="user-meta"><strong>Operator Sekolah</strong><span>Admin</span></span>
+          </div>
+        </div>
+      </header>
       <main class="admin-content">
+                
         <div class="spread" style="margin-bottom:24px">
           <div>
             <h2 style="font-size:20px">Daftar Guru &amp; Staf</h2>
             <p class="small muted">8 orang terdaftar.</p>
           </div>
-          <button class="btn btn-primary" type="button" data-soon="Tambah guru">+ Tambah</button>
+          <a class="btn btn-primary" href="../admin/guru/create.html">+ Tambah</a>
         </div>
 
         <section class="card" style="padding:0">
-          <div class="filter-bar">
+          <form class="filter-bar" method="GET" action="#" data-aksi="/admin/guru">
             <div class="field grow">
               <label for="cariGuruAdmin">Cari</label>
-              <input id="cariGuruAdmin" type="search" placeholder="Cari nama atau jabatan...">
+              <input id="cariGuruAdmin" name="q" type="search" value="" placeholder="Cari nama atau jabatan...">
             </div>
             <div class="field">
               <label for="kategoriGuru">Kategori</label>
-              <select id="kategoriGuru">
-                <option>Semua</option>
-                <option>Pimpinan</option>
-                <option>Guru</option>
-                <option>Staf</option>
-              </select>
+              <select id="kategoriGuru" name="kategori">
+                <option value="">Semua</option>
+                                  <option value="pimpinan" >Pimpinan</option>
+                                  <option value="guru" >Guru</option>
+                                  <option value="staf" >Staf</option>
+                              </select>
             </div>
-            <button class="btn btn-primary" type="button" data-soon="Terapkan filter">Terapkan</button>
-          </div>
+            <button class="btn btn-primary" type="submit">Terapkan</button>
+          </form>
 
           <div class="table-wrap">
             <table>
@@ -45,63 +92,138 @@
                 <tr><th>Nama</th><th>NIP</th><th>Jabatan</th><th>Kategori</th><th>Status</th><th>Aksi</th></tr>
               </thead>
               <tbody>
-                <tr>
-                  <td data-label="Nama">Nama Kepala Sekolah, M.Pd.</td>
-                  <td data-label="NIP"><span class="table-code">19680512 199003 2 001</span></td>
-                  <td data-label="Jabatan">Kepala Sekolah</td>
-                  <td data-label="Kategori">Pimpinan</td>
-                  <td data-label="Status"><span class="badge badge-success">Aktif</span></td>
-                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit guru">Edit</button></div></td>
-                </tr>
-                <tr>
-                  <td data-label="Nama">Paulus A. Neno, S.Pd.</td>
-                  <td data-label="NIP"><span class="table-code">19720318 199803 1 004</span></td>
-                  <td data-label="Jabatan">Wakil Kepala Kurikulum</td>
-                  <td data-label="Kategori">Pimpinan</td>
-                  <td data-label="Status"><span class="badge badge-success">Aktif</span></td>
-                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit guru">Edit</button></div></td>
-                </tr>
-                <tr>
-                  <td data-label="Nama">Yuliana B. Lada, S.Pd.</td>
-                  <td data-label="NIP"><span class="table-code">19801125 200604 2 002</span></td>
-                  <td data-label="Jabatan">Guru Bahasa Indonesia</td>
-                  <td data-label="Kategori">Guru</td>
-                  <td data-label="Status"><span class="badge badge-success">Aktif</span></td>
-                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit guru">Edit</button></div></td>
-                </tr>
-                <tr>
-                  <td data-label="Nama">Andreas K. Bau, S.Pd.</td>
-                  <td data-label="NIP"><span class="table-code">19770909 200312 1 003</span></td>
-                  <td data-label="Jabatan">Guru Matematika</td>
-                  <td data-label="Kategori">Guru</td>
-                  <td data-label="Status"><span class="badge badge-success">Aktif</span></td>
-                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit guru">Edit</button></div></td>
-                </tr>
-                <tr>
-                  <td data-label="Nama">Theresia M. Laka, S.Pd.</td>
-                  <td data-label="NIP"><span class="table-code">19830407 200902 2 005</span></td>
-                  <td data-label="Jabatan">Guru IPA</td>
-                  <td data-label="Kategori">Guru</td>
-                  <td data-label="Status"><span class="badge badge-success">Aktif</span></td>
-                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit guru">Edit</button></div></td>
-                </tr>
-                <tr>
-                  <td data-label="Nama">Mateus B. Ate, S.Kom.</td>
-                  <td data-label="NIP"><span class="table-code">19900122 201503 1 008</span></td>
-                  <td data-label="Jabatan">Staf Tata Usaha</td>
-                  <td data-label="Kategori">Staf</td>
-                  <td data-label="Status"><span class="badge badge-success">Aktif</span></td>
-                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit guru">Edit</button></div></td>
-                </tr>
-              </tbody>
+                                  <tr>
+                    <td data-label="Nama">Nama Kepala Sekolah, M.Pd.</td>
+                    <td data-label="NIP"><span class="table-code">19680512 199003 2 001</span></td>
+                    <td data-label="Jabatan">Kepala Sekolah</td>
+                    <td data-label="Kategori">Pimpinan</td>
+                    <td data-label="Status"><span class="badge badge-success">Aktif</span></td>
+                    <td data-label="Aksi">
+                      <div class="table-actions">
+                        <a href="../admin/guru/1/edit.html">Edit</a>
+                        <form method="POST" onsubmit="return confirm('Hapus data ini?')" action="#" data-aksi="/admin/guru/1">
+                          <input type="hidden" name="_method" value="DELETE">                          <button class="btn btn-text btn-sm danger" type="submit">Hapus</button>
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
+                                  <tr>
+                    <td data-label="Nama">Paulus A. Neno, S.Pd.</td>
+                    <td data-label="NIP"><span class="table-code">19720318 199803 1 004</span></td>
+                    <td data-label="Jabatan">Wakil Kepala Kurikulum</td>
+                    <td data-label="Kategori">Pimpinan</td>
+                    <td data-label="Status"><span class="badge badge-success">Aktif</span></td>
+                    <td data-label="Aksi">
+                      <div class="table-actions">
+                        <a href="../admin/guru/2/edit.html">Edit</a>
+                        <form method="POST" onsubmit="return confirm('Hapus data ini?')" action="#" data-aksi="/admin/guru/2">
+                          <input type="hidden" name="_method" value="DELETE">                          <button class="btn btn-text btn-sm danger" type="submit">Hapus</button>
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
+                                  <tr>
+                    <td data-label="Nama">Yuliana B. Lada, S.Pd.</td>
+                    <td data-label="NIP"><span class="table-code">19801125 200604 2 002</span></td>
+                    <td data-label="Jabatan">Guru Bahasa Indonesia</td>
+                    <td data-label="Kategori">Guru</td>
+                    <td data-label="Status"><span class="badge badge-success">Aktif</span></td>
+                    <td data-label="Aksi">
+                      <div class="table-actions">
+                        <a href="../admin/guru/3/edit.html">Edit</a>
+                        <form method="POST" onsubmit="return confirm('Hapus data ini?')" action="#" data-aksi="/admin/guru/3">
+                          <input type="hidden" name="_method" value="DELETE">                          <button class="btn btn-text btn-sm danger" type="submit">Hapus</button>
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
+                                  <tr>
+                    <td data-label="Nama">Andreas K. Bau, S.Pd.</td>
+                    <td data-label="NIP"><span class="table-code">19770909 200312 1 003</span></td>
+                    <td data-label="Jabatan">Guru Matematika</td>
+                    <td data-label="Kategori">Guru</td>
+                    <td data-label="Status"><span class="badge badge-success">Aktif</span></td>
+                    <td data-label="Aksi">
+                      <div class="table-actions">
+                        <a href="../admin/guru/4/edit.html">Edit</a>
+                        <form method="POST" onsubmit="return confirm('Hapus data ini?')" action="#" data-aksi="/admin/guru/4">
+                          <input type="hidden" name="_method" value="DELETE">                          <button class="btn btn-text btn-sm danger" type="submit">Hapus</button>
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
+                                  <tr>
+                    <td data-label="Nama">Theresia M. Laka, S.Pd.</td>
+                    <td data-label="NIP"><span class="table-code">19830407 200902 2 005</span></td>
+                    <td data-label="Jabatan">Guru IPA</td>
+                    <td data-label="Kategori">Guru</td>
+                    <td data-label="Status"><span class="badge badge-success">Aktif</span></td>
+                    <td data-label="Aksi">
+                      <div class="table-actions">
+                        <a href="../admin/guru/5/edit.html">Edit</a>
+                        <form method="POST" onsubmit="return confirm('Hapus data ini?')" action="#" data-aksi="/admin/guru/5">
+                          <input type="hidden" name="_method" value="DELETE">                          <button class="btn btn-text btn-sm danger" type="submit">Hapus</button>
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
+                                  <tr>
+                    <td data-label="Nama">Yohanes D. Tefa, S.Pd.</td>
+                    <td data-label="NIP"><span class="table-code">19751230 200801 1 006</span></td>
+                    <td data-label="Jabatan">Guru IPS</td>
+                    <td data-label="Kategori">Guru</td>
+                    <td data-label="Status"><span class="badge badge-success">Aktif</span></td>
+                    <td data-label="Aksi">
+                      <div class="table-actions">
+                        <a href="../admin/guru/6/edit.html">Edit</a>
+                        <form method="POST" onsubmit="return confirm('Hapus data ini?')" action="#" data-aksi="/admin/guru/6">
+                          <input type="hidden" name="_method" value="DELETE">                          <button class="btn btn-text btn-sm danger" type="submit">Hapus</button>
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
+                                  <tr>
+                    <td data-label="Nama">Elisabeth R. Peni, S.Pd.</td>
+                    <td data-label="NIP"><span class="table-code">19860714 201001 2 007</span></td>
+                    <td data-label="Jabatan">Guru Bahasa Inggris</td>
+                    <td data-label="Kategori">Guru</td>
+                    <td data-label="Status"><span class="badge badge-success">Aktif</span></td>
+                    <td data-label="Aksi">
+                      <div class="table-actions">
+                        <a href="../admin/guru/7/edit.html">Edit</a>
+                        <form method="POST" onsubmit="return confirm('Hapus data ini?')" action="#" data-aksi="/admin/guru/7">
+                          <input type="hidden" name="_method" value="DELETE">                          <button class="btn btn-text btn-sm danger" type="submit">Hapus</button>
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
+                                  <tr>
+                    <td data-label="Nama">Mateus B. Ate, S.Kom.</td>
+                    <td data-label="NIP"><span class="table-code">19900122 201503 1 008</span></td>
+                    <td data-label="Jabatan">Staf Tata Usaha</td>
+                    <td data-label="Kategori">Staf</td>
+                    <td data-label="Status"><span class="badge badge-success">Aktif</span></td>
+                    <td data-label="Aksi">
+                      <div class="table-actions">
+                        <a href="../admin/guru/8/edit.html">Edit</a>
+                        <form method="POST" onsubmit="return confirm('Hapus data ini?')" action="#" data-aksi="/admin/guru/8">
+                          <input type="hidden" name="_method" value="DELETE">                          <button class="btn btn-text btn-sm danger" type="submit">Hapus</button>
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
+                              </tbody>
             </table>
           </div>
         </section>
+
+        
       </main>
     </div>
   </div>
-  <div class="overlay" id="overlay"></div>
-  <script src="../assets/layout.js"></script>
+
+    <div class="overlay" id="overlay"></div>
   <script src="../assets/app.js"></script>
+  <script src="../assets/static-mode.js"></script>
 </body>
 </html>

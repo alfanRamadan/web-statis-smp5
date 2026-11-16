@@ -612,3 +612,10 @@ html { scroll-padding-top: 130px; }
 .announce a { color: #fff; }
 .announce .badge { background: var(--accent); color: var(--on-accent); }
 .hamburger { margin-left: auto; }
+
+/* Gambar sungguhan di dalam kotak .media (menggantikan placeholder) */
+.media.has-img { padding: 0; }
+.media.has-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.portrait.has-img { overflow: hidden; }
+.portrait.has-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+a.chip { display: inline-flex; align-items: center; }

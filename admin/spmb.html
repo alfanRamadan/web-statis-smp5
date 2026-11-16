@@ -7,114 +7,230 @@
   <link rel="icon" type="image/png" href="../assets/img/logo.png">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body data-admin="spmb" data-root="../">
-  <div class="admin-shell">
-    <aside class="sidebar" id="sidebar"></aside>
+<body>
+    <div class="admin-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="../admin/index.html">
+        <img class="crest" src="../assets/img/logo.png" alt="Logo SMP Negeri 5 Kota Kupang">
+        <span><span class="brand-name">SMPN 5 Kupang</span><span class="brand-sub">Panel Admin</span></span>
+      </a>
+      <div class="side-group">
+        <div class="side-label">Utama</div>
+        <a class="side-link" href="../admin/index.html">Dashboard</a>
+      </div>
+      <div class="side-group">
+        <div class="side-label">Konten</div>
+        <a class="side-link" href="../admin/profil.html">Profil Sekolah</a>
+        <a class="side-link" href="../admin/guru.html">Guru &amp; Staf</a>
+        <a class="side-link" href="../admin/berita.html">Berita</a>
+        <a class="side-link" href="../admin/prestasi.html">Prestasi</a>
+        <a class="side-link" href="../admin/galeri.html">Galeri</a>
+        <a class="side-link active" href="../admin/spmb.html">Pengumuman &amp; SPMB</a>
+        <a class="side-link" href="../admin/dokumen.html">Dokumen &amp; Tautan</a>
+      </div>
+      <div class="side-group">
+        <div class="side-label">Layanan</div>
+        <a class="side-link" href="../admin/kunjungan.html">Kunjungan</a>
+        <a class="side-link" href="../admin/lomba.html">Lomba</a>
+        <a class="side-link" href="../admin/reservasi.html">Reservasi</a>
+        <a class="side-link" href="../admin/sarana.html">Sarana</a>
+        <a class="side-link" href="../admin/kegiatan.html">Kegiatan</a>
+      </div>
+      <div class="side-group">
+        <div class="side-label">Sistem</div>
+        <a class="side-link" href="../admin/akun.html">Akun Admin</a>
+      </div>
+      <form class="side-bottom" method="POST" action="#" data-aksi="/logout">
+        <button class="side-link" type="submit" style="width:100%;border:0;background:none;cursor:pointer;font:inherit;text-align:left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5M21 12H9"/></svg> Keluar</button>
+      </form>
+    </aside>
     <div class="admin-main">
-      <header class="topbar" id="topbar" data-title="Pengumuman &amp; SPMB" data-subtitle="Kelola banner pengumuman dan informasi penerimaan murid baru."></header>
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-btn menu-btn" id="sideToggle" aria-label="Buka menu admin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+          <div><h1>Pengumuman &amp; SPMB</h1><div class="sub">Kelola banner pengumuman dan informasi penerimaan murid baru.</div></div>
+        </div>
+        <div class="topbar-actions">
+          <a class="btn btn-text small" href="">Lihat situs</a>
+          <div class="user-chip">
+            <span class="avatar">OP</span>
+            <span class="user-meta"><strong>Operator Sekolah</strong><span>Admin</span></span>
+          </div>
+        </div>
+      </header>
       <main class="admin-content">
-        <!-- shortcut: form statis, tombol hanya menampilkan toast; sambungkan ke backend saat Construction -->
+                
         <div class="admin-grid">
           <div class="stack-24">
-            <form class="card">
-              <h2 style="font-size:20px">Banner Pengumuman</h2>
-              <p class="small muted mt-8">Tampil di bagian paling atas semua halaman publik. Menggantikan banner &ldquo;SAS&rdquo; di website lama.</p>
-              <div class="field mt-24">
-                <label for="bTeks">Teks pengumuman</label>
-                <input id="bTeks" type="text" maxlength="120" value="Sumatif Akhir Semester (SAS) Ganjil dimulai 1 Desember 2026.">
+            <form class="card" method="POST" action="#" data-aksi="/admin/spmb/banner">
+              <input type="hidden" name="_method" value="PUT">              <h2 style="font-size:20px">Banner Pengumuman</h2>
+              <p class="small muted mt-8">Tampil di bagian paling atas semua halaman publik.</p>
+
+              <div class="field mt-24 ">
+                <label for="teks">Teks pengumuman <span class="req">*</span></label>
+                <input id="teks" name="teks" type="text" maxlength="120" value="Sumatif Akhir Semester (SAS) Ganjil dimulai 1 Desember 2026." required>
                 <div class="hint">Maksimal 120 karakter.</div>
+                <div class="error-text"></div>
               </div>
               <div class="grid grid-2">
-                <div class="field">
-                  <label for="bTautan">Tautan &ldquo;Selengkapnya&rdquo;</label>
-                  <select id="bTautan">
-                    <option>Berita: Jadwal SAS Ganjil 2026/2027</option>
-                    <option>Halaman SPMB</option>
-                    <option>Dokumen &amp; Tautan</option>
-                  </select>
+                <div class="field ">
+                  <label for="tautan">Tautan &ldquo;Selengkapnya&rdquo;</label>
+                  <input id="tautan" name="tautan" type="text" maxlength="255" value="/berita" placeholder="/spmb atau https://...">
+                  <div class="hint">Kosongkan jika tidak ada. Alamat di situs ini diawali /, mis. /spmb atau /berita.</div>
+                  <div class="error-text"></div>
                 </div>
-                <div class="field">
-                  <label for="bSampai">Tampil sampai</label>
-                  <input id="bSampai" type="date" value="2026-12-12">
+                <div class="field ">
+                  <label for="tampil_sampai">Tampil sampai</label>
+                  <input id="tampil_sampai" name="tampil_sampai" type="date" value="">
+                  <div class="hint">Kosongkan jika tanpa batas waktu.</div>
+                  <div class="error-text"></div>
                 </div>
               </div>
-              <div class="field">
-                <div class="check"><input id="bAktif" type="checkbox" checked><label for="bAktif">Tampilkan banner di situs</label></div>
-              </div>
+              <label class="check" style="margin-bottom:20px">
+                <input type="checkbox" name="aktif" value="1" checked> Tampilkan banner di situs
+              </label>
               <div class="form-actions">
-                <button class="btn btn-primary" type="button" data-toast="Banner pengumuman disimpan (demo).">Simpan Banner</button>
+                <button class="btn btn-primary" type="submit">Simpan Banner</button>
               </div>
             </form>
 
-            <form class="card">
-              <h2 style="font-size:20px">Informasi SPMB</h2>
+            <form class="card" method="POST" action="#" data-aksi="/admin/spmb/info">
+              <input type="hidden" name="_method" value="PUT">              <h2 style="font-size:20px">Informasi SPMB</h2>
               <p class="small muted mt-8">Website hanya menyajikan informasi. Pendaftaran tetap melalui portal resmi Dinas Pendidikan Kota Kupang.</p>
               <div class="grid grid-2 mt-24">
-                <div class="field">
-                  <label for="sTahun">Tahun ajaran</label>
-                  <input id="sTahun" type="text" value="2027/2028">
+                <div class="field ">
+                  <label for="tahun_ajaran">Tahun ajaran <span class="req">*</span></label>
+                  <input id="tahun_ajaran" name="tahun_ajaran" type="text" maxlength="9" value="2027/2028" placeholder="2027/2028" required>
+                  <div class="error-text"></div>
                 </div>
-                <div class="field">
-                  <label for="sStatus">Status di halaman publik</label>
-                  <select id="sStatus">
-                    <option>Segera dibuka</option>
-                    <option>Pendaftaran dibuka</option>
-                    <option>Pendaftaran ditutup</option>
-                  </select>
+                <div class="field ">
+                  <label for="status">Status di halaman publik</label>
+                  <select id="status" name="status">
+                                          <option value="segera" selected>Segera dibuka</option>
+                                          <option value="dibuka" >Pendaftaran dibuka</option>
+                                          <option value="ditutup" >Pendaftaran ditutup</option>
+                                      </select>
+                  <div class="error-text"></div>
                 </div>
-                <div class="field">
-                  <label for="sKuota">Kuota murid baru</label>
-                  <input id="sKuota" type="number" value="256">
+                <div class="field ">
+                  <label for="kuota">Kuota murid baru</label>
+                  <input id="kuota" name="kuota" type="number" min="0" value="256">
+                  <div class="error-text"></div>
                 </div>
-                <div class="field">
-                  <label for="sPortal">Tautan portal SPMB Dinas</label>
-                  <input id="sPortal" type="url" placeholder="https://...">
+                <div class="field ">
+                  <label for="link_portal">Tautan portal SPMB Dinas</label>
+                  <input id="link_portal" name="link_portal" type="url" maxlength="255" value="" placeholder="https://...">
                   <div class="hint">Diisi saat Dinas mengumumkan alamat portal.</div>
+                  <div class="error-text"></div>
                 </div>
               </div>
-              <div class="field">
-                <label for="sSyarat">Persyaratan umum (satu baris satu syarat)</label>
-                <textarea id="sSyarat" rows="5">Fotokopi akta kelahiran dan Kartu Keluarga.
+              <div class="field ">
+                <label for="persyaratan">Persyaratan umum (satu baris satu syarat)</label>
+                <textarea id="persyaratan" name="persyaratan" rows="5">Fotokopi akta kelahiran dan Kartu Keluarga.
 Fotokopi rapor kelas IV–VI atau ijazah SD.
 Surat keterangan lulus dari SD/MI.
 Pas foto berwarna ukuran 3×4 sebanyak dua lembar.
 Berkas pendukung sesuai jalur.</textarea>
+                <div class="error-text"></div>
               </div>
               <div class="form-actions">
-                <button class="btn btn-primary" type="button" data-toast="Informasi SPMB disimpan (demo).">Simpan Informasi</button>
-                <a class="btn btn-text" href="../spmb.html">Lihat halaman SPMB</a>
+                <button class="btn btn-primary" type="submit">Simpan Informasi</button>
+                <a class="btn btn-text" href="../spmb.html" target="_blank" rel="noopener">Lihat halaman SPMB</a>
               </div>
             </form>
           </div>
 
           <aside class="stack-24">
             <section class="card" style="padding:0">
-              <div class="panel-head"><h3>Jadwal SPMB</h3><button class="btn btn-text btn-sm" type="button" data-toast="Tahap baru ditambahkan (demo).">+ Tahap</button></div>
+              <div class="panel-head"><h3>Jadwal SPMB</h3></div>
               <div class="table-wrap">
                 <table>
-                  <thead><tr><th>Tahap</th><th>Tanggal</th></tr></thead>
+                  <thead><tr><th>Tahap</th><th>Tanggal</th><th></th></tr></thead>
                   <tbody>
-                    <tr><td data-label="Tahap">Sosialisasi</td><td data-label="Tanggal">20–31 Mei 2027</td></tr>
-                    <tr><td data-label="Tahap">Pendaftaran daring</td><td data-label="Tanggal">1–12 Jun 2027</td></tr>
-                    <tr><td data-label="Tahap">Verifikasi berkas</td><td data-label="Tanggal">13–20 Jun 2027</td></tr>
-                    <tr><td data-label="Tahap">Pengumuman hasil</td><td data-label="Tanggal">25 Jun 2027</td></tr>
-                    <tr><td data-label="Tahap">Daftar ulang</td><td data-label="Tanggal">26–30 Jun 2027</td></tr>
-                  </tbody>
+                                          <tr>
+                        <td data-label="Tahap">Pengumuman dan sosialisasi<div class="tiny muted">Informasi jalur dan kuota</div></td>
+                        <td data-label="Tanggal">20–31 Mei 2027</td>
+                        <td data-label="Aksi">
+                          <form method="POST" onsubmit="return confirm('Hapus tahap ini?')" action="#" data-aksi="/admin/spmb/jadwal/1">
+                            <input type="hidden" name="_method" value="DELETE">                            <button class="btn btn-text btn-sm danger" type="submit">Hapus</button>
+                          </form>
+                        </td>
+                      </tr>
+                                          <tr>
+                        <td data-label="Tahap">Pendaftaran daring<div class="tiny muted">Melalui portal SPMB Dinas Pendidikan Kota Kupang</div></td>
+                        <td data-label="Tanggal">1–12 Juni 2027</td>
+                        <td data-label="Aksi">
+                          <form method="POST" onsubmit="return confirm('Hapus tahap ini?')" action="#" data-aksi="/admin/spmb/jadwal/2">
+                            <input type="hidden" name="_method" value="DELETE">                            <button class="btn btn-text btn-sm danger" type="submit">Hapus</button>
+                          </form>
+                        </td>
+                      </tr>
+                                          <tr>
+                        <td data-label="Tahap">Verifikasi berkas<div class="tiny muted">Di sekolah, sesuai jadwal per jalur</div></td>
+                        <td data-label="Tanggal">13–20 Juni 2027</td>
+                        <td data-label="Aksi">
+                          <form method="POST" onsubmit="return confirm('Hapus tahap ini?')" action="#" data-aksi="/admin/spmb/jadwal/3">
+                            <input type="hidden" name="_method" value="DELETE">                            <button class="btn btn-text btn-sm danger" type="submit">Hapus</button>
+                          </form>
+                        </td>
+                      </tr>
+                                          <tr>
+                        <td data-label="Tahap">Pengumuman hasil<div class="tiny muted">Diumumkan di portal dan papan sekolah</div></td>
+                        <td data-label="Tanggal">25 Juni 2027</td>
+                        <td data-label="Aksi">
+                          <form method="POST" onsubmit="return confirm('Hapus tahap ini?')" action="#" data-aksi="/admin/spmb/jadwal/4">
+                            <input type="hidden" name="_method" value="DELETE">                            <button class="btn btn-text btn-sm danger" type="submit">Hapus</button>
+                          </form>
+                        </td>
+                      </tr>
+                                          <tr>
+                        <td data-label="Tahap">Daftar ulang<div class="tiny muted">Membawa berkas asli</div></td>
+                        <td data-label="Tanggal">26–30 Juni 2027</td>
+                        <td data-label="Aksi">
+                          <form method="POST" onsubmit="return confirm('Hapus tahap ini?')" action="#" data-aksi="/admin/spmb/jadwal/5">
+                            <input type="hidden" name="_method" value="DELETE">                            <button class="btn btn-text btn-sm danger" type="submit">Hapus</button>
+                          </form>
+                        </td>
+                      </tr>
+                                      </tbody>
                 </table>
               </div>
             </section>
-            <section class="card">
-              <h3>Status</h3>
-              <div class="row mt-16"><span class="badge badge-success">Banner aktif</span><span class="tiny muted">Diubah 9 Nov 2026</span></div>
-              <div class="row mt-8"><span class="badge badge-warning">SPMB: segera dibuka</span></div>
-            </section>
+
+            <form class="card" method="POST" action="#" data-aksi="/admin/spmb/jadwal">
+              <h3>Tambah Tahap</h3>
+                            <div class="field mt-16 ">
+                <label for="tahap">Tahap <span class="req">*</span></label>
+                <input id="tahap" name="tahap" type="text" maxlength="150" value="" required>
+                <div class="error-text"></div>
+              </div>
+              <div class="grid-2-sm">
+                <div class="field ">
+                  <label for="tanggal_mulai">Mulai <span class="req">*</span></label>
+                  <input id="tanggal_mulai" name="tanggal_mulai" type="date" value="" required>
+                  <div class="error-text"></div>
+                </div>
+                <div class="field ">
+                  <label for="tanggal_selesai">Selesai</label>
+                  <input id="tanggal_selesai" name="tanggal_selesai" type="date" value="">
+                  <div class="error-text"></div>
+                </div>
+              </div>
+              <div class="field">
+                <label for="keterangan">Keterangan</label>
+                <input id="keterangan" name="keterangan" type="text" maxlength="255" value="">
+              </div>
+              <button class="btn btn-outline btn-block" type="submit">+ Tambah Tahap</button>
+              <div class="hint mt-8">Untuk mengubah tahap, hapus lalu tambah ulang.</div>
+            </form>
           </aside>
         </div>
       </main>
     </div>
   </div>
-  <div class="overlay" id="overlay"></div>
-  <script src="../assets/layout.js"></script>
+
+    <div class="overlay" id="overlay"></div>
   <script src="../assets/app.js"></script>
+  <script src="../assets/static-mode.js"></script>
 </body>
 </html>

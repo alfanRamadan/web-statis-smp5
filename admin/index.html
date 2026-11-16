@@ -7,36 +7,82 @@
   <link rel="icon" type="image/png" href="../assets/img/logo.png">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body data-admin="dashboard" data-root="../">
-  <div class="admin-shell">
-    <aside class="sidebar" id="sidebar"></aside>
+<body>
+    <div class="admin-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="../admin/index.html">
+        <img class="crest" src="../assets/img/logo.png" alt="Logo SMP Negeri 5 Kota Kupang">
+        <span><span class="brand-name">SMPN 5 Kupang</span><span class="brand-sub">Panel Admin</span></span>
+      </a>
+      <div class="side-group">
+        <div class="side-label">Utama</div>
+        <a class="side-link active" href="../admin/index.html">Dashboard</a>
+      </div>
+      <div class="side-group">
+        <div class="side-label">Konten</div>
+        <a class="side-link" href="../admin/profil.html">Profil Sekolah</a>
+        <a class="side-link" href="../admin/guru.html">Guru &amp; Staf</a>
+        <a class="side-link" href="../admin/berita.html">Berita</a>
+        <a class="side-link" href="../admin/prestasi.html">Prestasi</a>
+        <a class="side-link" href="../admin/galeri.html">Galeri</a>
+        <a class="side-link" href="../admin/spmb.html">Pengumuman &amp; SPMB</a>
+        <a class="side-link" href="../admin/dokumen.html">Dokumen &amp; Tautan</a>
+      </div>
+      <div class="side-group">
+        <div class="side-label">Layanan</div>
+        <a class="side-link" href="../admin/kunjungan.html">Kunjungan</a>
+        <a class="side-link" href="../admin/lomba.html">Lomba</a>
+        <a class="side-link" href="../admin/reservasi.html">Reservasi</a>
+        <a class="side-link" href="../admin/sarana.html">Sarana</a>
+        <a class="side-link" href="../admin/kegiatan.html">Kegiatan</a>
+      </div>
+      <div class="side-group">
+        <div class="side-label">Sistem</div>
+        <a class="side-link" href="../admin/akun.html">Akun Admin</a>
+      </div>
+      <form class="side-bottom" method="POST" action="#" data-aksi="/logout">
+        <button class="side-link" type="submit" style="width:100%;border:0;background:none;cursor:pointer;font:inherit;text-align:left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5M21 12H9"/></svg> Keluar</button>
+      </form>
+    </aside>
     <div class="admin-main">
-      <header class="topbar" id="topbar" data-title="Dashboard" data-subtitle="Ringkasan aktivitas hari ini, 3 November 2026."></header>
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-btn menu-btn" id="sideToggle" aria-label="Buka menu admin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+          <div><h1>Dashboard</h1><div class="sub">Ringkasan aktivitas hari ini, 3 November 2026.</div></div>
+        </div>
+        <div class="topbar-actions">
+          <a class="btn btn-text small" href="">Lihat situs</a>
+          <div class="user-chip">
+            <span class="avatar">OP</span>
+            <span class="user-meta"><strong>Operator Sekolah</strong><span>Admin</span></span>
+          </div>
+        </div>
+      </header>
       <main class="admin-content">
-        <div class="grid grid-4">
+                <div class="grid grid-4">
           <article class="card stat-card">
             <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="7" r="4"/></svg></div>
             <div class="stat-num">12</div>
             <div class="stat-label">Kunjungan Menunggu</div>
-            <a class="stat-link" href="kunjungan.html">Lihat &rarr;</a>
+            <a class="stat-link" href="../admin/kunjungan.html">Lihat &rarr;</a>
           </article>
           <article class="card stat-card">
             <div class="icon-tile amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4Z"/><path d="M7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3"/></svg></div>
             <div class="stat-num">8</div>
             <div class="stat-label">Pendaftaran Lomba</div>
-            <a class="stat-link" href="lomba.html">Lihat &rarr;</a>
+            <a class="stat-link" href="../admin/lomba.html">Lihat &rarr;</a>
           </article>
           <article class="card stat-card">
             <div class="icon-tile blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-4h6v4"/></svg></div>
             <div class="stat-num">5</div>
             <div class="stat-label">Reservasi Menunggu</div>
-            <a class="stat-link" href="reservasi.html">Lihat &rarr;</a>
+            <a class="stat-link" href="../admin/reservasi.html">Lihat &rarr;</a>
           </article>
           <article class="card stat-card">
             <div class="icon-tile green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg></div>
             <div class="stat-num">3</div>
             <div class="stat-label">Pendaftar Kegiatan Menunggu</div>
-            <a class="stat-link" href="agenda.html">Lihat &rarr;</a>
+            <a class="stat-link" href="../admin/kegiatan.html">Lihat &rarr;</a>
           </article>
         </div>
 
@@ -44,7 +90,7 @@
           <section class="card" style="padding:0">
             <div class="panel-head">
               <h2>Antrean Verifikasi Terbaru</h2>
-              <a class="btn btn-text small" href="kunjungan.html">Lihat semua</a>
+              <a class="btn btn-text small" href="../admin/kunjungan.html">Lihat semua</a>
             </div>
             <div class="table-wrap">
               <table>
@@ -58,7 +104,7 @@
                     <td data-label="Layanan">Kunjungan</td>
                     <td data-label="Tanggal">5 Nov 2026</td>
                     <td data-label="Status"><span class="badge badge-warning">Menunggu</span></td>
-                    <td data-label="Aksi"><div class="table-actions"><a href="kunjungan.html">Verifikasi</a></div></td>
+                    <td data-label="Aksi"><div class="table-actions"><a href="../admin/kunjungan.html">Verifikasi</a></div></td>
                   </tr>
                   <tr>
                     <td data-label="Kode"><span class="table-code">LMB-261103-M4XA</span></td>
@@ -66,7 +112,7 @@
                     <td data-label="Layanan">Lomba</td>
                     <td data-label="Tanggal">6 Nov 2026</td>
                     <td data-label="Status"><span class="badge badge-warning">Menunggu</span></td>
-                    <td data-label="Aksi"><div class="table-actions"><a href="lomba.html">Verifikasi</a></div></td>
+                    <td data-label="Aksi"><div class="table-actions"><a href="../admin/lomba.html">Verifikasi</a></div></td>
                   </tr>
                   <tr>
                     <td data-label="Kode"><span class="table-code">RSV-261102-9BHT</span></td>
@@ -74,7 +120,7 @@
                     <td data-label="Layanan">Reservasi</td>
                     <td data-label="Tanggal">20 Nov 2026</td>
                     <td data-label="Status"><span class="badge badge-warning">Menunggu</span></td>
-                    <td data-label="Aksi"><div class="table-actions"><a href="reservasi.html">Verifikasi</a></div></td>
+                    <td data-label="Aksi"><div class="table-actions"><a href="../admin/reservasi.html">Verifikasi</a></div></td>
                   </tr>
                   <tr>
                     <td data-label="Kode"><span class="table-code">AGT-261101-P6WD</span></td>
@@ -82,7 +128,7 @@
                     <td data-label="Layanan">Kegiatan</td>
                     <td data-label="Tanggal">25 Nov 2026</td>
                     <td data-label="Status"><span class="badge badge-success">Dikonfirmasi</span></td>
-                    <td data-label="Aksi"><div class="table-actions"><a href="agenda.html">Lihat</a></div></td>
+                    <td data-label="Aksi"><div class="table-actions"><a href="../admin/kegiatan.html">Lihat</a></div></td>
                   </tr>
                   <tr>
                     <td data-label="Kode"><span class="table-code">KJG-261031-3TKR</span></td>
@@ -90,7 +136,7 @@
                     <td data-label="Layanan">Kunjungan</td>
                     <td data-label="Tanggal">4 Nov 2026</td>
                     <td data-label="Status"><span class="badge badge-success">Disetujui</span></td>
-                    <td data-label="Aksi"><div class="table-actions"><a href="kunjungan.html">Lihat</a></div></td>
+                    <td data-label="Aksi"><div class="table-actions"><a href="../admin/kunjungan.html">Lihat</a></div></td>
                   </tr>
                 </tbody>
               </table>
@@ -116,9 +162,9 @@
             <section class="card">
               <h3>Akses Cepat</h3>
               <div class="quick-grid mt-16">
-                <a class="btn btn-outline btn-block" href="berita.html">Tulis Berita</a>
-                <a class="btn btn-outline btn-block" href="kunjungan.html">Verifikasi Kunjungan</a>
-                <a class="btn btn-outline btn-block" href="lomba.html">Buat Lomba</a>
+                <a class="btn btn-outline btn-block" href="../admin/berita/create.html">Tulis Berita</a>
+                <a class="btn btn-outline btn-block" href="../admin/kunjungan.html">Verifikasi Kunjungan</a>
+                <a class="btn btn-outline btn-block" href="../admin/lomba.html">Buat Lomba</a>
               </div>
             </section>
           </aside>
@@ -127,8 +173,8 @@
     </div>
   </div>
 
-  <div class="overlay" id="overlay"></div>
-  <script src="../assets/layout.js"></script>
+    <div class="overlay" id="overlay"></div>
   <script src="../assets/app.js"></script>
+  <script src="../assets/static-mode.js"></script>
 </body>
 </html>

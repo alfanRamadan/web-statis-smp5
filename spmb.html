@@ -4,77 +4,134 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Informasi SPMB 2027/2028 &mdash; SMP Negeri 5 Kota Kupang</title>
+  <meta name="description" content="Informasi sekolah, prestasi siswa, dan layanan administrasi SMP Negeri 5 Kota Kupang.">
   <link rel="icon" type="image/png" href="assets/img/logo.png">
   <link rel="stylesheet" href="assets/style.css">
 </head>
-<body data-page="spmb" data-root="">
-  <header class="site-header" id="site-header"></header>
+<body>
+    <header class="site-header">
+        <div class="announce"><div class="container">
+      <span class="badge badge-warning">Pengumuman</span>
+      <span>Sumatif Akhir Semester (SAS) Ganjil dimulai 1 Desember 2026.</span>
+      <a href="berita.html">Selengkapnya</a>    </div></div>
+        <div class="container header-inner">
+      <a class="brand" href="">
+        <img class="crest" src="assets/img/logo.png" alt="Logo SMP Negeri 5 Kota Kupang">
+        <span><span class="brand-name">SMP Negeri 5 Kota Kupang</span><span class="brand-sub">Kota Kupang, Nusa Tenggara Timur</span></span>
+      </a>
+      <nav class="nav" aria-label="Navigasi utama">
+        <a class="" href="">Beranda</a>
+        <details class="nav-drop">
+          <summary class="">Profil <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="drop">
+            <a href="profil.html">Profil Sekolah</a>
+            <a href="profil.html#visi-misi">Visi &amp; Misi</a>
+            <a href="guru-staf.html">Guru &amp; Staf</a>
+            <a href="galeri.html">Galeri</a>
+          </div>
+        </details>
+        <a class="" href="berita.html">Berita &amp; Prestasi</a>
+        <a class="active" href="spmb.html">SPMB</a>
+        <details class="nav-drop">
+          <summary class="">Akademik <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="drop">
+            <a href="dokumen.html#dokumen">Dokumen &amp; Kurikulum</a>
+            <a href="dokumen.html#tautan">Learning Room</a>
+            <a href="dokumen.html#tautan">English Day</a>
+          </div>
+        </details>
+        <details class="nav-drop">
+          <summary class="">Layanan <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="drop">
+            <a href="kunjungan.html">Kunjungan Tamu</a>
+            <a href="lomba.html">Pendaftaran Lomba</a>
+            <a href="reservasi.html">Reservasi Sarana</a>
+            <a href="kegiatan.html">Pendaftaran Kegiatan</a>
+            <a href="reservasi.html#kalender">Kalender Pemakaian Sarana</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-text small" href="login.html">Masuk</a>
+        <a class="btn btn-outline" href="cek-status.html">Cek Status</a>
+        <a class="btn btn-primary" href="kunjungan.html">Ajukan Layanan</a>
+      </div>
+      <button class="hamburger" id="menuToggle" aria-label="Buka menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="">Beranda</a>
+      <a href="profil.html">Profil Sekolah</a>
+      <a href="guru-staf.html">Guru &amp; Staf</a>
+      <a href="galeri.html">Galeri</a>
+      <a href="berita.html">Berita &amp; Prestasi</a>
+      <a href="spmb.html">SPMB</a>
+      <a href="dokumen.html">Dokumen &amp; Tautan</a>
+      <a href="kunjungan.html">Kunjungan Tamu</a>
+      <a href="lomba.html">Pendaftaran Lomba</a>
+      <a href="reservasi.html">Reservasi Sarana</a>
+      <a href="kegiatan.html">Pendaftaran Kegiatan</a>
+      <div class="mobile-actions">
+        <a class="btn btn-outline btn-block" href="cek-status.html">Cek Status</a>
+        <a class="btn btn-primary btn-block" href="kunjungan.html">Ajukan Layanan</a>
+        <a class="btn btn-text btn-block" href="login.html">Masuk Panel Admin</a>
+      </div>
+    </div>
+  </header>
 
-  <main>
+    <main>
     <section class="page-head">
       <div class="container">
-        <div class="breadcrumb"><a href="index.html">Beranda</a><span>/</span><span>SPMB</span></div>
+        <div class="breadcrumb"><a href="">Beranda</a><span>/</span><span>SPMB</span></div>
         <h1>SPMB 2027/2028</h1>
         <p class="lead">Sistem Penerimaan Murid Baru (SPMB, sebelumnya PPDB) SMP Negeri 5 Kota Kupang. Pendaftaran dilakukan melalui portal resmi Dinas Pendidikan Kota Kupang; halaman ini merangkum jadwal, jalur, dan persyaratannya.</p>
-        <div class="row mt-24">
-          <span class="badge badge-warning">Segera dibuka</span>
-          <span class="tiny muted">Juni 2027 &bull; Kuota contoh 256 murid</span>
-          <a class="btn btn-primary btn-sm" href="#" data-soon="Portal SPMB Dinas Pendidikan Kota Kupang">Buka Portal SPMB Resmi</a>
-        </div>
-      </div>
+                  <div class="row mt-24">
+            <span class="badge badge-warning">Segera dibuka</span>
+            <span class="tiny muted">Kuota 256 murid</span>                          <span class="tiny muted">Tautan portal resmi belum diumumkan.</span>
+                      </div>
+              </div>
     </section>
 
     <section class="section">
       <div class="container split-form">
         <div class="stack-24">
           <div class="note-box note-warning" style="margin-top:0">Website sekolah <strong>tidak menerima pendaftaran SPMB</strong>. Seluruh pendaftaran, seleksi, dan pengumuman hasil mengikuti sistem resmi Dinas Pendidikan Kota Kupang.</div>
-          <section class="card" style="padding:0">
-            <div class="panel-head"><h2>Jadwal SPMB</h2><span class="badge badge-neutral">Tahun Ajaran 2027/2028 &bull; data contoh</span></div>
-            <div class="table-wrap">
-              <table>
-                <thead><tr><th>Tahap</th><th>Tanggal</th><th>Keterangan</th></tr></thead>
-                <tbody>
-                  <tr><td data-label="Tahap">Pengumuman dan sosialisasi</td><td data-label="Tanggal">20&ndash;31 Mei 2027</td><td data-label="Keterangan">Informasi jalur dan kuota</td></tr>
-                  <tr><td data-label="Tahap">Pendaftaran daring</td><td data-label="Tanggal">1&ndash;12 Juni 2027</td><td data-label="Keterangan">Melalui portal SPMB Dinas Pendidikan Kota Kupang</td></tr>
-                  <tr><td data-label="Tahap">Verifikasi berkas</td><td data-label="Tanggal">13&ndash;20 Juni 2027</td><td data-label="Keterangan">Di sekolah, sesuai jadwal per jalur</td></tr>
-                  <tr><td data-label="Tahap">Pengumuman hasil</td><td data-label="Tanggal">25 Juni 2027</td><td data-label="Keterangan">Diumumkan di portal dan papan sekolah</td></tr>
-                  <tr><td data-label="Tahap">Daftar ulang</td><td data-label="Tanggal">26&ndash;30 Juni 2027</td><td data-label="Keterangan">Membawa berkas asli</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
 
+                      <section class="card" style="padding:0">
+              <div class="panel-head"><h2>Jadwal SPMB</h2><span class="badge badge-neutral">Tahun Ajaran 2027/2028</span></div>
+                              <div class="table-wrap">
+                  <table>
+                    <thead><tr><th>Tahap</th><th>Tanggal</th><th>Keterangan</th></tr></thead>
+                    <tbody>
+                                              <tr><td data-label="Tahap">Pengumuman dan sosialisasi</td><td data-label="Tanggal">20–31 Mei 2027</td><td data-label="Keterangan">Informasi jalur dan kuota</td></tr>
+                                              <tr><td data-label="Tahap">Pendaftaran daring</td><td data-label="Tanggal">1–12 Juni 2027</td><td data-label="Keterangan">Melalui portal SPMB Dinas Pendidikan Kota Kupang</td></tr>
+                                              <tr><td data-label="Tahap">Verifikasi berkas</td><td data-label="Tanggal">13–20 Juni 2027</td><td data-label="Keterangan">Di sekolah, sesuai jadwal per jalur</td></tr>
+                                              <tr><td data-label="Tahap">Pengumuman hasil</td><td data-label="Tanggal">25 Juni 2027</td><td data-label="Keterangan">Diumumkan di portal dan papan sekolah</td></tr>
+                                              <tr><td data-label="Tahap">Daftar ulang</td><td data-label="Tanggal">26–30 Juni 2027</td><td data-label="Keterangan">Membawa berkas asli</td></tr>
+                                          </tbody>
+                  </table>
+                </div>
+                          </section>
+
+                          <section class="card">
+                <h2 style="font-size:20px">Persyaratan Umum</h2>
+                <ul class="small muted mt-16" style="padding-left:20px; display:grid; gap:8px">
+                                      <li>Fotokopi akta kelahiran dan Kartu Keluarga.</li>
+                                      <li>Fotokopi rapor kelas IV–VI atau ijazah SD.</li>
+                                      <li>Surat keterangan lulus dari SD/MI.</li>
+                                      <li>Pas foto berwarna ukuran 3×4 sebanyak dua lembar.</li>
+                                      <li>Berkas pendukung sesuai jalur.</li>
+                                  </ul>
+              </section>
+                      
           <section class="card">
             <h2 style="font-size:20px">Jalur Pendaftaran</h2>
+            <p class="small muted mt-8">Jalur yang berlaku dan besar kuotanya mengikuti petunjuk teknis Dinas Pendidikan setiap tahun.</p>
             <div class="grid grid-2 mt-24">
-              <div>
-                <h3>Jalur Domisili</h3>
-                <p class="small muted">Untuk calon murid yang berdomisili di wilayah yang ditetapkan Dinas (domisili minimal 1 tahun). Kuota minimal 40%.</p>
-              </div>
-              <div>
-                <h3>Jalur Afirmasi</h3>
-                <p class="small muted">Untuk murid dari keluarga tidak mampu dan penyandang disabilitas. Kuota minimal 20%.</p>
-              </div>
-              <div>
-                <h3>Jalur Prestasi</h3>
-                <p class="small muted">Berdasarkan nilai rapor, prestasi akademik, atau non-akademik. Kuota mengikuti juknis Dinas.</p>
-              </div>
-              <div>
-                <h3>Jalur Mutasi</h3>
-                <p class="small muted">Untuk anak dari orang tua/wali yang pindah tugas, serta anak guru. Kuota maksimal 5%.</p>
-              </div>
+              <div><h3>Jalur Domisili</h3><p class="small muted">Untuk calon murid yang berdomisili di wilayah yang ditetapkan Dinas.</p></div>
+              <div><h3>Jalur Afirmasi</h3><p class="small muted">Untuk murid dari keluarga tidak mampu dan penyandang disabilitas.</p></div>
+              <div><h3>Jalur Prestasi</h3><p class="small muted">Berdasarkan nilai rapor, prestasi akademik, atau non-akademik.</p></div>
+              <div><h3>Jalur Mutasi</h3><p class="small muted">Untuk anak dari orang tua/wali yang pindah tugas, serta anak guru.</p></div>
             </div>
-          </section>
-
-          <section class="card">
-            <h2 style="font-size:20px">Persyaratan Umum</h2>
-            <ul class="small muted mt-16" style="padding-left:20px; display:grid; gap:8px">
-              <li>Fotokopi akta kelahiran dan Kartu Keluarga.</li>
-              <li>Fotokopi rapor kelas IV&ndash;VI atau ijazah SD.</li>
-              <li>Surat keterangan lulus dari SD/MI.</li>
-              <li>Pas foto berwarna ukuran 3&times;4 sebanyak dua lembar.</li>
-              <li>Berkas pendukung sesuai jalur (sertifikat prestasi, surat keterangan domisili, atau kartu bantuan sosial).</li>
-            </ul>
           </section>
 
           <section class="card">
@@ -91,28 +148,65 @@
         <aside class="stack-24">
           <section class="card">
             <h3>Butuh Bantuan?</h3>
-            <p class="small muted mt-8">Panitia SPMB sekolah siap membantu pada hari kerja, 08.00&ndash;14.00 WITA.</p>
-            <div class="stack mt-16">
-              <a class="btn btn-outline btn-block" href="#" data-soon="Kontak panitia SPMB">Hubungi Panitia</a>
-              <a class="btn btn-outline btn-block" href="#" data-soon="Unduh juknis SPMB">Unduh Juknis SPMB</a>
-            </div>
+            <p class="small muted mt-8">Hubungi sekolah pada hari kerja.</p>
+            <dl class="inline mt-16">
+                            <div><dt>Email</dt><dd>smpnegeri5kupang.80@gmail.com</dd></div>            </dl>
+            <a class="btn btn-outline btn-block mt-16" href="dokumen.html">Dokumen &amp; Tautan</a>
           </section>
           <section class="card">
             <h3>Informasi Sekolah</h3>
             <dl class="inline mt-16">
-              <div><dt>NPSN</dt><dd>5030xxxx</dd></div>
-              <div><dt>Akreditasi</dt><dd>A</dd></div>
-              <div><dt>Alamat</dt><dd>Jl. Frans Seda, Kelapa Lima, Kota Kupang</dd></div>
-              <div><dt>Email</dt><dd>smpnegeri5kupang.80@gmail.com</dd></div>
-            </dl>
+              <div><dt>NPSN</dt><dd>5030xxxx</dd></div>              <div><dt>Akreditasi</dt><dd>A</dd></div>              <div><dt>Alamat</dt><dd>Jl. Frans Seda, Kel. Kelapa Lima, Kec. Kelapa Lima, Kota Kupang, NTT 85228</dd></div>            </dl>
           </section>
         </aside>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer" id="site-footer"></footer>
-  <script src="assets/layout.js"></script>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href=""><img class="crest" src="assets/img/logo.png" alt="Logo SMP Negeri 5 Kota Kupang"><span><span class="brand-name">SMP Negeri 5 Kota Kupang</span><span class="brand-sub">Kota Kupang, Nusa Tenggara Timur</span></span></a>
+          <p class="small muted mt-16">Jl. Frans Seda, Kel. Kelapa Lima, Kec. Kelapa Lima, Kota Kupang, NTT 85228 <br>smpnegeri5kupang.80@gmail.com<br>smpnegeri5kupang.sch.id</p>
+        </div>
+        <div>
+          <div class="footer-title">Tautan Cepat</div>
+          <div class="footer-links">
+            <a href="profil.html">Profil</a>
+            <a href="berita.html">Berita &amp; Prestasi</a>
+            <a href="galeri.html">Galeri</a>
+            <a href="spmb.html">Informasi SPMB</a>
+            <a href="dokumen.html">Dokumen &amp; Tautan</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-title">Layanan</div>
+          <div class="footer-links">
+            <a href="kunjungan.html">Kunjungan Tamu</a>
+            <a href="lomba.html">Pendaftaran Lomba</a>
+            <a href="reservasi.html">Reservasi Sarana</a>
+            <a href="kegiatan.html">Pendaftaran Kegiatan</a>
+            <a href="reservasi.html#kalender">Kalender Pemakaian Sarana</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-title">Ikuti Kami</div>
+          <div class="footer-links">
+            <a href="https://www.instagram.com/smpnegeri5kupang" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.facebook.com/smpnegeri5kupang" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://www.youtube.com/channel/UCqFI5MzB6pjWHWjmUjy6tvw" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.tiktok.com/@smpn.5.kupang" target="_blank" rel="noopener">TikTok</a>
+            <a href="cek-status.html">Cek Status Pengajuan</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 UPTD SMP Negeri 5 Kota Kupang</span>
+      </div>
+    </div>
+  </footer>
   <script src="assets/app.js"></script>
+  <script src="assets/static-mode.js"></script>
 </body>
 </html>

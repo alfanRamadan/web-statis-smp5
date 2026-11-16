@@ -4,16 +4,84 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Guru &amp; Staf &mdash; SMP Negeri 5 Kota Kupang</title>
+  <meta name="description" content="Informasi sekolah, prestasi siswa, dan layanan administrasi SMP Negeri 5 Kota Kupang.">
   <link rel="icon" type="image/png" href="assets/img/logo.png">
   <link rel="stylesheet" href="assets/style.css">
 </head>
-<body data-page="guru" data-root="">
-  <header class="site-header" id="site-header"></header>
+<body>
+    <header class="site-header">
+        <div class="announce"><div class="container">
+      <span class="badge badge-warning">Pengumuman</span>
+      <span>Sumatif Akhir Semester (SAS) Ganjil dimulai 1 Desember 2026.</span>
+      <a href="berita.html">Selengkapnya</a>    </div></div>
+        <div class="container header-inner">
+      <a class="brand" href="">
+        <img class="crest" src="assets/img/logo.png" alt="Logo SMP Negeri 5 Kota Kupang">
+        <span><span class="brand-name">SMP Negeri 5 Kota Kupang</span><span class="brand-sub">Kota Kupang, Nusa Tenggara Timur</span></span>
+      </a>
+      <nav class="nav" aria-label="Navigasi utama">
+        <a class="" href="">Beranda</a>
+        <details class="nav-drop">
+          <summary class="active">Profil <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="drop">
+            <a href="profil.html">Profil Sekolah</a>
+            <a href="profil.html#visi-misi">Visi &amp; Misi</a>
+            <a href="guru-staf.html">Guru &amp; Staf</a>
+            <a href="galeri.html">Galeri</a>
+          </div>
+        </details>
+        <a class="" href="berita.html">Berita &amp; Prestasi</a>
+        <a class="" href="spmb.html">SPMB</a>
+        <details class="nav-drop">
+          <summary class="">Akademik <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="drop">
+            <a href="dokumen.html#dokumen">Dokumen &amp; Kurikulum</a>
+            <a href="dokumen.html#tautan">Learning Room</a>
+            <a href="dokumen.html#tautan">English Day</a>
+          </div>
+        </details>
+        <details class="nav-drop">
+          <summary class="">Layanan <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="drop">
+            <a href="kunjungan.html">Kunjungan Tamu</a>
+            <a href="lomba.html">Pendaftaran Lomba</a>
+            <a href="reservasi.html">Reservasi Sarana</a>
+            <a href="kegiatan.html">Pendaftaran Kegiatan</a>
+            <a href="reservasi.html#kalender">Kalender Pemakaian Sarana</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-text small" href="login.html">Masuk</a>
+        <a class="btn btn-outline" href="cek-status.html">Cek Status</a>
+        <a class="btn btn-primary" href="kunjungan.html">Ajukan Layanan</a>
+      </div>
+      <button class="hamburger" id="menuToggle" aria-label="Buka menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="">Beranda</a>
+      <a href="profil.html">Profil Sekolah</a>
+      <a href="guru-staf.html">Guru &amp; Staf</a>
+      <a href="galeri.html">Galeri</a>
+      <a href="berita.html">Berita &amp; Prestasi</a>
+      <a href="spmb.html">SPMB</a>
+      <a href="dokumen.html">Dokumen &amp; Tautan</a>
+      <a href="kunjungan.html">Kunjungan Tamu</a>
+      <a href="lomba.html">Pendaftaran Lomba</a>
+      <a href="reservasi.html">Reservasi Sarana</a>
+      <a href="kegiatan.html">Pendaftaran Kegiatan</a>
+      <div class="mobile-actions">
+        <a class="btn btn-outline btn-block" href="cek-status.html">Cek Status</a>
+        <a class="btn btn-primary btn-block" href="kunjungan.html">Ajukan Layanan</a>
+        <a class="btn btn-text btn-block" href="login.html">Masuk Panel Admin</a>
+      </div>
+    </div>
+  </header>
 
-  <main>
+    <main>
     <section class="page-head">
       <div class="container">
-        <div class="breadcrumb"><a href="index.html">Beranda</a><span>/</span><span>Guru &amp; Staf</span></div>
+        <div class="breadcrumb"><a href="">Beranda</a><span>/</span><span>Guru &amp; Staf</span></div>
         <h1>Guru &amp; Staf</h1>
         <p class="lead">Kenali tenaga pendidik dan kependidikan yang mendampingi siswa setiap hari.</p>
       </div>
@@ -21,79 +89,109 @@
 
     <section class="section">
       <div class="container">
-        <div class="filters">
-          <div class="search">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-            <input id="cariGuru" type="search" placeholder="Cari nama atau jabatan..." aria-label="Cari guru atau staf">
+                  <div class="filters">
+            <div class="search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+              <input id="cariGuru" type="search" placeholder="Cari nama atau jabatan..." aria-label="Cari guru atau staf">
+            </div>
+            <div class="chips" id="filterGuru">
+              <button class="chip active" data-kategori="semua" type="button">Semua</button>
+                              <button class="chip" data-kategori="pimpinan" type="button">Pimpinan</button>
+                              <button class="chip" data-kategori="guru" type="button">Guru</button>
+                              <button class="chip" data-kategori="staf" type="button">Staf</button>
+                          </div>
           </div>
-          <div class="chips" id="filterGuru">
-            <button class="chip active" data-kategori="semua" type="button">Semua</button>
-            <button class="chip" data-kategori="pimpinan" type="button">Pimpinan</button>
-            <button class="chip" data-kategori="guru" type="button">Guru</button>
-            <button class="chip" data-kategori="staf" type="button">Staf</button>
-          </div>
-        </div>
 
-        <div class="grid grid-4" id="daftarGuru">
-          <article class="card person-card" data-kategori="pimpinan">
-            <div class="portrait">KS</div>
-            <strong>Nama Kepala Sekolah, M.Pd.</strong>
-            <span>Kepala Sekolah</span>
-            <span class="tiny">NIP 19680512 199003 2 001</span>
-          </article>
-          <article class="card person-card" data-kategori="pimpinan">
-            <div class="portrait alt">PN</div>
-            <strong>Paulus A. Neno, S.Pd.</strong>
-            <span>Wakil Kepala Kurikulum</span>
-            <span class="tiny">NIP 19720318 199803 1 004</span>
-          </article>
-          <article class="card person-card" data-kategori="guru">
-            <div class="portrait alt2">YL</div>
-            <strong>Yuliana B. Lada, S.Pd.</strong>
-            <span>Guru Bahasa Indonesia</span>
-            <span class="tiny">NIP 19801125 200604 2 002</span>
-          </article>
-          <article class="card person-card" data-kategori="guru">
-            <div class="portrait">AB</div>
-            <strong>Andreas K. Bau, S.Pd.</strong>
-            <span>Guru Matematika</span>
-            <span class="tiny">NIP 19770909 200312 1 003</span>
-          </article>
-          <article class="card person-card" data-kategori="guru">
-            <div class="portrait alt">TL</div>
-            <strong>Theresia M. Laka, S.Pd.</strong>
-            <span>Guru IPA</span>
-            <span class="tiny">NIP 19830407 200902 2 005</span>
-          </article>
-          <article class="card person-card" data-kategori="guru">
-            <div class="portrait alt2">YT</div>
-            <strong>Yohanes D. Tefa, S.Pd.</strong>
-            <span>Guru IPS</span>
-            <span class="tiny">NIP 19751230 200801 1 006</span>
-          </article>
-          <article class="card person-card" data-kategori="guru">
-            <div class="portrait">EP</div>
-            <strong>Elisabeth R. Peni, S.Pd.</strong>
-            <span>Guru Bahasa Inggris</span>
-            <span class="tiny">NIP 19860714 201001 2 007</span>
-          </article>
-          <article class="card person-card" data-kategori="staf">
-            <div class="portrait alt">MA</div>
-            <strong>Mateus B. Ate, S.Kom.</strong>
-            <span>Staf Tata Usaha</span>
-            <span class="tiny">NIP 19900122 201503 1 008</span>
-          </article>
-        </div>
-
-        <div class="center mt-32">
-          <button class="btn btn-outline" type="button" data-soon="Daftar guru lengkap">Tampilkan lebih banyak</button>
-        </div>
-      </div>
+          <div class="grid grid-4" id="daftarGuru">
+                          <article class="card person-card" data-kategori="pimpinan">
+                                  <div class="portrait ">NK</div>
+                                <strong>Nama Kepala Sekolah, M.Pd.</strong>
+                <span>Kepala Sekolah</span>
+                              </article>
+                          <article class="card person-card" data-kategori="pimpinan">
+                                  <div class="portrait alt">PA</div>
+                                <strong>Paulus A. Neno, S.Pd.</strong>
+                <span>Wakil Kepala Kurikulum</span>
+                <span class="tiny">Matematika</span>              </article>
+                          <article class="card person-card" data-kategori="guru">
+                                  <div class="portrait alt2">YB</div>
+                                <strong>Yuliana B. Lada, S.Pd.</strong>
+                <span>Guru Bahasa Indonesia</span>
+                <span class="tiny">Bahasa Indonesia</span>              </article>
+                          <article class="card person-card" data-kategori="guru">
+                                  <div class="portrait ">AK</div>
+                                <strong>Andreas K. Bau, S.Pd.</strong>
+                <span>Guru Matematika</span>
+                <span class="tiny">Matematika</span>              </article>
+                          <article class="card person-card" data-kategori="guru">
+                                  <div class="portrait alt">TM</div>
+                                <strong>Theresia M. Laka, S.Pd.</strong>
+                <span>Guru IPA</span>
+                <span class="tiny">IPA</span>              </article>
+                          <article class="card person-card" data-kategori="guru">
+                                  <div class="portrait alt2">YD</div>
+                                <strong>Yohanes D. Tefa, S.Pd.</strong>
+                <span>Guru IPS</span>
+                <span class="tiny">IPS</span>              </article>
+                          <article class="card person-card" data-kategori="guru">
+                                  <div class="portrait ">ER</div>
+                                <strong>Elisabeth R. Peni, S.Pd.</strong>
+                <span>Guru Bahasa Inggris</span>
+                <span class="tiny">Bahasa Inggris</span>              </article>
+                          <article class="card person-card" data-kategori="staf">
+                                  <div class="portrait alt">MB</div>
+                                <strong>Mateus B. Ate, S.Kom.</strong>
+                <span>Staf Tata Usaha</span>
+                              </article>
+                      </div>
+              </div>
     </section>
   </main>
 
-  <footer class="site-footer" id="site-footer"></footer>
-  <script src="assets/layout.js"></script>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href=""><img class="crest" src="assets/img/logo.png" alt="Logo SMP Negeri 5 Kota Kupang"><span><span class="brand-name">SMP Negeri 5 Kota Kupang</span><span class="brand-sub">Kota Kupang, Nusa Tenggara Timur</span></span></a>
+          <p class="small muted mt-16">Jl. Frans Seda, Kel. Kelapa Lima, Kec. Kelapa Lima, Kota Kupang, NTT 85228 <br>smpnegeri5kupang.80@gmail.com<br>smpnegeri5kupang.sch.id</p>
+        </div>
+        <div>
+          <div class="footer-title">Tautan Cepat</div>
+          <div class="footer-links">
+            <a href="profil.html">Profil</a>
+            <a href="berita.html">Berita &amp; Prestasi</a>
+            <a href="galeri.html">Galeri</a>
+            <a href="spmb.html">Informasi SPMB</a>
+            <a href="dokumen.html">Dokumen &amp; Tautan</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-title">Layanan</div>
+          <div class="footer-links">
+            <a href="kunjungan.html">Kunjungan Tamu</a>
+            <a href="lomba.html">Pendaftaran Lomba</a>
+            <a href="reservasi.html">Reservasi Sarana</a>
+            <a href="kegiatan.html">Pendaftaran Kegiatan</a>
+            <a href="reservasi.html#kalender">Kalender Pemakaian Sarana</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-title">Ikuti Kami</div>
+          <div class="footer-links">
+            <a href="https://www.instagram.com/smpnegeri5kupang" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.facebook.com/smpnegeri5kupang" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://www.youtube.com/channel/UCqFI5MzB6pjWHWjmUjy6tvw" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.tiktok.com/@smpn.5.kupang" target="_blank" rel="noopener">TikTok</a>
+            <a href="cek-status.html">Cek Status Pengajuan</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 UPTD SMP Negeri 5 Kota Kupang</span>
+      </div>
+    </div>
+  </footer>
   <script src="assets/app.js"></script>
+  <script src="assets/static-mode.js"></script>
 </body>
 </html>

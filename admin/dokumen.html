@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dokumen &amp; Tautan &mdash; Panel Admin SMPN 5 Kupang</title>
+  <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="admin-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="../admin/index.html">
+        <img class="crest" src="../assets/img/logo.png" alt="Logo SMP Negeri 5 Kota Kupang">
+        <span><span class="brand-name">SMPN 5 Kupang</span><span class="brand-sub">Panel Admin</span></span>
+      </a>
+      <div class="side-group">
+        <div class="side-label">Utama</div>
+        <a class="side-link" href="../admin/index.html">Dashboard</a>
+      </div>
+      <div class="side-group">
+        <div class="side-label">Konten</div>
+        <a class="side-link" href="../admin/profil.html">Profil Sekolah</a>
+        <a class="side-link" href="../admin/guru.html">Guru &amp; Staf</a>
+        <a class="side-link" href="../admin/berita.html">Berita</a>
+        <a class="side-link" href="../admin/prestasi.html">Prestasi</a>
+        <a class="side-link" href="../admin/galeri.html">Galeri</a>
+        <a class="side-link" href="../admin/spmb.html">Pengumuman &amp; SPMB</a>
+        <a class="side-link active" href="../admin/dokumen.html">Dokumen &amp; Tautan</a>
+      </div>
+      <div class="side-group">
+        <div class="side-label">Layanan</div>
+        <a class="side-link" href="../admin/kunjungan.html">Kunjungan</a>
+        <a class="side-link" href="../admin/lomba.html">Lomba</a>
+        <a class="side-link" href="../admin/reservasi.html">Reservasi</a>
+        <a class="side-link" href="../admin/sarana.html">Sarana</a>
+        <a class="side-link" href="../admin/kegiatan.html">Kegiatan</a>
+      </div>
+      <div class="side-group">
+        <div class="side-label">Sistem</div>
+        <a class="side-link" href="../admin/akun.html">Akun Admin</a>
+      </div>
+      <form class="side-bottom" method="POST" action="#" data-aksi="/logout">
+        <button class="side-link" type="submit" style="width:100%;border:0;background:none;cursor:pointer;font:inherit;text-align:left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5M21 12H9"/></svg> Keluar</button>
+      </form>
+    </aside>
+    <div class="admin-main">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-btn menu-btn" id="sideToggle" aria-label="Buka menu admin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+          <div><h1>Dokumen &amp; Tautan</h1><div class="sub">Kelola dokumen unduhan dan tautan layanan di halaman Akademik.</div></div>
+        </div>
+        <div class="topbar-actions">
+          <a class="btn btn-text small" href="">Lihat situs</a>
+          <div class="user-chip">
+            <span class="avatar">OP</span>
+            <span class="user-meta"><strong>Operator Sekolah</strong><span>Admin</span></span>
+          </div>
+        </div>
+      </header>
+      <main class="admin-content">
+                
+        <div class="spread" style="margin-bottom:24px">
+          <div>
+            <h2 style="font-size:20px">Dokumen Unduhan</h2>
+            <p class="small muted">PDF, Word, atau Excel. Maksimal 5 MB per berkas. Dokumen bisa diunduh siapa saja.</p>
+          </div>
+          <a class="btn btn-primary" href="../admin/dokumen/create__tipe-file.html">+ Unggah Dokumen</a>
+        </div>
+
+        <section class="card" style="padding:0">
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Judul</th><th>Kategori</th><th>Jenis</th><th>Ukuran</th><th>Diperbarui</th><th>Aksi</th></tr></thead>
+              <tbody>
+                                  <tr>
+                    <td data-label="Judul">Jadwal Sumatif Akhir Semester (SAS) Ganjil</td>
+                    <td data-label="Kategori">Jadwal</td>
+                    <td data-label="Jenis">PDF</td>
+                    <td data-label="Ukuran">-</td>
+                    <td data-label="Diperbarui">16 Nov 2026</td>
+                    <td data-label="Aksi">
+                      <div class="table-actions">
+                        <a href="../admin/dokumen/3/edit.html">Edit</a>
+                        <form method="POST" onsubmit="return confirm('Hapus dokumen ini?')" action="#" data-aksi="/admin/dokumen/3">
+                          <input type="hidden" name="_method" value="DELETE">                          <button class="btn btn-text btn-sm danger" type="submit">Hapus</button>
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
+                                  <tr>
+                    <td data-label="Judul">Kalender Pendidikan 2026/2027</td>
+                    <td data-label="Kategori">Kalender</td>
+                    <td data-label="Jenis">PDF</td>
+                    <td data-label="Ukuran">-</td>
+                    <td data-label="Diperbarui">16 Nov 2026</td>
+                    <td data-label="Aksi">
+                      <div class="table-actions">
+                        <a href="../admin/dokumen/2/edit.html">Edit</a>
+                        <form method="POST" onsubmit="return confirm('Hapus dokumen ini?')" action="#" data-aksi="/admin/dokumen/2">
+                          <input type="hidden" name="_method" value="DELETE">                          <button class="btn btn-text btn-sm danger" type="submit">Hapus</button>
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
+                                  <tr>
+                    <td data-label="Judul">Kurikulum Operasional Satuan Pendidikan (KOSP)</td>
+                    <td data-label="Kategori">Kurikulum</td>
+                    <td data-label="Jenis">PDF</td>
+                    <td data-label="Ukuran">-</td>
+                    <td data-label="Diperbarui">16 Nov 2026</td>
+                    <td data-label="Aksi">
+                      <div class="table-actions">
+                        <a href="../admin/dokumen/1/edit.html">Edit</a>
+                        <form method="POST" onsubmit="return confirm('Hapus dokumen ini?')" action="#" data-aksi="/admin/dokumen/1">
+                          <input type="hidden" name="_method" value="DELETE">                          <button class="btn btn-text btn-sm danger" type="submit">Hapus</button>
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
+                              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <div class="spread" style="margin:32px 0 24px">
+          <div>
+            <h2 style="font-size:20px">Tautan Layanan</h2>
+            <p class="small muted">Tautan ke platform luar dan formulir yang sudah dipakai sekolah.</p>
+          </div>
+          <a class="btn btn-outline" href="../admin/dokumen/create__tipe-tautan.html">+ Tambah Tautan</a>
+        </div>
+
+        <section class="card" style="padding:0">
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Nama</th><th>Kelompok</th><th>Alamat Tautan</th><th>Aksi</th></tr></thead>
+              <tbody>
+                                  <tr>
+                    <td data-label="Nama">Cetak Kwitansi</td>
+                    <td data-label="Kelompok">Tata Usaha</td>
+                    <td data-label="Alamat Tautan"><span class="table-code">https://docs.google.com/forms/</span></td>
+                    <td data-label="Aksi">
+                      <div class="table-actions">
+                        <a href="../admin/dokumen/7/edit.html">Edit</a>
+                        <form method="POST" onsubmit="return confirm('Hapus tautan ini?')" action="#" data-aksi="/admin/dokumen/7">
+                          <input type="hidden" name="_method" value="DELETE">                          <button class="btn btn-text btn-sm danger" type="submit">Hapus</button>
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
+                                  <tr>
+                    <td data-label="Nama">English Day</td>
+                    <td data-label="Kelompok">Program sekolah</td>
+                    <td data-label="Alamat Tautan"><span class="table-code">https://docs.google.com/presentation/</span></td>
+                    <td data-label="Aksi">
+                      <div class="table-actions">
+                        <a href="../admin/dokumen/6/edit.html">Edit</a>
+                        <form method="POST" onsubmit="return confirm('Hapus tautan ini?')" action="#" data-aksi="/admin/dokumen/6">
+                          <input type="hidden" name="_method" value="DELETE">                          <button class="btn btn-text btn-sm danger" type="submit">Hapus</button>
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
+                                  <tr>
+                    <td data-label="Nama">Learning Room Siswa</td>
+                    <td data-label="Kelompok">Learning Room</td>
+                    <td data-label="Alamat Tautan"><span class="table-code">https://student.learningroom.id/</span></td>
+                    <td data-label="Aksi">
+                      <div class="table-actions">
+                        <a href="../admin/dokumen/5/edit.html">Edit</a>
+                        <form method="POST" onsubmit="return confirm('Hapus tautan ini?')" action="#" data-aksi="/admin/dokumen/5">
+                          <input type="hidden" name="_method" value="DELETE">                          <button class="btn btn-text btn-sm danger" type="submit">Hapus</button>
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
+                                  <tr>
+                    <td data-label="Nama">Learning Room Guru</td>
+                    <td data-label="Kelompok">Learning Room</td>
+                    <td data-label="Alamat Tautan"><span class="table-code">https://teacher.learningroom.id/</span></td>
+                    <td data-label="Aksi">
+                      <div class="table-actions">
+                        <a href="../admin/dokumen/4/edit.html">Edit</a>
+                        <form method="POST" onsubmit="return confirm('Hapus tautan ini?')" action="#" data-aksi="/admin/dokumen/4">
+                          <input type="hidden" name="_method" value="DELETE">                          <button class="btn btn-text btn-sm danger" type="submit">Hapus</button>
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
+                              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+    <div class="overlay" id="overlay"></div>
+  <script src="../assets/app.js"></script>
+  <script src="../assets/static-mode.js"></script>
+</body>
+</html>

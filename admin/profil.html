@@ -7,90 +7,178 @@
   <link rel="icon" type="image/png" href="../assets/img/logo.png">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body data-admin="profil" data-root="../">
-  <div class="admin-shell">
-    <aside class="sidebar" id="sidebar"></aside>
+<body>
+    <div class="admin-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="../admin/index.html">
+        <img class="crest" src="../assets/img/logo.png" alt="Logo SMP Negeri 5 Kota Kupang">
+        <span><span class="brand-name">SMPN 5 Kupang</span><span class="brand-sub">Panel Admin</span></span>
+      </a>
+      <div class="side-group">
+        <div class="side-label">Utama</div>
+        <a class="side-link" href="../admin/index.html">Dashboard</a>
+      </div>
+      <div class="side-group">
+        <div class="side-label">Konten</div>
+        <a class="side-link active" href="../admin/profil.html">Profil Sekolah</a>
+        <a class="side-link" href="../admin/guru.html">Guru &amp; Staf</a>
+        <a class="side-link" href="../admin/berita.html">Berita</a>
+        <a class="side-link" href="../admin/prestasi.html">Prestasi</a>
+        <a class="side-link" href="../admin/galeri.html">Galeri</a>
+        <a class="side-link" href="../admin/spmb.html">Pengumuman &amp; SPMB</a>
+        <a class="side-link" href="../admin/dokumen.html">Dokumen &amp; Tautan</a>
+      </div>
+      <div class="side-group">
+        <div class="side-label">Layanan</div>
+        <a class="side-link" href="../admin/kunjungan.html">Kunjungan</a>
+        <a class="side-link" href="../admin/lomba.html">Lomba</a>
+        <a class="side-link" href="../admin/reservasi.html">Reservasi</a>
+        <a class="side-link" href="../admin/sarana.html">Sarana</a>
+        <a class="side-link" href="../admin/kegiatan.html">Kegiatan</a>
+      </div>
+      <div class="side-group">
+        <div class="side-label">Sistem</div>
+        <a class="side-link" href="../admin/akun.html">Akun Admin</a>
+      </div>
+      <form class="side-bottom" method="POST" action="#" data-aksi="/logout">
+        <button class="side-link" type="submit" style="width:100%;border:0;background:none;cursor:pointer;font:inherit;text-align:left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5M21 12H9"/></svg> Keluar</button>
+      </form>
+    </aside>
     <div class="admin-main">
-      <header class="topbar" id="topbar" data-title="Profil Sekolah" data-subtitle="Kelola informasi umum sekolah."></header>
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-btn menu-btn" id="sideToggle" aria-label="Buka menu admin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+          <div><h1>Profil Sekolah</h1><div class="sub">Kelola informasi umum sekolah.</div></div>
+        </div>
+        <div class="topbar-actions">
+          <a class="btn btn-text small" href="">Lihat situs</a>
+          <div class="user-chip">
+            <span class="avatar">OP</span>
+            <span class="user-meta"><strong>Operator Sekolah</strong><span>Admin</span></span>
+          </div>
+        </div>
+      </header>
       <main class="admin-content">
-        <!-- shortcut: form statis, belum menyimpan; sambungkan ke backend saat Construction -->
+                
         <div class="admin-grid">
-          <form class="card">
-            <h2 style="font-size:20px">Informasi Sekolah</h2>
-            <p class="small muted mt-8">Perubahan di sini akan tampil di halaman profil publik.</p>
+          <form class="card" method="POST" enctype="multipart/form-data" action="#" data-aksi="/admin/profil">
+            <input type="hidden" name="_method" value="PUT">            <h2 style="font-size:20px">Informasi Sekolah</h2>
+            <p class="small muted mt-8">Perubahan di sini akan tampil di halaman profil publik, beranda, dan footer.</p>
 
+            
             <div class="grid grid-2 mt-24">
-              <div class="field">
-                <label for="pNama">Nama Sekolah</label>
-                <input id="pNama" type="text" value="SMP Negeri 5 Kota Kupang">
+              <div class="field ">
+                <label for="nama_sekolah">Nama Sekolah <span class="req">*</span></label>
+                <input id="nama_sekolah" name="nama_sekolah" type="text" maxlength="150" value="SMP Negeri 5 Kota Kupang" required>
+                <div class="error-text"></div>
               </div>
-              <div class="field">
-                <label for="pNpsn">NPSN</label>
-                <input id="pNpsn" type="text" value="5030xxxx">
+              <div class="field ">
+                <label for="npsn">NPSN</label>
+                <input id="npsn" name="npsn" type="text" maxlength="20" value="5030xxxx">
+                <div class="error-text"></div>
               </div>
-              <div class="field">
-                <label for="pAkreditasi">Akreditasi</label>
-                <input id="pAkreditasi" type="text" value="A">
+              <div class="field ">
+                <label for="akreditasi">Akreditasi</label>
+                <input id="akreditasi" name="akreditasi" type="text" maxlength="30" value="A" placeholder="mis. A">
+                <div class="error-text"></div>
               </div>
-              <div class="field">
-                <label for="pKepsek">Kepala Sekolah</label>
-                <input id="pKepsek" type="text" value="Nama Kepala Sekolah, M.Pd.">
+              <div class="field ">
+                <label for="nama_kepala_sekolah">Kepala Sekolah</label>
+                <input id="nama_kepala_sekolah" name="nama_kepala_sekolah" type="text" maxlength="150" value="Nama Kepala Sekolah, M.Pd.">
+                <div class="error-text"></div>
               </div>
             </div>
 
-            <div class="field">
-              <label for="pAlamat">Alamat</label>
-              <input id="pAlamat" type="text" value="Jl. Frans Seda, Kel. Kelapa Lima, Kec. Kelapa Lima, Kota Kupang, NTT 85228">
+            <div class="field ">
+              <label for="alamat">Alamat</label>
+              <input id="alamat" name="alamat" type="text" maxlength="255" value="Jl. Frans Seda, Kel. Kelapa Lima, Kec. Kelapa Lima, Kota Kupang, NTT 85228">
+              <div class="error-text"></div>
             </div>
             <div class="grid grid-2">
-              <div class="field">
-                <label for="pTelepon">Telepon</label>
-                <input id="pTelepon" type="text" value="" placeholder="Belum ada nomor resmi">
+              <div class="field ">
+                <label for="telepon">Telepon</label>
+                <input id="telepon" name="telepon" type="text" maxlength="20" value="" placeholder="Kosongkan jika belum ada nomor resmi">
+                <div class="error-text"></div>
               </div>
-              <div class="field">
-                <label for="pEmail">Email</label>
-                <input id="pEmail" type="email" value="smpnegeri5kupang.80@gmail.com">
+              <div class="field ">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" maxlength="150" value="smpnegeri5kupang.80@gmail.com">
+                <div class="error-text"></div>
               </div>
             </div>
 
-            <div class="field">
-              <label for="pVisi">Visi</label>
-              <textarea id="pVisi">Menghasilkan tamatan yang beriman dan bertakwa, berprestasi, terampil, dan berdaya saing tinggi serta berbudi pekerti yang luhur.</textarea>
+            <div class="field ">
+              <label for="sambutan">Sambutan Kepala Sekolah</label>
+              <textarea id="sambutan" name="sambutan" maxlength="2000">Kami membuka pintu bagi setiap siswa, orang tua, dan mitra untuk tumbuh bersama SMPN 5 Kupang.</textarea>
+              <div class="hint">Tampil di beranda. Singkat saja, satu sampai tiga kalimat.</div>
+              <div class="error-text"></div>
             </div>
-            <div class="field">
-              <label for="pMisi">Misi</label>
-              <textarea id="pMisi" rows="8">Unggul dalam disiplin.
-Unggul dalam perolehan nilai US/UN.
+
+            <div class="field ">
+              <label for="foto_kepala_sekolah">Foto Kepala Sekolah</label>
+                            <input id="foto_kepala_sekolah" name="foto_kepala_sekolah" type="file" accept=".jpg,.jpeg,.png">
+              <div class="hint">JPG atau PNG, maksimal 5 MB.</div>
+              <div class="error-text"></div>
+            </div>
+
+            <div class="field ">
+              <label for="sejarah">Sejarah</label>
+              <textarea id="sejarah" name="sejarah" style="min-height:200px">SMP Negeri 5 Kota Kupang berdiri pada tahun 1985 dan terus berkembang menjadi salah satu sekolah menengah pertama negeri di Kota Kupang. Sejak awal, sekolah ini berkomitmen memberikan pendidikan yang merata bagi anak-anak di lingkungan sekitar.
+
+Seiring waktu, jumlah peserta didik, tenaga pendidik, dan sarana pembelajaran terus bertambah. Kini sekolah membuka diri sebagai pusat kegiatan akademik maupun non-akademik bagi masyarakat.</textarea>
+              <div class="hint">Teks biasa. Beri satu baris kosong untuk paragraf baru.</div>
+              <div class="error-text"></div>
+            </div>
+            <div class="field ">
+              <label for="visi">Visi</label>
+              <textarea id="visi" name="visi" maxlength="1000">Menghasilkan tamatan yang beriman dan bertakwa, berprestasi, terampil, dan berdaya saing tinggi serta berbudi pekerti yang luhur.</textarea>
+              <div class="error-text"></div>
+            </div>
+            <div class="field ">
+              <label for="misi">Misi</label>
+              <textarea id="misi" name="misi" rows="8">Unggul dalam disiplin.
+Unggul dalam perolehan nilai asesmen.
 Unggul dalam perolehan nilai ulangan.
 Unggul dalam lomba kesenian dan olahraga prestasi.
 Unggul dalam kegiatan keagamaan dan sosial kemasyarakatan.
 Unggul dalam Lomba Cerdas Cermat / LAMOJARI.
 Unggul dalam LPIR/PIR.
 Unggul dalam 7K.</textarea>
+              <div class="hint">Satu baris satu butir misi. Nomor ditambahkan otomatis.</div>
+              <div class="error-text"></div>
+            </div>
+
+            <div class="field ">
+              <label for="struktur_organisasi">Gambar Struktur Organisasi</label>
+                              <img src="../assets/contoh/struktur.svg" alt="Struktur saat ini" style="max-width:280px;border-radius:8px">
+                            <input id="struktur_organisasi" name="struktur_organisasi" type="file" accept=".jpg,.jpeg,.png">
+              <div class="hint">JPG atau PNG, maksimal 5 MB. Pilih file baru hanya jika ingin mengganti.</div>
+              <div class="error-text"></div>
             </div>
 
             <div class="form-actions">
-              <button class="btn btn-primary" type="button" data-toast="Profil disimpan (demo).">Simpan Perubahan</button>
+              <button class="btn btn-primary" type="submit">Simpan Perubahan</button>
             </div>
           </form>
 
           <aside class="stack-24">
             <section class="card">
               <h3>Pratinjau Publik</h3>
-              <p class="small muted mt-8">Halaman profil menampilkan sejarah, visi/misi, struktur, dan fasilitas.</p>
-              <a class="btn btn-outline btn-block mt-16" href="../profil.html">Lihat Halaman Profil</a>
+              <p class="small muted mt-8">Halaman profil menampilkan sejarah, visi dan misi, struktur organisasi, dan fasilitas.</p>
+              <a class="btn btn-outline btn-block mt-16" href="../profil.html" target="_blank" rel="noopener">Lihat Halaman Profil</a>
             </section>
             <section class="card">
-              <h3>Status</h3>
-              <div class="row mt-16"><span class="badge badge-success">Tampil</span><span class="tiny muted">Terakhir diubah 3 Nov 2026</span></div>
+              <h3>Terakhir diubah</h3>
+              <p class="small muted mt-8">16 November 2026, 15.18</p>
             </section>
           </aside>
         </div>
       </main>
     </div>
   </div>
-  <div class="overlay" id="overlay"></div>
-  <script src="../assets/layout.js"></script>
+
+    <div class="overlay" id="overlay"></div>
   <script src="../assets/app.js"></script>
+  <script src="../assets/static-mode.js"></script>
 </body>
 </html>

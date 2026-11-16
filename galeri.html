@@ -4,16 +4,84 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Galeri &mdash; SMP Negeri 5 Kota Kupang</title>
+  <meta name="description" content="Informasi sekolah, prestasi siswa, dan layanan administrasi SMP Negeri 5 Kota Kupang.">
   <link rel="icon" type="image/png" href="assets/img/logo.png">
   <link rel="stylesheet" href="assets/style.css">
 </head>
-<body data-page="galeri" data-root="">
-  <header class="site-header" id="site-header"></header>
+<body>
+    <header class="site-header">
+        <div class="announce"><div class="container">
+      <span class="badge badge-warning">Pengumuman</span>
+      <span>Sumatif Akhir Semester (SAS) Ganjil dimulai 1 Desember 2026.</span>
+      <a href="berita.html">Selengkapnya</a>    </div></div>
+        <div class="container header-inner">
+      <a class="brand" href="">
+        <img class="crest" src="assets/img/logo.png" alt="Logo SMP Negeri 5 Kota Kupang">
+        <span><span class="brand-name">SMP Negeri 5 Kota Kupang</span><span class="brand-sub">Kota Kupang, Nusa Tenggara Timur</span></span>
+      </a>
+      <nav class="nav" aria-label="Navigasi utama">
+        <a class="" href="">Beranda</a>
+        <details class="nav-drop">
+          <summary class="active">Profil <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="drop">
+            <a href="profil.html">Profil Sekolah</a>
+            <a href="profil.html#visi-misi">Visi &amp; Misi</a>
+            <a href="guru-staf.html">Guru &amp; Staf</a>
+            <a href="galeri.html">Galeri</a>
+          </div>
+        </details>
+        <a class="" href="berita.html">Berita &amp; Prestasi</a>
+        <a class="" href="spmb.html">SPMB</a>
+        <details class="nav-drop">
+          <summary class="">Akademik <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="drop">
+            <a href="dokumen.html#dokumen">Dokumen &amp; Kurikulum</a>
+            <a href="dokumen.html#tautan">Learning Room</a>
+            <a href="dokumen.html#tautan">English Day</a>
+          </div>
+        </details>
+        <details class="nav-drop">
+          <summary class="">Layanan <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="drop">
+            <a href="kunjungan.html">Kunjungan Tamu</a>
+            <a href="lomba.html">Pendaftaran Lomba</a>
+            <a href="reservasi.html">Reservasi Sarana</a>
+            <a href="kegiatan.html">Pendaftaran Kegiatan</a>
+            <a href="reservasi.html#kalender">Kalender Pemakaian Sarana</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-text small" href="login.html">Masuk</a>
+        <a class="btn btn-outline" href="cek-status.html">Cek Status</a>
+        <a class="btn btn-primary" href="kunjungan.html">Ajukan Layanan</a>
+      </div>
+      <button class="hamburger" id="menuToggle" aria-label="Buka menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="">Beranda</a>
+      <a href="profil.html">Profil Sekolah</a>
+      <a href="guru-staf.html">Guru &amp; Staf</a>
+      <a href="galeri.html">Galeri</a>
+      <a href="berita.html">Berita &amp; Prestasi</a>
+      <a href="spmb.html">SPMB</a>
+      <a href="dokumen.html">Dokumen &amp; Tautan</a>
+      <a href="kunjungan.html">Kunjungan Tamu</a>
+      <a href="lomba.html">Pendaftaran Lomba</a>
+      <a href="reservasi.html">Reservasi Sarana</a>
+      <a href="kegiatan.html">Pendaftaran Kegiatan</a>
+      <div class="mobile-actions">
+        <a class="btn btn-outline btn-block" href="cek-status.html">Cek Status</a>
+        <a class="btn btn-primary btn-block" href="kunjungan.html">Ajukan Layanan</a>
+        <a class="btn btn-text btn-block" href="login.html">Masuk Panel Admin</a>
+      </div>
+    </div>
+  </header>
 
-  <main>
+    <main>
     <section class="page-head">
       <div class="container">
-        <div class="breadcrumb"><a href="index.html">Beranda</a><span>/</span><span>Galeri</span></div>
+        <div class="breadcrumb"><a href="">Beranda</a><span>/</span><span>Galeri</span></div>
         <h1>Galeri Sekolah</h1>
         <p class="lead">Dokumentasi kegiatan, fasilitas, dan capaian siswa SMP Negeri 5 Kota Kupang.</p>
       </div>
@@ -21,60 +89,102 @@
 
     <section class="section">
       <div class="container">
-        <!-- shortcut: filter galeri statis, sambungkan ke data galeri saat Construction -->
         <div class="filters">
           <div class="chips">
-            <button class="chip active" type="button" data-gal-filter="semua">Semua</button>
-            <button class="chip" type="button" data-gal-filter="kegiatan">Kegiatan</button>
-            <button class="chip" type="button" data-gal-filter="fasilitas">Fasilitas</button>
-            <button class="chip" type="button" data-gal-filter="prestasi">Prestasi</button>
-          </div>
+            <a class="chip active" href="galeri.html">Semua</a>
+                          <a class="chip " href="galeri__kategori-Kegiatan.html">Kegiatan</a>
+                          <a class="chip " href="galeri__kategori-Fasilitas.html">Fasilitas</a>
+                          <a class="chip " href="galeri__kategori-Prestasi.html">Prestasi</a>
+                      </div>
         </div>
 
-        <div class="grid grid-3">
-          <figure class="card" data-gal="kegiatan">
-            <div class="media ratio-4-3">Foto: Upacara Bendera</div>
-            <figcaption class="mt-16"><strong>Upacara Bendera</strong><p class="small muted">Senin, 2 November 2026</p></figcaption>
-          </figure>
-          <figure class="card" data-gal="fasilitas">
-            <div class="media ratio-4-3">Foto: Perpustakaan</div>
-            <figcaption class="mt-16"><strong>Ruang Perpustakaan</strong><p class="small muted">Fasilitas &mdash; literasi siswa</p></figcaption>
-          </figure>
-          <figure class="card" data-gal="fasilitas">
-            <div class="media ratio-4-3">Foto: Laboratorium IPA</div>
-            <figcaption class="mt-16"><strong>Laboratorium IPA</strong><p class="small muted">Fasilitas &mdash; praktikum</p></figcaption>
-          </figure>
-          <figure class="card" data-gal="prestasi">
-            <div class="media ratio-4-3">Foto: Lomba Cerdas Cermat</div>
-            <figcaption class="mt-16"><strong>Juara 1 Lomba Cerdas Cermat</strong><p class="small muted">Prestasi &mdash; tingkat Kota, 1 Oktober 2026</p></figcaption>
-          </figure>
-          <figure class="card" data-gal="fasilitas">
-            <div class="media ratio-4-3">Foto: Aula Serbaguna</div>
-            <figcaption class="mt-16"><strong>Aula Serbaguna</strong><p class="small muted">Fasilitas &mdash; kegiatan komite</p></figcaption>
-          </figure>
-          <figure class="card" data-gal="kegiatan">
-            <div class="media ratio-4-3">Foto: Bulan Bahasa</div>
-            <figcaption class="mt-16"><strong>Peringatan Bulan Bahasa</strong><p class="small muted">Kegiatan &mdash; 28 Oktober 2026</p></figcaption>
-          </figure>
-          <figure class="card" data-gal="fasilitas">
-            <div class="media ratio-4-3">Foto: Lapangan Olahraga</div>
-            <figcaption class="mt-16"><strong>Lapangan Olahraga</strong><p class="small muted">Fasilitas &mdash; bola voli dan basket</p></figcaption>
-          </figure>
-          <figure class="card" data-gal="kegiatan">
-            <div class="media ratio-4-3">Foto: Class Meeting</div>
-            <figcaption class="mt-16"><strong>Class Meeting</strong><p class="small muted">Kegiatan &mdash; Desember 2026</p></figcaption>
-          </figure>
-          <figure class="card" data-gal="kegiatan">
-            <div class="media ratio-4-3">Foto: Workshop Guru</div>
-            <figcaption class="mt-16"><strong>Workshop Guru</strong><p class="small muted">Kegiatan &mdash; 2 Oktober 2026</p></figcaption>
-          </figure>
-        </div>
-      </div>
+                  <div class="grid grid-3">
+                          <figure class="card">
+                <div class="media ratio-4-3 has-img"><img src="assets/contoh/galeri-9.svg" alt="Workshop Guru" loading="lazy"></div>
+                <figcaption class="mt-16"><strong>Workshop Guru</strong><p class="small muted">Kegiatan &mdash; 16 November 2026</p></figcaption>
+              </figure>
+                          <figure class="card">
+                <div class="media ratio-4-3 has-img"><img src="assets/contoh/galeri-8.svg" alt="Class Meeting" loading="lazy"></div>
+                <figcaption class="mt-16"><strong>Class Meeting</strong><p class="small muted">Kegiatan &mdash; 16 November 2026</p></figcaption>
+              </figure>
+                          <figure class="card">
+                <div class="media ratio-4-3 has-img"><img src="assets/contoh/galeri-7.svg" alt="Lapangan Olahraga" loading="lazy"></div>
+                <figcaption class="mt-16"><strong>Lapangan Olahraga</strong><p class="small muted">Fasilitas &mdash; 16 November 2026</p></figcaption>
+              </figure>
+                          <figure class="card">
+                <div class="media ratio-4-3 has-img"><img src="assets/contoh/galeri-6.svg" alt="Peringatan Bulan Bahasa" loading="lazy"></div>
+                <figcaption class="mt-16"><strong>Peringatan Bulan Bahasa</strong><p class="small muted">Kegiatan &mdash; 16 November 2026</p></figcaption>
+              </figure>
+                          <figure class="card">
+                <div class="media ratio-4-3 has-img"><img src="assets/contoh/galeri-5.svg" alt="Aula Serbaguna" loading="lazy"></div>
+                <figcaption class="mt-16"><strong>Aula Serbaguna</strong><p class="small muted">Fasilitas &mdash; 16 November 2026</p></figcaption>
+              </figure>
+                          <figure class="card">
+                <div class="media ratio-4-3 has-img"><img src="assets/contoh/galeri-4.svg" alt="Juara 1 Lomba Cerdas Cermat" loading="lazy"></div>
+                <figcaption class="mt-16"><strong>Juara 1 Lomba Cerdas Cermat</strong><p class="small muted">Prestasi &mdash; 16 November 2026</p></figcaption>
+              </figure>
+                          <figure class="card">
+                <div class="media ratio-4-3 has-img"><img src="assets/contoh/galeri-3.svg" alt="Laboratorium IPA" loading="lazy"></div>
+                <figcaption class="mt-16"><strong>Laboratorium IPA</strong><p class="small muted">Fasilitas &mdash; 16 November 2026</p></figcaption>
+              </figure>
+                          <figure class="card">
+                <div class="media ratio-4-3 has-img"><img src="assets/contoh/galeri-2.svg" alt="Ruang Perpustakaan" loading="lazy"></div>
+                <figcaption class="mt-16"><strong>Ruang Perpustakaan</strong><p class="small muted">Fasilitas &mdash; 16 November 2026</p></figcaption>
+              </figure>
+                          <figure class="card">
+                <div class="media ratio-4-3 has-img"><img src="assets/contoh/galeri-1.svg" alt="Upacara Bendera" loading="lazy"></div>
+                <figcaption class="mt-16"><strong>Upacara Bendera</strong><p class="small muted">Kegiatan &mdash; 16 November 2026</p></figcaption>
+              </figure>
+                      </div>
+          
+              </div>
     </section>
   </main>
 
-  <footer class="site-footer" id="site-footer"></footer>
-  <script src="assets/layout.js"></script>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href=""><img class="crest" src="assets/img/logo.png" alt="Logo SMP Negeri 5 Kota Kupang"><span><span class="brand-name">SMP Negeri 5 Kota Kupang</span><span class="brand-sub">Kota Kupang, Nusa Tenggara Timur</span></span></a>
+          <p class="small muted mt-16">Jl. Frans Seda, Kel. Kelapa Lima, Kec. Kelapa Lima, Kota Kupang, NTT 85228 <br>smpnegeri5kupang.80@gmail.com<br>smpnegeri5kupang.sch.id</p>
+        </div>
+        <div>
+          <div class="footer-title">Tautan Cepat</div>
+          <div class="footer-links">
+            <a href="profil.html">Profil</a>
+            <a href="berita.html">Berita &amp; Prestasi</a>
+            <a href="galeri.html">Galeri</a>
+            <a href="spmb.html">Informasi SPMB</a>
+            <a href="dokumen.html">Dokumen &amp; Tautan</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-title">Layanan</div>
+          <div class="footer-links">
+            <a href="kunjungan.html">Kunjungan Tamu</a>
+            <a href="lomba.html">Pendaftaran Lomba</a>
+            <a href="reservasi.html">Reservasi Sarana</a>
+            <a href="kegiatan.html">Pendaftaran Kegiatan</a>
+            <a href="reservasi.html#kalender">Kalender Pemakaian Sarana</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-title">Ikuti Kami</div>
+          <div class="footer-links">
+            <a href="https://www.instagram.com/smpnegeri5kupang" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.facebook.com/smpnegeri5kupang" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://www.youtube.com/channel/UCqFI5MzB6pjWHWjmUjy6tvw" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.tiktok.com/@smpn.5.kupang" target="_blank" rel="noopener">TikTok</a>
+            <a href="cek-status.html">Cek Status Pengajuan</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 UPTD SMP Negeri 5 Kota Kupang</span>
+      </div>
+    </div>
+  </footer>
   <script src="assets/app.js"></script>
+  <script src="assets/static-mode.js"></script>
 </body>
 </html>

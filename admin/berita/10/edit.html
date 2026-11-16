@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edit Berita &mdash; Panel Admin SMPN 5 Kupang</title>
+  <link rel="icon" type="image/png" href="../../../assets/img/logo.png">
+  <link rel="stylesheet" href="../../../assets/style.css">
+</head>
+<body>
+    <div class="admin-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="../../../admin/index.html">
+        <img class="crest" src="../../../assets/img/logo.png" alt="Logo SMP Negeri 5 Kota Kupang">
+        <span><span class="brand-name">SMPN 5 Kupang</span><span class="brand-sub">Panel Admin</span></span>
+      </a>
+      <div class="side-group">
+        <div class="side-label">Utama</div>
+        <a class="side-link" href="../../../admin/index.html">Dashboard</a>
+      </div>
+      <div class="side-group">
+        <div class="side-label">Konten</div>
+        <a class="side-link" href="../../../admin/profil.html">Profil Sekolah</a>
+        <a class="side-link" href="../../../admin/guru.html">Guru &amp; Staf</a>
+        <a class="side-link active" href="../../../admin/berita.html">Berita</a>
+        <a class="side-link" href="../../../admin/prestasi.html">Prestasi</a>
+        <a class="side-link" href="../../../admin/galeri.html">Galeri</a>
+        <a class="side-link" href="../../../admin/spmb.html">Pengumuman &amp; SPMB</a>
+        <a class="side-link" href="../../../admin/dokumen.html">Dokumen &amp; Tautan</a>
+      </div>
+      <div class="side-group">
+        <div class="side-label">Layanan</div>
+        <a class="side-link" href="../../../admin/kunjungan.html">Kunjungan</a>
+        <a class="side-link" href="../../../admin/lomba.html">Lomba</a>
+        <a class="side-link" href="../../../admin/reservasi.html">Reservasi</a>
+        <a class="side-link" href="../../../admin/sarana.html">Sarana</a>
+        <a class="side-link" href="../../../admin/kegiatan.html">Kegiatan</a>
+      </div>
+      <div class="side-group">
+        <div class="side-label">Sistem</div>
+        <a class="side-link" href="../../../admin/akun.html">Akun Admin</a>
+      </div>
+      <form class="side-bottom" method="POST" action="#" data-aksi="/logout">
+        <button class="side-link" type="submit" style="width:100%;border:0;background:none;cursor:pointer;font:inherit;text-align:left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5M21 12H9"/></svg> Keluar</button>
+      </form>
+    </aside>
+    <div class="admin-main">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-btn menu-btn" id="sideToggle" aria-label="Buka menu admin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+          <div><h1>Edit Berita</h1><div class="sub">Berita berstatus Draf tidak tampil di situs sampai diubah ke Terbit.</div></div>
+        </div>
+        <div class="topbar-actions">
+          <a class="btn btn-text small" href="">Lihat situs</a>
+          <div class="user-chip">
+            <span class="avatar">OP</span>
+            <span class="user-meta"><strong>Operator Sekolah</strong><span>Admin</span></span>
+          </div>
+        </div>
+      </header>
+      <main class="admin-content">
+                <form class="card" method="POST" enctype="multipart/form-data"
+              style="max-width:820px" action="#" data-aksi="/admin/berita/10">
+          <input type="hidden" name="_method" value="PUT"> 
+          
+          <div class="field ">
+            <label for="judul">Judul <span class="req">*</span></label>
+            <input id="judul" name="judul" type="text" maxlength="200" value="Kunjungan Dinas Pendidikan Kota Kupang" required>
+            <div class="error-text"></div>
+          </div>
+
+          <div class="grid-2-sm">
+            <div class="field ">
+              <label for="kategori">Kategori <span class="req">*</span></label>
+              <select id="kategori" name="kategori" required>
+                                  <option value="Kegiatan" >Kegiatan</option>
+                                  <option value="Prestasi" >Prestasi</option>
+                                  <option value="Pengumuman" selected>Pengumuman</option>
+                                  <option value="Mading Siswa" >Mading Siswa</option>
+                                  <option value="English Day" >English Day</option>
+                              </select>
+              <div class="error-text"></div>
+            </div>
+            <div class="field ">
+              <label for="tanggal">Tanggal <span class="req">*</span></label>
+              <input id="tanggal" name="tanggal" type="date" value="2026-08-21" required>
+              <div class="error-text"></div>
+            </div>
+          </div>
+
+          <div class="field ">
+            <label for="ringkasan">Ringkasan</label>
+            <textarea id="ringkasan" name="ringkasan" maxlength="300" style="min-height:80px">Monitoring sarana belajar dan layanan administrasi sekolah berjalan lancar.</textarea>
+            <div class="hint">Satu atau dua kalimat, tampil di daftar berita.</div>
+            <div class="error-text"></div>
+          </div>
+
+          <div class="field ">
+            <label for="isi">Isi Berita <span class="req">*</span></label>
+            <textarea id="isi" name="isi" style="min-height:260px" required>Monitoring sarana belajar dan layanan administrasi sekolah berjalan lancar.
+
+Kegiatan ini diikuti oleh guru dan siswa dari berbagai kelas dan berlangsung dengan lancar.
+
+Pihak sekolah menyampaikan apresiasi kepada seluruh pihak yang terlibat dan berharap kegiatan serupa dapat terus dilaksanakan.</textarea>
+            <div class="hint">Tulis teks biasa. Beri satu baris kosong untuk memulai paragraf baru.</div>
+            <div class="error-text"></div>
+          </div>
+
+          <div class="field ">
+            <label for="gambar">Gambar Utama</label>
+                        <input id="gambar" name="gambar" type="file" accept=".jpg,.jpeg,.png">
+            <div class="hint">JPG atau PNG, maksimal 5 MB.</div>
+            <div class="error-text"></div>
+          </div>
+
+          <div class="field ">
+            <label for="status">Status</label>
+            <select id="status" name="status">
+              <option value="draf" >Draf (belum tampil)</option>
+              <option value="terbit" selected>Terbit (tampil di situs)</option>
+            </select>
+            <div class="error-text"></div>
+          </div>
+
+          <div class="row">
+            <button class="btn btn-primary" type="submit">Simpan</button>
+            <a class="btn btn-outline" href="../../../admin/berita.html">Batal</a>
+          </div>
+        </form>
+      </main>
+    </div>
+  </div>
+
+    <div class="overlay" id="overlay"></div>
+  <script src="../../../assets/app.js"></script>
+  <script src="../../../assets/static-mode.js"></script>
+</body>
+</html>

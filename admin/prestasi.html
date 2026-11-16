@@ -7,93 +7,198 @@
   <link rel="icon" type="image/png" href="../assets/img/logo.png">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body data-admin="prestasi" data-root="../">
-  <div class="admin-shell">
-    <aside class="sidebar" id="sidebar"></aside>
+<body>
+    <div class="admin-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="../admin/index.html">
+        <img class="crest" src="../assets/img/logo.png" alt="Logo SMP Negeri 5 Kota Kupang">
+        <span><span class="brand-name">SMPN 5 Kupang</span><span class="brand-sub">Panel Admin</span></span>
+      </a>
+      <div class="side-group">
+        <div class="side-label">Utama</div>
+        <a class="side-link" href="../admin/index.html">Dashboard</a>
+      </div>
+      <div class="side-group">
+        <div class="side-label">Konten</div>
+        <a class="side-link" href="../admin/profil.html">Profil Sekolah</a>
+        <a class="side-link" href="../admin/guru.html">Guru &amp; Staf</a>
+        <a class="side-link" href="../admin/berita.html">Berita</a>
+        <a class="side-link active" href="../admin/prestasi.html">Prestasi</a>
+        <a class="side-link" href="../admin/galeri.html">Galeri</a>
+        <a class="side-link" href="../admin/spmb.html">Pengumuman &amp; SPMB</a>
+        <a class="side-link" href="../admin/dokumen.html">Dokumen &amp; Tautan</a>
+      </div>
+      <div class="side-group">
+        <div class="side-label">Layanan</div>
+        <a class="side-link" href="../admin/kunjungan.html">Kunjungan</a>
+        <a class="side-link" href="../admin/lomba.html">Lomba</a>
+        <a class="side-link" href="../admin/reservasi.html">Reservasi</a>
+        <a class="side-link" href="../admin/sarana.html">Sarana</a>
+        <a class="side-link" href="../admin/kegiatan.html">Kegiatan</a>
+      </div>
+      <div class="side-group">
+        <div class="side-label">Sistem</div>
+        <a class="side-link" href="../admin/akun.html">Akun Admin</a>
+      </div>
+      <form class="side-bottom" method="POST" action="#" data-aksi="/logout">
+        <button class="side-link" type="submit" style="width:100%;border:0;background:none;cursor:pointer;font:inherit;text-align:left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5M21 12H9"/></svg> Keluar</button>
+      </form>
+    </aside>
     <div class="admin-main">
-      <header class="topbar" id="topbar" data-title="Prestasi" data-subtitle="Kelola capaian siswa dan sekolah."></header>
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-btn menu-btn" id="sideToggle" aria-label="Buka menu admin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+          <div><h1>Prestasi</h1><div class="sub">Kelola capaian siswa dan sekolah.</div></div>
+        </div>
+        <div class="topbar-actions">
+          <a class="btn btn-text small" href="">Lihat situs</a>
+          <div class="user-chip">
+            <span class="avatar">OP</span>
+            <span class="user-meta"><strong>Operator Sekolah</strong><span>Admin</span></span>
+          </div>
+        </div>
+      </header>
       <main class="admin-content">
+                
         <div class="spread" style="margin-bottom:24px">
           <div>
             <h2 style="font-size:20px">Daftar Prestasi</h2>
-            <p class="small muted">4 prestasi tercatat pada 2026.</p>
+            <p class="small muted">6 prestasi tercatat.</p>
           </div>
-          <button class="btn btn-primary" type="button" data-soon="Tambah prestasi">+ Tambah</button>
+          <a class="btn btn-primary" href="../admin/prestasi/create.html">+ Tambah</a>
         </div>
 
         <section class="card" style="padding:0">
-          <div class="filter-bar">
+          <form class="filter-bar" method="GET" action="#" data-aksi="/admin/prestasi">
             <div class="field grow">
               <label for="cariPrestasi">Cari</label>
-              <input id="cariPrestasi" type="search" placeholder="Cari judul atau nama siswa...">
+              <input id="cariPrestasi" name="q" type="search" value="" placeholder="Cari nama prestasi atau siswa...">
             </div>
             <div class="field">
               <label for="tahunPrestasi">Tahun</label>
-              <select id="tahunPrestasi">
-                <option>2026</option>
-                <option>2025</option>
-                <option>2024</option>
-              </select>
+              <input id="tahunPrestasi" name="tahun" type="number" value="" placeholder="Semua">
             </div>
             <div class="field">
               <label for="tingkatPrestasi">Tingkat</label>
-              <select id="tingkatPrestasi">
-                <option>Semua</option>
-                <option>Kota</option>
-                <option>Provinsi</option>
-                <option>Nasional</option>
-              </select>
+              <select id="tingkatPrestasi" name="tingkat">
+                <option value="">Semua</option>
+                                  <option value="kecamatan" >Kecamatan</option>
+                                  <option value="kota" >Kota</option>
+                                  <option value="provinsi" >Provinsi</option>
+                                  <option value="nasional" >Nasional</option>
+                              </select>
             </div>
-            <button class="btn btn-primary" type="button" data-soon="Terapkan filter">Terapkan</button>
-          </div>
+            <button class="btn btn-primary" type="submit">Terapkan</button>
+          </form>
 
           <div class="table-wrap">
             <table>
               <thead>
-                <tr><th>Prestasi</th><th>Siswa / Tim</th><th>Tingkat</th><th>Tahun</th><th>Status</th><th>Aksi</th></tr>
+                <tr><th>Prestasi</th><th>Siswa / Tim</th><th>Tingkat</th><th>Tahun</th><th>Aksi</th></tr>
               </thead>
               <tbody>
-                <tr>
-                  <td data-label="Prestasi">Juara 1 Lomba Cerdas Cermat</td>
-                  <td data-label="Siswa / Tim">Tim LCC</td>
-                  <td data-label="Tingkat">Kota</td>
-                  <td data-label="Tahun">2026</td>
-                  <td data-label="Status"><span class="badge badge-success">Publish</span></td>
-                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit prestasi">Edit</button></div></td>
-                </tr>
-                <tr>
-                  <td data-label="Prestasi">Finalis Olimpiade Sains</td>
-                  <td data-label="Siswa / Tim">Matematika &amp; IPA</td>
-                  <td data-label="Tingkat">Provinsi</td>
-                  <td data-label="Tahun">2026</td>
-                  <td data-label="Status"><span class="badge badge-success">Publish</span></td>
-                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit prestasi">Edit</button></div></td>
-                </tr>
-                <tr>
-                  <td data-label="Prestasi">Juara 2 Lomba Puisi Bulan Bahasa</td>
-                  <td data-label="Siswa / Tim">Elisabeth R. Peni</td>
-                  <td data-label="Tingkat">Kota</td>
-                  <td data-label="Tahun">2026</td>
-                  <td data-label="Status"><span class="badge badge-success">Publish</span></td>
-                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit prestasi">Edit</button></div></td>
-                </tr>
-                <tr>
-                  <td data-label="Prestasi">Juara 3 Turnamen Bola Voli Pelajar</td>
-                  <td data-label="Siswa / Tim">Tim Putra</td>
-                  <td data-label="Tingkat">Kecamatan</td>
-                  <td data-label="Tahun">2026</td>
-                  <td data-label="Status"><span class="badge badge-neutral">Draft</span></td>
-                  <td data-label="Aksi"><div class="table-actions"><button class="btn btn-text btn-sm" type="button" data-soon="Edit prestasi">Edit</button></div></td>
-                </tr>
-              </tbody>
+                                  <tr>
+                    <td data-label="Prestasi">Juara 3 Turnamen Bola Voli Pelajar</td>
+                    <td data-label="Siswa / Tim">Tim Putra</td>
+                    <td data-label="Tingkat">Kecamatan</td>
+                    <td data-label="Tahun">2026</td>
+                    <td data-label="Aksi">
+                      <div class="table-actions">
+                        <a href="../admin/prestasi/4/edit.html">Edit</a>
+                        <a href="../prestasi/4.html" target="_blank" rel="noopener">Lihat</a>
+                        <form method="POST" onsubmit="return confirm('Hapus prestasi ini?')" action="#" data-aksi="/admin/prestasi/4">
+                          <input type="hidden" name="_method" value="DELETE">                          <button class="btn btn-text btn-sm danger" type="submit">Hapus</button>
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
+                                  <tr>
+                    <td data-label="Prestasi">Juara 2 Lomba Puisi Bulan Bahasa</td>
+                    <td data-label="Siswa / Tim">Elisabeth R. Peni</td>
+                    <td data-label="Tingkat">Kota</td>
+                    <td data-label="Tahun">2026</td>
+                    <td data-label="Aksi">
+                      <div class="table-actions">
+                        <a href="../admin/prestasi/3/edit.html">Edit</a>
+                        <a href="../prestasi/3.html" target="_blank" rel="noopener">Lihat</a>
+                        <form method="POST" onsubmit="return confirm('Hapus prestasi ini?')" action="#" data-aksi="/admin/prestasi/3">
+                          <input type="hidden" name="_method" value="DELETE">                          <button class="btn btn-text btn-sm danger" type="submit">Hapus</button>
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
+                                  <tr>
+                    <td data-label="Prestasi">Finalis Olimpiade Sains Tingkat Provinsi</td>
+                    <td data-label="Siswa / Tim">Matematika &amp; IPA</td>
+                    <td data-label="Tingkat">Provinsi</td>
+                    <td data-label="Tahun">2026</td>
+                    <td data-label="Aksi">
+                      <div class="table-actions">
+                        <a href="../admin/prestasi/2/edit.html">Edit</a>
+                        <a href="../prestasi/2.html" target="_blank" rel="noopener">Lihat</a>
+                        <form method="POST" onsubmit="return confirm('Hapus prestasi ini?')" action="#" data-aksi="/admin/prestasi/2">
+                          <input type="hidden" name="_method" value="DELETE">                          <button class="btn btn-text btn-sm danger" type="submit">Hapus</button>
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
+                                  <tr>
+                    <td data-label="Prestasi">Juara 1 Lomba Cerdas Cermat Tingkat Kota</td>
+                    <td data-label="Siswa / Tim">Tim LCC</td>
+                    <td data-label="Tingkat">Kota</td>
+                    <td data-label="Tahun">2026</td>
+                    <td data-label="Aksi">
+                      <div class="table-actions">
+                        <a href="../admin/prestasi/1/edit.html">Edit</a>
+                        <a href="../prestasi/1.html" target="_blank" rel="noopener">Lihat</a>
+                        <form method="POST" onsubmit="return confirm('Hapus prestasi ini?')" action="#" data-aksi="/admin/prestasi/1">
+                          <input type="hidden" name="_method" value="DELETE">                          <button class="btn btn-text btn-sm danger" type="submit">Hapus</button>
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
+                                  <tr>
+                    <td data-label="Prestasi">Juara 2 Olimpiade Matematika Provinsi</td>
+                    <td data-label="Siswa / Tim">Yosef A. Manu</td>
+                    <td data-label="Tingkat">Provinsi</td>
+                    <td data-label="Tahun">2025</td>
+                    <td data-label="Aksi">
+                      <div class="table-actions">
+                        <a href="../admin/prestasi/5/edit.html">Edit</a>
+                        <a href="../prestasi/5.html" target="_blank" rel="noopener">Lihat</a>
+                        <form method="POST" onsubmit="return confirm('Hapus prestasi ini?')" action="#" data-aksi="/admin/prestasi/5">
+                          <input type="hidden" name="_method" value="DELETE">                          <button class="btn btn-text btn-sm danger" type="submit">Hapus</button>
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
+                                  <tr>
+                    <td data-label="Prestasi">Finalis Festival Robotik Pelajar Nasional</td>
+                    <td data-label="Siswa / Tim">Tim Robotik</td>
+                    <td data-label="Tingkat">Nasional</td>
+                    <td data-label="Tahun">2024</td>
+                    <td data-label="Aksi">
+                      <div class="table-actions">
+                        <a href="../admin/prestasi/6/edit.html">Edit</a>
+                        <a href="../prestasi/6.html" target="_blank" rel="noopener">Lihat</a>
+                        <form method="POST" onsubmit="return confirm('Hapus prestasi ini?')" action="#" data-aksi="/admin/prestasi/6">
+                          <input type="hidden" name="_method" value="DELETE">                          <button class="btn btn-text btn-sm danger" type="submit">Hapus</button>
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
+                              </tbody>
             </table>
           </div>
         </section>
+
+        
       </main>
     </div>
   </div>
-  <div class="overlay" id="overlay"></div>
-  <script src="../assets/layout.js"></script>
+
+    <div class="overlay" id="overlay"></div>
   <script src="../assets/app.js"></script>
+  <script src="../assets/static-mode.js"></script>
 </body>
 </html>
